@@ -34,7 +34,19 @@ body {
   background: #2d303e;
   border: 1px solid #393c49;
   border-radius: 8px;
-  padding: 0.8em;
+  padding: 0.8em 0.8em 0.8em 2.5em;
+  color: #abbbc2;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+}
+.header-search__img {
+  position: relative;
+  top: 0;
+  left: 2em;
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: middle;
 }
 
 .main-sidebar {
