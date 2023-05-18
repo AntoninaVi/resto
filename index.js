@@ -38,6 +38,8 @@ const dishesRef = collection(db, 'dishes');
 
 const mainContent = document.querySelector('.main-content');
 
+
+
 getDocs(dishesRef)
     .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
@@ -45,6 +47,8 @@ getDocs(dishesRef)
 
             const mainArticle = document.createElement('article');
             mainArticle.className = 'main-content__dish';
+            mainArticle.dataset.type = dishData.type; // type filter
+
 
             const imageMainArticle = document.createElement('img')
             imageMainArticle.className = 'main-content__dish-img';
@@ -76,3 +80,24 @@ getDocs(dishesRef)
     })
 
 
+//Tabs filter
+function filterDishesByType(type) {
+    const dishes = document.querySelectorAll('.main-content__dish');
+
+    dishes.forEach((dish) => {
+        const dishType = dish.dataset.type;
+        if (type === 'all' || dishType === type) {
+            dish.style.display = 'block';
+        } else {
+            dish.style.display = 'none';
+        }
+    });
+}
+
+const tabs = document.querySelectorAll('.main-tabs__tab');
+tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+        const selectedType = tab.textContent.toLowerCase();
+        filterDishesByType(selectedType);
+    });
+});

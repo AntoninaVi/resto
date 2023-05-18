@@ -1,5 +1,6 @@
 body {
   font-family: "Barlow", sans-serif;
+  color: #ffffff;
 }
 
 .wrapper {
@@ -11,6 +12,59 @@ body {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding: 2em;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 1.5em;
+}
+
+.header-search__input {
+  width: 220px;
+  height: 48px;
+  background: #2d303e;
+  border: 1px solid #393c49;
+  border-radius: 8px;
+  padding: 0.8em;
+}
+
+.main-tabs {
+  margin-bottom: 1.5em;
+}
+.main-tabs__tab {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  margin-right: 2em;
+  cursor: pointer;
+}
+.main-tabs__tab:last-child {
+  margin-right: 0;
+}
+.main-tabs__tab:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #ea7c69;
+}
+
+.main-title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  margin-bottom: 3.6em;
 }
 
 .main-content {
@@ -20,15 +74,22 @@ body {
   -webkit-column-gap: 1.7em;
      -moz-column-gap: 1.7em;
           column-gap: 1.7em;
-  row-gap: 3.6em;
+  row-gap: 4.6em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .main-content__dish {
   margin: 0 auto;
-  height: 14.6em;
+  height: 13.6em;
   max-width: 12em;
   background: #1f1d2b;
   border-radius: 16px;
   padding: 0 1.5em 1.5em 1.5em;
+  cursor: pointer;
 }
 .main-content__dish-img {
   position: relative;
@@ -47,7 +108,6 @@ body {
   font-size: 14px;
   line-height: 130%;
   text-align: center;
-  color: #ffffff;
   margin-bottom: 8px;
 }
 .main-content__dish-price {
@@ -56,7 +116,6 @@ body {
   font-size: 14px;
   line-height: 140%;
   text-align: center;
-  color: #ffffff;
   margin-bottom: 4px;
 }
 .main-content__dish-amount {
