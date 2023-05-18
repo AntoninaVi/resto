@@ -37,6 +37,9 @@ const dishesRef = collection(db, 'dishes');
 
 
 const mainContent = document.querySelector('.main-content');
+const tabs = document.querySelectorAll('.main-tabs__tab');
+const dateToday = document.querySelector('.header-date');
+const searchInput = document.querySelector('.header-search__input');
 
 
 
@@ -93,11 +96,40 @@ function filterDishesByType(type) {
         }
     });
 }
-
-const tabs = document.querySelectorAll('.main-tabs__tab');
 tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
         const selectedType = tab.textContent.toLowerCase();
         filterDishesByType(selectedType);
     });
 });
+
+//date
+const today = new Date();
+
+const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+const dayOfWeek = daysOfWeek[today.getDay()];
+const day = today.getDate();
+const month = months[today.getMonth()];
+const year = today.getFullYear();
+
+const formattedDate = `${dayOfWeek}, ${day} ${month} ${year}`;
+dateToday.textContent = formattedDate;
+
+
+//search
+searchInput.addEventListener('input', handleSearch);
+function handleSearch() {
+    const searchText = searchInput.value.toLowerCase();
+
+    const dishes = document.querySelectorAll('.main-content__dish');
+    dishes.forEach((dish) => {
+        const dishTitle = dish.querySelector('.main-content__dish-title').textContent.toLowerCase();
+        if (dishTitle.includes(searchText)) {
+            dish.style.display = '';
+        } else {
+            dish.style.display = 'none';
+        }
+    });
+}
