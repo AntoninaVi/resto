@@ -1,4 +1,87 @@
+body {
+    font-family: "Barlow", sans-serif;
+}
 
-body{
-    font-family: 'Barlow', sans-serif;
+.wrapper {
+    background-color: #252836;
+}
+.container {
+    max-width: 1258px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header {
+}
+.header-content {
+}
+.header-title {
+}
+.header-date {
+}
+.header-search {
+}
+.main {
+}
+.main-tabs {
+    &__tab {
+    }
+}
+.main-title {
+}
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8.2em, 18em));
+    column-gap: 1.7em;
+    row-gap: 3.6em;
+
+    &__dish {
+        margin: 0 auto;
+        height: 14.6em;
+        max-width: 12em;
+        // width: 100%;
+        background: #1f1d2b;
+        border-radius: 16px;
+        padding: 0 1.5em 1.5em 1.5em;
+    }
+
+    &__dish-img {
+        position: relative;
+        bottom: 3.5em;
+        width: 8.3em;
+        height: 8.3em;
+    }
+    &__dish-info {
+        position: relative;
+        bottom: 2em;
+        max-width: 9em;
+    }
+    &__dish-title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 8px;
+    }
+
+    &__dish-price {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 4px;
+    }
+
+    &__dish-amount {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        text-align: center;
+        color: #abbbc2;
+    }
 }
