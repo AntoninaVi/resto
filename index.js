@@ -36,7 +36,7 @@ const dishesRef = collection(db, 'dishes');
 
 
 
-const mainContent = document.querySelector('.main-content');
+const mainContent = document.querySelector('.main-content__offers');
 const tabs = document.querySelectorAll('.main-tabs__tab');
 const dateToday = document.querySelector('.header-date');
 const searchInput = document.querySelector('.header-search__input');
@@ -49,32 +49,32 @@ getDocs(dishesRef)
             const dishData = doc.data();
 
             const mainArticle = document.createElement('article');
-            mainArticle.className = 'main-content__dish';
+            mainArticle.className = 'main-content__offers-dish';
             mainArticle.dataset.type = dishData.type; // type filter
 
 
             const imageMainArticle = document.createElement('img')
-            imageMainArticle.className = 'main-content__dish-img';
+            imageMainArticle.className = 'main-content__offers-dish-img';
             imageMainArticle.src = dishData.image;
             mainArticle.appendChild(imageMainArticle);
 
             const infoMainArticle = document.createElement('div');
-            infoMainArticle.className = 'main-content__dish-info';
+            infoMainArticle.className = 'main-content__offers-dish-info';
             mainArticle.appendChild(infoMainArticle);
 
 
             const titleMainArticle = document.createElement('h2');
-            titleMainArticle.className = 'main-content__dish-title';
+            titleMainArticle.className = 'main-content__offers-dish-title';
             titleMainArticle.textContent = dishData.title;
             infoMainArticle.appendChild(titleMainArticle);
 
             const priceMainArticle = document.createElement('p');
-            priceMainArticle.className = 'main-content__dish-price';
+            priceMainArticle.className = 'main-content__offers-dish-price';
             priceMainArticle.textContent = dishData.price;
             infoMainArticle.appendChild(priceMainArticle);
 
             const availabilityMainArticle = document.createElement('p');
-            availabilityMainArticle.className = 'main-content__dish-amount';
+            availabilityMainArticle.className = 'main-content__offers-dish-amount';
             availabilityMainArticle.textContent = dishData.availability;
             infoMainArticle.appendChild(availabilityMainArticle);
 
@@ -85,7 +85,7 @@ getDocs(dishesRef)
 
 //Tabs filter
 function filterDishesByType(type) {
-    const dishes = document.querySelectorAll('.main-content__dish');
+    const dishes = document.querySelectorAll('.main-content__offers-dish');
 
     dishes.forEach((dish) => {
         const dishType = dish.dataset.type;
@@ -123,9 +123,9 @@ searchInput.addEventListener('input', handleSearch);
 function handleSearch() {
     const searchText = searchInput.value.toLowerCase();
 
-    const dishes = document.querySelectorAll('.main-content__dish');
+    const dishes = document.querySelectorAll('.main-content__offers-dish');
     dishes.forEach((dish) => {
-        const dishTitle = dish.querySelector('.main-content__dish-title').textContent.toLowerCase();
+        const dishTitle = dish.querySelector('.main-content__offers-dish-title').textContent.toLowerCase();
         if (dishTitle.includes(searchText)) {
             dish.style.display = '';
         } else {
@@ -133,3 +133,9 @@ function handleSearch() {
         }
     });
 }
+
+
+
+//Orders
+
+

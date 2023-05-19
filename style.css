@@ -20,12 +20,27 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 48em;
   margin-bottom: 1.5em;
+}
+
+.header-title {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 140%;
+}
+
+.header-date {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #e0e6e9;
 }
 
 .header-search__input {
@@ -49,6 +64,15 @@ body {
   vertical-align: middle;
 }
 
+.main {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .main-sidebar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -60,16 +84,17 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
-  top: 0;
-  left: 17em;
+  position: relative;
+  bottom: 9em;
+  left: 0;
+  height: 52em;
   padding: 1.4em 0.4em 1.4em 0.4em;
   background-color: #1f1d2b;
   border-radius: 16px;
 }
 .main-sidebar__btn {
   color: #ea7c69;
-  margin-bottom: 4em;
+  margin-bottom: 3em;
   padding: 1em;
 }
 .main-sidebar__btn:first-child {
@@ -93,6 +118,7 @@ body {
 
 .main-tabs {
   margin-bottom: 1.5em;
+  border-bottom: 1px solid #393c49;
 }
 .main-tabs__tab {
   font-style: normal;
@@ -123,21 +149,23 @@ body {
 }
 
 .main-content {
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+}
+
+.main-content__offers {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8.2em, 18em));
+  grid-template-columns: repeat(auto-fit, minmax(8.2em, 13em));
   -webkit-column-gap: 1.7em;
      -moz-column-gap: 1.7em;
           column-gap: 1.7em;
   row-gap: 4.6em;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-.main-content__dish {
+.main-content__offers-dish {
   margin: 0 auto;
   height: 13.6em;
   max-width: 12em;
@@ -146,18 +174,18 @@ body {
   padding: 0 1.5em 1.5em 1.5em;
   cursor: pointer;
 }
-.main-content__dish-img {
+.main-content__offers-dish-img {
   position: relative;
   bottom: 3.5em;
   width: 8.3em;
   height: 8.3em;
 }
-.main-content__dish-info {
+.main-content__offers-dish-info {
   position: relative;
   bottom: 2em;
   max-width: 9em;
 }
-.main-content__dish-title {
+.main-content__offers-dish-title {
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -165,7 +193,7 @@ body {
   text-align: center;
   margin-bottom: 8px;
 }
-.main-content__dish-price {
+.main-content__offers-dish-price {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -173,11 +201,74 @@ body {
   text-align: center;
   margin-bottom: 4px;
 }
-.main-content__dish-amount {
+.main-content__offers-dish-amount {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
   text-align: center;
+  color: #abbbc2;
+}
+
+.main-orders {
+  position: relative;
+  right: 0;
+  bottom: 9em;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  padding: 1.5em;
+  background: #1f1d2b;
+  border-radius: 8px;
+}
+.main-orders__title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  margin-bottom: 5em;
+}
+.main-orders__content {
+  border-bottom: 1px solid #393C49;
+}
+.main-orders__content-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #393C49;
+}
+.main-orders__content-text-item {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+}
+.main-orders__content-button {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  color: #fafafa;
+  padding: 0.8em;
+  gap: 8px;
+  max-width: 22.5em;
+  width: 100%;
+  background: #ea7c69;
+  -webkit-box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
+          box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.main-orders__price {
+  margin-top: 1.4em;
+  margin-bottom: 2.6em;
+}
+.main-orders__price-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
   color: #abbbc2;
 }

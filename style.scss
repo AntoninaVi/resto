@@ -16,15 +16,24 @@ body {
 }
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    width: 48em;
     margin-bottom: 1.5em;
 }
 .header-content {
 }
 .header-title {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 140%;
 }
 .header-date {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #e0e6e9;
 }
 .header-search {
     &__input {
@@ -50,21 +59,24 @@ body {
 }
 
 .main {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
 }
 .main-sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 0;
-    left: 17em;
+    position: relative;
+    bottom: 9em;
+    left: 0;
+    height: 52em;
     padding: 1.4em 0.4em 1.4em 0.4em;
     background-color: #1f1d2b;
     border-radius: 16px;
     &__btn {
         color: #ea7c69;
-        // height: 6.3em;
-        margin-bottom: 4em;
+        margin-bottom: 3em;
         padding: 1em;
         &:first-child {
             padding: 0;
@@ -87,6 +99,7 @@ body {
 
 .main-tabs {
     margin-bottom: 1.5em;
+    border-bottom: 1px solid #393c49;
     &__tab {
         font-style: normal;
         font-weight: 600;
@@ -114,14 +127,17 @@ body {
     margin-bottom: 3.6em;
 }
 .main-content {
+    flex-basis: 60%;
+}
+.main-content__offers {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(8.2em, 18em));
+    grid-template-columns: repeat(auto-fit, minmax(8.2em, 13em));
     column-gap: 1.7em;
     row-gap: 4.6em;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
 
-    &__dish {
+    &-dish {
         margin: 0 auto;
         height: 13.6em;
         max-width: 12em;
@@ -132,18 +148,18 @@ body {
         cursor: pointer;
     }
 
-    &__dish-img {
+    &-dish-img {
         position: relative;
         bottom: 3.5em;
         width: 8.3em;
         height: 8.3em;
     }
-    &__dish-info {
+    &-dish-info {
         position: relative;
         bottom: 2em;
         max-width: 9em;
     }
-    &__dish-title {
+    &-dish-title {
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
@@ -152,7 +168,7 @@ body {
         margin-bottom: 8px;
     }
 
-    &__dish-price {
+    &-dish-price {
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -161,12 +177,71 @@ body {
         margin-bottom: 4px;
     }
 
-    &__dish-amount {
+    &-dish-amount {
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
         line-height: 140%;
         text-align: center;
+        color: #abbbc2;
+    }
+}
+.main-orders {
+    position: relative;
+    right: 0;
+    bottom: 9em;
+    flex-basis: 30%;
+    padding: 1.5em;
+    background: #1f1d2b;
+    border-radius: 8px;
+    &__title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 140%;
+        margin-bottom: 5em;
+    }
+
+    &__content {
+      
+        border-bottom: 1px solid #393C49;
+    }
+
+    &__content-text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #393C49;
+    }
+
+    &__content-text-item {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 140%;
+    }
+    &__content-button {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 140%;
+        color: #fafafa;
+        padding: 0.8em;
+        gap: 8px;
+        max-width: 22.5em;
+        width: 100%;
+        background: #ea7c69;
+        box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+    }
+    &__price {
+        margin-top: 1.4em;
+        margin-bottom: 2.6em;
+    }
+
+    &__price-text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
         color: #abbbc2;
     }
 }
