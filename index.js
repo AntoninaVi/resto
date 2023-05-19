@@ -139,9 +139,6 @@ function handleSearch() {
 //Orders
 
 let totalAmount = 0;
-const subTotalText = document.querySelector('.main-orders__price-text');
-subTotalText.textContent = `Sub total: $${totalAmount.toFixed(2)}`;
-
 
 function addDishToOrder(event) {
     const selectedDish = event.target.closest('.main-content__offers-dish');
@@ -169,6 +166,11 @@ function addDishToOrder(event) {
         updateTotalAmount();
     });
 
+    const itemNote = document.createElement('input');
+    itemNote.className = 'main-orders__content-text-note';
+    itemNote.type = 'text';
+    itemNote.placeholder = 'Order Note...';
+    orderItem.appendChild(itemNote);
 
     const itemDelete = document.createElement('button');
     itemDelete.className = 'main-orders__content-order-button';
@@ -182,9 +184,11 @@ function addDishToOrder(event) {
     itemPrice.textContent = dishPrice;
     orderItem.appendChild(itemPrice);
 
+
+
     orderContent.appendChild(orderItem);
     totalAmount += parseFloat(dishPrice.substring(1));
-    const subTotalText = document.querySelector('.main-orders__price-text');
+    const subTotalText = document.querySelector('#ordersPrice');
     subTotalText.textContent = `Sub total: $${totalAmount.toFixed(2)}`;
 
 
@@ -223,6 +227,6 @@ function updateTotalAmount() {
         totalAmount += subtotal;
     });
 
-    const subTotalText = document.querySelector('.main-orders__price-text');
+    const subTotalText = document.querySelector('#ordersPrice');
     subTotalText.textContent = `Sub total: $${totalAmount.toFixed(2)}`;
 }
