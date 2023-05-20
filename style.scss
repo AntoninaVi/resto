@@ -1,3 +1,31 @@
+@mixin h2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+}
+@mixin h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 140%;
+}
+@mixin button {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    color: #fafafa;
+    padding: 0.8em;
+    gap: 8px;
+    max-width: 22.5em;
+    width: 100%;
+    background: #ea7c69;
+    box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
 body {
     font-family: "Barlow", sans-serif;
     color: #ffffff;
@@ -21,8 +49,8 @@ body {
     width: 48em;
     margin-bottom: 1.5em;
 }
-.header-content {
-}
+// .header-content {
+// }
 .header-title {
     font-weight: 600;
     font-size: 28px;
@@ -120,11 +148,7 @@ body {
     }
 }
 .main-title {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 140%;
-    margin-bottom: 3.6em;
+    @include h2;
 }
 .main-content {
     flex-basis: 60%;
@@ -195,22 +219,18 @@ body {
     background: #1f1d2b;
     border-radius: 8px;
     &__title {
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 140%;
-        margin-bottom: 5em;
+        @include h2;
     }
 
     &__content {
-      
-        border-bottom: 1px solid #393C49;
+        border-bottom: 1px solid #393c49;
     }
 
     &__content-text {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-bottom: 1px solid #393C49;
+        border-bottom: 1px solid #393c49;
     }
 
     &__content-text-item {
@@ -219,19 +239,7 @@ body {
         line-height: 140%;
     }
     &__content-button {
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 140%;
-        color: #fafafa;
-        padding: 0.8em;
-        gap: 8px;
-        max-width: 22.5em;
-        width: 100%;
-        background: #ea7c69;
-        box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
-        border-radius: 8px;
-        border: none;
-        cursor: pointer;
+        @include button;
     }
     &__price {
         margin-top: 1.4em;
@@ -244,4 +252,84 @@ body {
         line-height: 140%;
         color: #abbbc2;
     }
+}
+
+//Payment
+.main-orders {
+    &__payment {
+        position: relative;
+        right: -22em;
+        bottom: 12em;
+        flex-basis: 30%;
+        padding: 1.5em;
+        background: #1f1d2b;
+        border-radius: 8px;
+        height: 100%;
+    }
+
+    &__payment-title {
+        @include h3;
+        margin-bottom: 0.5em;
+    }
+
+    &__payment-subscription {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        color: #abbbc2;
+        margin-bottom: 1.5em;
+        border-bottom: 1px solid #393c49;
+    }
+
+    &__payment-methods {
+    }
+
+    &__payment-methods-title {
+        @include h2;
+    }
+
+    &__payment-methods-content {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1em;
+    }
+
+    &__payment-methods-content-item {
+        width: 6.3em;
+        text-align: center;
+        padding: 10px 16px;
+        border: 1px solid #abbbc2;
+        border-radius: 8px;
+        white-space: nowrap;
+        margin-right: 0.5em;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__payment-methods-content-item-title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        margin-bottom: 1em;
+    }
+
+    &__payment-buttons {
+        display: flex;
+        align-items: center;
+    }
+
+    &__payment-buttons-item {
+        @include button;
+        white-space: nowrap;
+        &:first-child {
+            color: #ea7c69;
+            border: 1px solid #ea7c69;
+            background-color: #1f1d2b;
+            margin-right: 0.5em;
+        }
+    }
+}
+.hidden {
+    display: none;
 }

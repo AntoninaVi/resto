@@ -230,3 +230,19 @@ function updateTotalAmount() {
     const subTotalText = document.querySelector('#ordersPrice');
     subTotalText.textContent = `Sub total: $${totalAmount.toFixed(2)}`;
 }
+
+//Payment
+const continueToPaymentButton = document.querySelector('.main-orders__content-button');
+const paymentMethodsContainer = document.querySelector('.main-orders__payment');
+
+continueToPaymentButton.addEventListener('click', function () {
+    continueToPaymentButton.classList.add('hidden');
+    paymentMethodsContainer.classList.remove('hidden');
+});
+
+// Confirmation
+// const ordersSection = document.querySelector('.main-orders__content');
+// const confirmationTitle = document.createElement('h2');
+// confirmationTitle.classList = 'main-orders__content-text-title'
+// confirmationTitle.textContent = 'Confirmation';
+// ordersSection.appendChild(confirmationTitle);
