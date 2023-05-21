@@ -273,9 +273,9 @@ body {
 }
 
 .main-orders__payment {
-  position: relative;
+  position: absolute;
+  top: 0;
   right: -22em;
-  bottom: 12em;
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
   padding: 1.5em;
@@ -303,6 +303,7 @@ body {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
+  margin-bottom: 1em;
 }
 .main-orders__payment-methods-content {
   display: -webkit-box;
@@ -317,19 +318,24 @@ body {
   width: 6.3em;
   text-align: center;
   padding: 10px 16px;
-  border: 1px solid #abbbc2;
+  border: 1px solid #393C49;
+  background-color: #1F1D2B;
   border-radius: 8px;
   white-space: nowrap;
   margin-right: 0.5em;
+  cursor: pointer;
 }
 .main-orders__payment-methods-content-item:last-child {
   margin-right: 0;
+}
+.main-orders__payment-methods-content-item:hover {
+  background: #252836;
+  border: 1px solid #abbbc2;
 }
 .main-orders__payment-methods-content-item-title {
   font-weight: 500;
   font-size: 14px;
   line-height: 130%;
-  margin-bottom: 1em;
 }
 .main-orders__payment-buttons {
   display: -webkit-box;
