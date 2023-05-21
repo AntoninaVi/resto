@@ -240,6 +240,32 @@ continueToPaymentButton.addEventListener('click', function () {
     paymentMethodsContainer.classList.remove('hidden');
 });
 
+//Cancel
+const cancelButton = document.querySelector('.main-orders__payment-buttons-item:first-child');
+cancelButton.addEventListener('click', cancelPayment);
+
+function cancelPayment() {
+    continueToPaymentButton.classList.remove('hidden');
+    paymentMethodsContainer.classList.add('hidden');
+}
+
+//Modal
+const confirmPaymentButton = document.querySelector('.main-orders__payment-buttons-item:last-child');
+const modalOverlay = document.querySelector('.main-orders__payment-modal');
+const modalCloseButton = document.querySelector('.main-orders__payment-modal-button');
+
+confirmPaymentButton.addEventListener('click', showPaymentModal);
+modalCloseButton.addEventListener('click', hidePaymentModal);
+
+function showPaymentModal() {
+    modalOverlay.classList.remove('hidden');
+}
+
+function hidePaymentModal() {
+    modalOverlay.classList.add('hidden');
+}
+
+
 // Confirmation
 // const ordersSection = document.querySelector('.main-orders__content');
 // const confirmationTitle = document.createElement('h2');
