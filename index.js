@@ -140,6 +140,65 @@ function handleSearch() {
 
 let totalAmount = 0;
 
+// function addDishToOrder(event) {
+//     const selectedDish = event.target.closest('.main-content__offers-dish');
+//     const dishTitle = selectedDish.querySelector('.main-content__offers-dish-title').textContent;
+//     const dishPrice = selectedDish.querySelector('.main-content__offers-dish-price').textContent;
+
+//     const orderContent = document.querySelector('.main-orders__content-order');
+
+//     const orderItem = document.createElement('div');
+//     orderItem.className = 'main-orders__content-order-item';
+
+//     const itemTitle = document.createElement('p');
+//     itemTitle.className = 'main-orders__content-text-item';
+//     itemTitle.textContent = dishTitle;
+//     orderItem.appendChild(itemTitle);
+
+//     const itemQty = document.createElement('input');
+//     itemQty.className = 'main-orders__content-text-input';
+//     itemQty.type = 'number';
+//     itemQty.value = '1';
+//     itemQty.min = '1';                                      // count total sum when quantity of items changes
+//     itemQty.max = '10';
+//     orderItem.appendChild(itemQty);
+//     itemQty.addEventListener('input', function () {
+//         updateTotalAmount();
+//     });
+
+//     const itemNote = document.createElement('input');
+//     itemNote.className = 'main-orders__content-text-note';
+//     itemNote.type = 'text';
+//     itemNote.placeholder = 'Order Note...';
+//     orderItem.appendChild(itemNote);
+
+//     const itemDelete = document.createElement('button');
+//     itemDelete.className = 'main-orders__content-order-button';
+//     itemDelete.textContent = 'Delete';
+//     orderItem.appendChild(itemDelete);
+//     itemDelete.addEventListener('click', deleteOrderItem); //delete item from order
+
+
+//     const itemPrice = document.createElement('p');  ///orders sub total price
+//     itemPrice.className = 'main-orders__content-text-item';
+//     itemPrice.textContent = dishPrice;
+//     orderItem.appendChild(itemPrice);
+
+
+
+//     orderContent.appendChild(orderItem);
+//     totalAmount += parseFloat(dishPrice.substring(1));
+//     const subTotalText = document.querySelector('#ordersPrice');
+//     subTotalText.textContent = `Sub total: $${totalAmount.toFixed(2)}`;
+
+//     const orderTotal = document.createElement('div');
+//     orderTotal.className = 'main-orders__content-order-total';
+//     orderItem.appendChild(orderTotal);
+//     // orderItem.textContent
+
+
+// }
+
 function addDishToOrder(event) {
     const selectedDish = event.target.closest('.main-content__offers-dish');
     const dishTitle = selectedDish.querySelector('.main-content__offers-dish-title').textContent;
@@ -155,16 +214,22 @@ function addDishToOrder(event) {
     itemTitle.textContent = dishTitle;
     orderItem.appendChild(itemTitle);
 
+    const itemPrice = document.createElement('p');
+    itemPrice.className = 'main-orders__content-text-item';
+    itemPrice.textContent = dishPrice;
+    orderItem.appendChild(itemPrice);
+
     const itemQty = document.createElement('input');
     itemQty.className = 'main-orders__content-text-input';
     itemQty.type = 'number';
     itemQty.value = '1';
-    itemQty.min = '1';                                      // count total sum when quantity of items changes
+    itemQty.min = '1';
     itemQty.max = '10';
     orderItem.appendChild(itemQty);
-    itemQty.addEventListener('input', function () {
-        updateTotalAmount();
-    });
+
+    const orderTotal = document.createElement('div');
+    orderTotal.className = 'main-orders__content-order-total'; //
+    orderItem.appendChild(orderTotal);
 
     const itemNote = document.createElement('input');
     itemNote.className = 'main-orders__content-text-note';
@@ -176,24 +241,25 @@ function addDishToOrder(event) {
     itemDelete.className = 'main-orders__content-order-button';
     itemDelete.textContent = 'Delete';
     orderItem.appendChild(itemDelete);
-    itemDelete.addEventListener('click', deleteOrderItem); //delete item from order
-
-
-    const itemPrice = document.createElement('p');  ///orders sub total price
-    itemPrice.className = 'main-orders__content-text-item';
-    itemPrice.textContent = dishPrice;
-    orderItem.appendChild(itemPrice);
-
-
+    itemDelete.addEventListener('click', deleteOrderItem);
 
     orderContent.appendChild(orderItem);
+
+    itemQty.addEventListener('input', function () {
+        const quantity = parseInt(itemQty.value);
+        const price = parseFloat(dishPrice.substring(1));
+        const total = quantity * price;
+
+        orderTotal.textContent = `Total: $${total.toFixed(2)}`;
+
+        updateTotalAmount();
+    });
+
     totalAmount += parseFloat(dishPrice.substring(1));
     const subTotalText = document.querySelector('#ordersPrice');
     subTotalText.textContent = `Sub total: $${totalAmount.toFixed(2)}`;
-
-
-
 }
+
 
 document.addEventListener('click', function (event) { //add item to order
     if (event.target.matches('.main-content__offers-dish')) {
@@ -219,7 +285,7 @@ function updateTotalAmount() {
 
     orderItems.forEach((orderItem) => {
         const itemQty = orderItem.querySelector('.main-orders__content-text-input');
-        const itemPrice = orderItem.querySelector('.main-orders__content-text-item:last-child').textContent;
+        const itemPrice = orderItem.querySelector('.main-orders__content-text-item').textContent;
         const price = parseFloat(itemPrice.substring(1));
         const quantity = itemQty && itemQty.value ? parseInt(itemQty.value, 10) : 0;
 
@@ -272,3 +338,4 @@ function hidePaymentModal() {
 // confirmationTitle.classList = 'main-orders__content-text-title'
 // confirmationTitle.textContent = 'Confirmation';
 // ordersSection.appendChild(confirmationTitle);
+

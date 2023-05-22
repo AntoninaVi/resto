@@ -149,6 +149,7 @@ body {
 }
 .main-title {
     @include h2;
+    margin-bottom: 3.6em;
 }
 .main-content {
     flex-basis: 60%;
