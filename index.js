@@ -285,7 +285,7 @@ function updateTotalAmount() {
 
     orderItems.forEach((orderItem) => {
         const itemQty = orderItem.querySelector('.main-orders__content-text-input');
-        const itemPrice = orderItem.querySelector('.main-orders__content-text-item').textContent;
+        const itemPrice = orderItem.querySelector('.main-orders__content-text-item:nth-child(2)').textContent;
         const price = parseFloat(itemPrice.substring(1));
         const quantity = itemQty && itemQty.value ? parseInt(itemQty.value, 10) : 0;
 
