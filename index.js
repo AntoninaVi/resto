@@ -140,65 +140,6 @@ function handleSearch() {
 
 let totalAmount = 0;
 
-// function addDishToOrder(event) {
-//     const selectedDish = event.target.closest('.main-content__offers-dish');
-//     const dishTitle = selectedDish.querySelector('.main-content__offers-dish-title').textContent;
-//     const dishPrice = selectedDish.querySelector('.main-content__offers-dish-price').textContent;
-
-//     const orderContent = document.querySelector('.main-orders__content-order');
-
-//     const orderItem = document.createElement('div');
-//     orderItem.className = 'main-orders__content-order-item';
-
-//     const itemTitle = document.createElement('p');
-//     itemTitle.className = 'main-orders__content-text-item';
-//     itemTitle.textContent = dishTitle;
-//     orderItem.appendChild(itemTitle);
-
-//     const itemQty = document.createElement('input');
-//     itemQty.className = 'main-orders__content-text-input';
-//     itemQty.type = 'number';
-//     itemQty.value = '1';
-//     itemQty.min = '1';                                      // count total sum when quantity of items changes
-//     itemQty.max = '10';
-//     orderItem.appendChild(itemQty);
-//     itemQty.addEventListener('input', function () {
-//         updateTotalAmount();
-//     });
-
-//     const itemNote = document.createElement('input');
-//     itemNote.className = 'main-orders__content-text-note';
-//     itemNote.type = 'text';
-//     itemNote.placeholder = 'Order Note...';
-//     orderItem.appendChild(itemNote);
-
-//     const itemDelete = document.createElement('button');
-//     itemDelete.className = 'main-orders__content-order-button';
-//     itemDelete.textContent = 'Delete';
-//     orderItem.appendChild(itemDelete);
-//     itemDelete.addEventListener('click', deleteOrderItem); //delete item from order
-
-
-//     const itemPrice = document.createElement('p');  ///orders sub total price
-//     itemPrice.className = 'main-orders__content-text-item';
-//     itemPrice.textContent = dishPrice;
-//     orderItem.appendChild(itemPrice);
-
-
-
-//     orderContent.appendChild(orderItem);
-//     totalAmount += parseFloat(dishPrice.substring(1));
-//     const subTotalText = document.querySelector('#ordersPrice');
-//     subTotalText.textContent = `Sub total: $${totalAmount.toFixed(2)}`;
-
-//     const orderTotal = document.createElement('div');
-//     orderTotal.className = 'main-orders__content-order-total';
-//     orderItem.appendChild(orderTotal);
-//     // orderItem.textContent
-
-
-// }
-
 function addDishToOrder(event) {
     const selectedDish = event.target.closest('.main-content__offers-dish');
     const dishTitle = selectedDish.querySelector('.main-content__offers-dish-title').textContent;
@@ -215,14 +156,14 @@ function addDishToOrder(event) {
     orderItem.appendChild(itemTitle);
 
     const itemPrice = document.createElement('p');
-    itemPrice.className = 'main-orders__content-text-item';
+    itemPrice.className = 'main-orders__content-text-item';  ///orders sub total price
     itemPrice.textContent = dishPrice;
     orderItem.appendChild(itemPrice);
 
     const itemQty = document.createElement('input');
     itemQty.className = 'main-orders__content-text-input';
     itemQty.type = 'number';
-    itemQty.value = '1';
+    itemQty.value = '1';                   // count total sum when quantity of items changes
     itemQty.min = '1';
     itemQty.max = '10';
     orderItem.appendChild(itemQty);
@@ -238,7 +179,7 @@ function addDishToOrder(event) {
     orderItem.appendChild(itemNote);
 
     const itemDelete = document.createElement('button');
-    itemDelete.className = 'main-orders__content-order-button';
+    itemDelete.className = 'main-orders__content-order-button'; //delete item from order
     itemDelete.textContent = 'Delete';
     orderItem.appendChild(itemDelete);
     itemDelete.addEventListener('click', deleteOrderItem);
@@ -339,3 +280,31 @@ function hidePaymentModal() {
 // confirmationTitle.textContent = 'Confirmation';
 // ordersSection.appendChild(confirmationTitle);
 
+//Methods
+const creditCardItem = document.getElementById('creditCard');
+const creditCardSection = document.getElementById('creditCardSection');
+
+const payPalItem = document.getElementById('payPal');
+const payPalSection = document.getElementById('payPalSection');
+
+const cashlItem = document.getElementById('cash');
+const cashSection = document.getElementById('cashSection');
+
+
+creditCardItem.addEventListener('click', function () {
+    creditCardSection.style.display = 'block';
+    payPalSection.style.display = 'none';
+    cashSection.style.display = 'none';
+});
+
+payPalItem.addEventListener('click', function () {
+    payPalSection.style.display = 'block';
+    creditCardSection.style.display = 'none';
+    cashSection.style.display = 'none';
+});
+
+cashlItem.addEventListener('click', function () {
+    cashSection.style.display = 'block';
+    payPalSection.style.display = 'none';
+    creditCardSection.style.display = 'none';
+});
