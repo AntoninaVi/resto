@@ -322,6 +322,9 @@ body {
         font-size: 14px;
         line-height: 130%;
     }
+    &__payment-methods-content-section{
+        display: grid;
+    }
 
     &__payment-buttons {
         display: flex;
@@ -339,6 +342,7 @@ body {
         }
     }
 }
+
 .hidden {
     display: none;
 }
@@ -358,7 +362,7 @@ body {
     box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.4);
     border-radius: 8px;
 }
-
+//Methods sections
 .main-orders__payment-methods-content-section.credit-card {
     display: none;
 }

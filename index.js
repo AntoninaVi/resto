@@ -292,19 +292,19 @@ const cashSection = document.getElementById('cashSection');
 
 
 creditCardItem.addEventListener('click', function () {
-    creditCardSection.style.display = 'block';
+    creditCardSection.style.display = 'grid';
     payPalSection.style.display = 'none';
     cashSection.style.display = 'none';
 });
 
 payPalItem.addEventListener('click', function () {
-    payPalSection.style.display = 'block';
+    payPalSection.style.display = 'grid';
     creditCardSection.style.display = 'none';
     cashSection.style.display = 'none';
 });
 
 cashlItem.addEventListener('click', function () {
-    cashSection.style.display = 'block';
+    cashSection.style.display = 'grid';
     payPalSection.style.display = 'none';
     creditCardSection.style.display = 'none';
 });

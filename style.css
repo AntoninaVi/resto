@@ -338,6 +338,10 @@ body {
   font-size: 14px;
   line-height: 130%;
 }
+.main-orders__payment-methods-content-section {
+  display: -ms-grid;
+  display: grid;
+}
 .main-orders__payment-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
