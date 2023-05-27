@@ -210,7 +210,7 @@ document.addEventListener('click', function (event) { //add item to order
 
 function deleteOrderItem(event) { //delete item from order 
     const orderItem = event.target.closest('.main-orders__content-order-item');
-    const itemPrice = orderItem.querySelector('.main-orders__content-text-item:last-child').textContent;
+    const itemPrice = orderItem.querySelector('.main-orders__content-text-item').textContent;//
     const price = parseFloat(itemPrice.substring(1));
 
     totalAmount -= price;

@@ -415,3 +415,8 @@ body {
 .main-orders__payment-methods-content-section.cash {
   display: none;
 }
+
+.main-orders__payment-methods-content-form {
+  display: -ms-grid;
+  display: grid;
+}
