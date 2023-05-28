@@ -226,7 +226,18 @@ body {
     &__content {
         border-bottom: 1px solid #393c49;
     }
+    &__content-order {
+        max-height: 34em;
+        overflow: scroll;
+        &::-webkit-scrollbar {
+            width: 1px;
+        }
 
+        &::-webkit-scrollbar-thumb {
+            background: rgb(224, 87, 13);
+        }
+        
+    }
     &__content-text {
         display: flex;
         align-items: center;
@@ -322,7 +333,7 @@ body {
         font-size: 14px;
         line-height: 130%;
     }
-    &__payment-methods-content-section{
+    &__payment-methods-content-section {
         display: grid;
     }
 
@@ -374,6 +385,6 @@ body {
 .main-orders__payment-methods-content-section.cash {
     display: none;
 }
-.main-orders__payment-methods-content-form{
+.main-orders__payment-methods-content-form {
     display: grid;
 }

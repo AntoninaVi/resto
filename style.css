@@ -229,6 +229,16 @@ body {
 .main-orders__content {
   border-bottom: 1px solid #393c49;
 }
+.main-orders__content-order {
+  max-height: 34em;
+  overflow: scroll;
+}
+.main-orders__content-order::-webkit-scrollbar {
+  width: 1px;
+}
+.main-orders__content-order::-webkit-scrollbar-thumb {
+  background: rgb(224, 87, 13);
+}
 .main-orders__content-text {
   display: -webkit-box;
   display: -ms-flexbox;
