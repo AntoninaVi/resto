@@ -144,11 +144,18 @@ function addDishToOrder(event) {
     const selectedDish = event.target.closest('.main-content__offers-dish');
     const dishTitle = selectedDish.querySelector('.main-content__offers-dish-title').textContent;
     const dishPrice = selectedDish.querySelector('.main-content__offers-dish-price').textContent;
+    const dishImage = selectedDish.querySelector('.main-content__offers-dish-img').src;
+
 
     const orderContent = document.querySelector('.main-orders__content-order');
 
     const orderItem = document.createElement('div');
     orderItem.className = 'main-orders__content-order-item';
+
+    const itemImage = document.createElement('img');
+    itemImage.className = 'main-orders__content-dish-image';
+    itemImage.src = dishImage;
+    orderItem.appendChild(itemImage);
 
     const itemTitle = document.createElement('p');
     itemTitle.className = 'main-orders__content-text-item';
@@ -180,7 +187,7 @@ function addDishToOrder(event) {
 
     const itemDelete = document.createElement('button');
     itemDelete.className = 'main-orders__content-order-button'; //delete item from order
-    itemDelete.textContent = 'Delete';
+    // itemDelete.textContent = 'Delete';
     orderItem.appendChild(itemDelete);
     itemDelete.addEventListener('click', deleteOrderItem);
 
@@ -191,16 +198,26 @@ function addDishToOrder(event) {
         const price = parseFloat(dishPrice.substring(1));
         const total = quantity * price;
 
-        orderTotal.textContent = `Total: $${total.toFixed(2)}`;
+        orderTotal.textContent = ` $${total.toFixed(2)}`;
 
         updateTotalAmount();
     });
 
+    // Save dish to local storage
+    const dishData = {
+        title: dishTitle,
+        price: dishPrice
+    };
+    const existingOrder = localStorage.getItem('order');
+    const order = existingOrder ? JSON.parse(existingOrder) : [];
+    order.push(dishData);
+    localStorage.setItem('order', JSON.stringify(order));
+
     totalAmount += parseFloat(dishPrice.substring(1));
     const subTotalText = document.querySelector('#ordersPrice');
     subTotalText.textContent = `Sub total: $${totalAmount.toFixed(2)}`;
-}
 
+}
 
 document.addEventListener('click', function (event) { //add item to order
     if (event.target.matches('.main-content__offers-dish')) {
@@ -208,15 +225,94 @@ document.addEventListener('click', function (event) { //add item to order
     }
 });
 
-function deleteOrderItem(event) { //delete item from order 
+function deleteOrderItem(event) {
     const orderItem = event.target.closest('.main-orders__content-order-item');
-    const itemPrice = orderItem.querySelector('.main-orders__content-text-item').textContent;//
+    const itemPrice = orderItem.querySelector('.main-orders__content-text-item').textContent;
     const price = parseFloat(itemPrice.substring(1));
 
     totalAmount -= price;
     orderItem.remove();
     updateTotalAmount();
+
+    // Remove dish from local storage
+    const dishTitle = orderItem.querySelector('.main-orders__content-text-item').textContent;
+    const existingOrder = localStorage.getItem('order');
+    if (existingOrder) {
+        const order = JSON.parse(existingOrder);
+        const updatedOrder = order.filter((dish) => dish.title !== dishTitle);
+        localStorage.setItem('order', JSON.stringify(updatedOrder));
+    }
 }
+
+// load saved dishes from local storage
+
+// function loadSavedDishes() {
+//     const existingOrder = localStorage.getItem('order');
+//     if (existingOrder) {
+//         const order = JSON.parse(existingOrder);
+//         order.forEach((dishData) => {
+//             const { title, price } = dishData;
+//             const orderContent = document.querySelector('.main-orders__content-order');
+
+//             const orderItem = document.createElement('div');
+//             orderItem.className = 'main-orders__content-order-item';
+
+//             const itemTitle = document.createElement('p');
+//             itemTitle.className = 'main-orders__content-text-item';
+//             itemTitle.textContent = title;
+//             orderItem.appendChild(itemTitle);
+
+//             const itemPrice = document.createElement('p');
+//             itemPrice.className = 'main-orders__content-text-item';
+//             itemPrice.textContent = price;
+//             orderItem.appendChild(itemPrice);
+
+//             const itemQty = document.createElement('input');
+//             itemQty.className = 'main-orders__content-text-input';
+//             itemQty.type = 'number';
+//             itemQty.value = '1';
+//             itemQty.min = '1';
+//             itemQty.max = '10';
+//             orderItem.appendChild(itemQty);
+
+//             const orderTotal = document.createElement('div');
+//             orderTotal.className = 'main-orders__content-order-total';
+//             orderItem.appendChild(orderTotal);
+
+//             const itemNote = document.createElement('input');
+//             itemNote.className = 'main-orders__content-text-note';
+//             itemNote.type = 'text';
+//             itemNote.placeholder = 'Order Note...';
+//             orderItem.appendChild(itemNote);
+
+//             const itemDelete = document.createElement('button');
+//             itemDelete.className = 'main-orders__content-order-button';
+//             itemDelete.textContent = 'Delete';
+//             orderItem.appendChild(itemDelete);
+//             itemDelete.addEventListener('click', deleteOrderItem);
+
+//             orderContent.appendChild(orderItem);
+
+//             itemQty.addEventListener('input', function () {
+//                 const quantity = parseInt(itemQty.value);
+//                 const dishPrice = itemPrice.textContent;
+//                 const price = parseFloat(dishPrice.substring(1));
+//                 const total = quantity * price;
+
+//                 orderTotal.textContent = `Total: $${total.toFixed(2)}`;
+
+//                 updateTotalAmount();
+//             });
+
+//             totalAmount += parseFloat(price.substring(1));
+//             const subTotalText = document.querySelector('#ordersPrice');
+//             subTotalText.textContent = `Sub total: $${totalAmount.toFixed(2)}`;
+//         });
+//     }
+// }
+
+
+// window.addEventListener('DOMContentLoaded', loadSavedDishes);
 
 
 //update sum Sub total

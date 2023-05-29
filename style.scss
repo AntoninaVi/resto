@@ -25,6 +25,10 @@
     border: none;
     cursor: pointer;
 }
+@mixin input {
+    @include input;
+    padding: 0.8em 0.8em 0.8em 2.5em;
+}
 
 body {
     font-family: "Barlow", sans-serif;
@@ -232,23 +236,49 @@ body {
         &::-webkit-scrollbar {
             width: 1px;
         }
-
         &::-webkit-scrollbar-thumb {
             background: rgb(224, 87, 13);
         }
+    }
+
+    &__content-dish-image{
+        max-width: 2.5em;
+        height: 2.5em;
+        object-fit: cover;
         
     }
+
     &__content-text {
         display: flex;
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid #393c49;
     }
+    &__content-order-button {
+        width: 3em;
+        height: 3em;
+        background-color: transparent;
+        background-image: url(img/Trash.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid #ea7c69;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    &__content-text-note {
+        @include input;
+    }
 
     &__content-text-item {
+        display: inline-block;
         font-weight: 600;
         font-size: 16px;
         line-height: 140%;
+        max-width: 8.7em;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &__content-button {
         @include button;

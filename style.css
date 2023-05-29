@@ -251,10 +251,27 @@ body {
           justify-content: space-between;
   border-bottom: 1px solid #393c49;
 }
+.main-orders__content-order-button {
+  width: 3em;
+  height: 3em;
+  background-color: transparent;
+  background-image: url(img/Trash.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid #ea7c69;
+  border-radius: 8px;
+  cursor: pointer;
+}
 .main-orders__content-text-item {
+  display: inline-block;
   font-weight: 600;
   font-size: 16px;
   line-height: 140%;
+  max-width: 8.7em;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .main-orders__content-button {
   font-weight: 600;
