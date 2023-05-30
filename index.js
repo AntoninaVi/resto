@@ -152,20 +152,29 @@ function addDishToOrder(event) {
     const orderItem = document.createElement('div');
     orderItem.className = 'main-orders__content-order-item';
 
+
+    const itemInfo = document.createElement('div');
+    itemInfo.className = 'main-orders__content-info';
+    orderItem.appendChild(itemInfo);
+
     const itemImage = document.createElement('img');
     itemImage.className = 'main-orders__content-dish-image';
     itemImage.src = dishImage;
-    orderItem.appendChild(itemImage);
+    itemInfo.appendChild(itemImage);
+
+    const itemsText = document.createElement('div');
+    itemsText.className = 'main-orders__content-text-items'
+    itemInfo.appendChild(itemsText)
 
     const itemTitle = document.createElement('p');
     itemTitle.className = 'main-orders__content-text-item';
     itemTitle.textContent = dishTitle;
-    orderItem.appendChild(itemTitle);
+    itemsText.appendChild(itemTitle);
 
     const itemPrice = document.createElement('p');
     itemPrice.className = 'main-orders__content-text-item';  ///orders sub total price
     itemPrice.textContent = dishPrice;
-    orderItem.appendChild(itemPrice);
+    itemsText.appendChild(itemPrice);
 
     const itemQty = document.createElement('input');
     itemQty.className = 'main-orders__content-text-input';
@@ -173,22 +182,28 @@ function addDishToOrder(event) {
     itemQty.value = '1';                   // count total sum when quantity of items changes
     itemQty.min = '1';
     itemQty.max = '10';
-    orderItem.appendChild(itemQty);
+    itemInfo.appendChild(itemQty);
+
 
     const orderTotal = document.createElement('div');
-    orderTotal.className = 'main-orders__content-order-total'; //
-    orderItem.appendChild(orderTotal);
+    orderTotal.className = 'main-orders__content-order-total'; // price total for each
+    orderTotal.textContent = dishPrice;
+    itemInfo.appendChild(orderTotal);
+
+    const itemOptions = document.createElement('div');
+    itemOptions.className = 'main-orders__content-options';
+    orderItem.appendChild(itemOptions);
 
     const itemNote = document.createElement('input');
     itemNote.className = 'main-orders__content-text-note';
     itemNote.type = 'text';
     itemNote.placeholder = 'Order Note...';
-    orderItem.appendChild(itemNote);
+    itemOptions.appendChild(itemNote);
 
     const itemDelete = document.createElement('button');
     itemDelete.className = 'main-orders__content-order-button'; //delete item from order
     // itemDelete.textContent = 'Delete';
-    orderItem.appendChild(itemDelete);
+    itemOptions.appendChild(itemDelete);
     itemDelete.addEventListener('click', deleteOrderItem);
 
     orderContent.appendChild(orderItem);
@@ -322,17 +337,22 @@ function updateTotalAmount() {
 
     orderItems.forEach((orderItem) => {
         const itemQty = orderItem.querySelector('.main-orders__content-text-input');
-        const itemPrice = orderItem.querySelector('.main-orders__content-text-item:nth-child(2)').textContent;
+        const itemPrice = orderItem.querySelector('.main-orders__content-text-item').textContent;
         const price = parseFloat(itemPrice.substring(1));
         const quantity = itemQty && itemQty.value ? parseInt(itemQty.value, 10) : 0;
 
-        const subtotal = price * quantity;
-        totalAmount += subtotal;
+        if (typeof itemPrice === 'string' && itemPrice.trim() !== '') { // Проверка на пустую строку и тип
+            const subtotal = price * quantity;
+            totalAmount += subtotal;
+        }
     });
 
     const subTotalText = document.querySelector('#ordersPrice');
-    subTotalText.textContent = `Sub total: $${totalAmount.toFixed(2)}`;
+    if (!isNaN(totalAmount)) {
+        subTotalText.textContent = `Sub total: $${totalAmount.toFixed(2)}`;
+    }
 }
+
 
 //Payment
 const continueToPaymentButton = document.querySelector('.main-orders__content-button');
