@@ -118,6 +118,7 @@ body {
 
 .main-tabs {
   margin-bottom: 1.5em;
+  padding-bottom: 0.8em;
   border-bottom: 1px solid #393c49;
 }
 .main-tabs__tab {
@@ -219,12 +220,14 @@ body {
   padding: 1.5em;
   background: #1f1d2b;
   border-radius: 8px;
+  margin-bottom: 5em;
 }
 .main-orders__title {
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
+  margin-bottom: 5em;
 }
 .main-orders__content {
   border-bottom: 1px solid #393c49;
@@ -260,6 +263,9 @@ body {
   margin-bottom: 1.5em;
   padding-bottom: 1.5em;
 }
+.main-orders__content-order-item {
+  margin-bottom: 1.5em;
+}
 .main-orders__content-order-button {
   width: 3em;
   height: 3em;
@@ -288,6 +294,7 @@ body {
 .main-orders__content-text-input {
   height: 3em;
   width: 3em;
+  margin-right: 1.3em;
   text-align: center;
   background: #2d303e;
   border: 1px solid #393c49;
@@ -351,6 +358,12 @@ body {
   font-size: 14px;
   line-height: 140%;
   color: #abbbc2;
+}
+.main-orders__content-order-total {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  white-space: nowrap;
 }
 
 input[type=number]::-webkit-inner-spin-button,

@@ -341,7 +341,7 @@ function updateTotalAmount() {
         const price = parseFloat(itemPrice.substring(1));
         const quantity = itemQty && itemQty.value ? parseInt(itemQty.value, 10) : 0;
 
-        if (typeof itemPrice === 'string' && itemPrice.trim() !== '') { // Проверка на пустую строку и тип
+        if (typeof itemPrice === 'string' && itemPrice.trim() !== '') { // 
             const subtotal = price * quantity;
             totalAmount += subtotal;
         }
