@@ -337,14 +337,12 @@ function updateTotalAmount() {
 
     orderItems.forEach((orderItem) => {
         const itemQty = orderItem.querySelector('.main-orders__content-text-input');
-        const itemPrice = orderItem.querySelector('.main-orders__content-text-item').textContent;
+        const itemPrice = orderItem.querySelector('.main-orders__content-text-item:last-child').textContent;
         const price = parseFloat(itemPrice.substring(1));
         const quantity = itemQty && itemQty.value ? parseInt(itemQty.value, 10) : 0;
 
-        if (typeof itemPrice === 'string' && itemPrice.trim() !== '') { // 
-            const subtotal = price * quantity;
-            totalAmount += subtotal;
-        }
+        const subtotal = price * quantity;
+        totalAmount += subtotal;
     });
 
     const subTotalText = document.querySelector('#ordersPrice');
@@ -352,6 +350,7 @@ function updateTotalAmount() {
         subTotalText.textContent = `Sub total: $${totalAmount.toFixed(2)}`;
     }
 }
+
 
 
 //Payment
