@@ -519,11 +519,35 @@ input[type=number]:focus {
           justify-content: center;
   max-width: 20em;
   width: 100%;
-  min-height: 6em;
+  padding: 1.5em;
   background: #ea7c69;
   -webkit-box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.4);
           box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.4);
   border-radius: 8px;
+}
+
+.main-orders__payment-modal-message, .main-orders__payment-modal-title {
+  margin-bottom: 0.7em;
+}
+
+.main-orders__payment-modal-button {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  color: #fafafa;
+  padding: 0.8em;
+  gap: 8px;
+  max-width: 22.5em;
+  width: 100%;
+  background: #ea7c69;
+  -webkit-box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
+          box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: rgb(224, 87, 13);
+  width: 10em;
 }
 
 .main-orders__payment-methods-content-section.credit-card {
