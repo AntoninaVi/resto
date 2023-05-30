@@ -287,11 +287,18 @@ function updateTotalAmount() {
 //Payment
 const continueToPaymentButton = document.querySelector('.main-orders__content-button');
 const paymentMethodsContainer = document.querySelector('.main-orders__payment');
+const confirmationTitle = document.querySelector('.main-orders__title');
+const orderNumber = document.querySelector('#orderNumber'); 
 
 continueToPaymentButton.addEventListener('click', function () {
     continueToPaymentButton.classList.add('hidden');
     paymentMethodsContainer.classList.remove('hidden');
+    confirmationTitle.textContent = 'Confirmation';
+    orderNumber.style.display = 'block';
+    orderNumber.innerHTML = 'Orders #22'; 
 });
+
+
 
 //Cancel
 const cancelButton = document.querySelector('.main-orders__payment-buttons-item:first-child');
@@ -300,6 +307,8 @@ cancelButton.addEventListener('click', cancelPayment);
 function cancelPayment() {
     continueToPaymentButton.classList.remove('hidden');
     paymentMethodsContainer.classList.add('hidden');
+    orderNumber.style.display = 'none';
+    confirmationTitle.textContent = 'Order #22';
 }
 
 //Modal
@@ -317,14 +326,6 @@ function showPaymentModal() {
 function hidePaymentModal() {
     modalOverlay.classList.add('hidden');
 }
-
-
-// Confirmation
-// const ordersSection = document.querySelector('.main-orders__content');
-// const confirmationTitle = document.createElement('h2');
-// confirmationTitle.classList = 'main-orders__content-text-title'
-// confirmationTitle.textContent = 'Confirmation';
-// ordersSection.appendChild(confirmationTitle);
 
 //Methods
 const creditCardItem = document.getElementById('creditCard');
@@ -354,3 +355,5 @@ cashlItem.addEventListener('click', function () {
     payPalSection.style.display = 'none';
     creditCardSection.style.display = 'none';
 });
+
+
