@@ -189,12 +189,16 @@
                                         <input type="text" id="cardholderName" />
                                         <label for="cardNumber">Card Number:</label>
                                         <input type="text" id="cardNumber" />
-                                        <div>
-                                            <label for="expirationDate">Expiration Date:</label>
-                                            <input type="jss" id="expirationDate" placeholder="MM/YYYY" />
+                                        <div class="main-orders__payment-methods-content-section credit-card-date">
+                                            <div class="main-orders__payment-methods-content-section credit-card-date-item">
+                                                <label for="expirationDate">Expiration Date:</label>
+                                                <input type="text" id="expirationDate" placeholder="MM/YYYY" />
+                                            </div>
+                                            <div>
+                                                <label for="cvv">CVV</label>
+                                                <input type="password" id="cvv" max="3" required />
+                                            </div>
 
-                                            <label for="cvv">CVV</label>
-                                            <input type="password" id="cvv" max="3" />
 
                                         </div>
 

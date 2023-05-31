@@ -474,6 +474,8 @@ input[type=number]:focus {
 .main-orders__payment-methods-content-section {
   display: -ms-grid;
   display: grid;
+  max-width: 25.5em;
+  width: 100%;
 }
 .main-orders__payment-buttons {
   display: -webkit-box;
@@ -578,6 +580,21 @@ input[type=number]:focus {
 
 .main-orders__payment-methods-content-section.credit-card {
   display: none;
+}
+
+.main-orders__payment-methods-content-section.credit-card-date {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 0.7em 40%;
+  grid-template-columns: 40% 40%;
+  gap: 0.7em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-orders__payment-methods-content-section.credit-card-date-item {
+  display: block;
 }
 
 .main-orders__payment-methods-content-section.paypal {

@@ -399,3 +399,19 @@ function formatExpirationDate(value) {
     return formattedValue;
 }
 
+// CREDIT CARD CVV format
+const cvvInput = document.getElementById('cvv');
+
+cvvInput.addEventListener('input', function () {
+    const enteredValue = cvvInput.value;
+    const formattedValue = formatCVV(enteredValue);
+    cvvInput.value = formattedValue;
+});
+
+function formatCVV(value) {
+    const deletedValue = value.replace(/\D/g, '');
+    const maxLength = parseInt(cvvInput.getAttribute('max'), 10);
+    const formattedValue = deletedValue.substr(0, maxLength);
+    return formattedValue;
+}
+

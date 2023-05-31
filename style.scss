@@ -268,15 +268,15 @@ body {
         margin-bottom: 1.5em;
         padding-bottom: 1.5em;
     }
-    &__content-titles-items{
+    &__content-titles-items {
         display: flex;
     }
-    &__content-titles-item{
+    &__content-titles-item {
         font-style: normal;
         font-weight: 600;
         font-size: 16px;
         line-height: 140%;
-        &:nth-child(2){
+        &:nth-child(2) {
             margin-left: 2em;
         }
     }
@@ -448,6 +448,8 @@ input[type="number"]:focus {
     }
     &__payment-methods-content-section {
         display: grid;
+        max-width: 25.5em;
+        width: 100%;
     }
 
     &__payment-buttons {
@@ -501,6 +503,15 @@ input[type="number"]:focus {
 //Methods sections
 .main-orders__payment-methods-content-section.credit-card {
     display: none;
+}
+.main-orders__payment-methods-content-section.credit-card-date {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    gap: 0.7em;
+    align-items: center;
+}
+.main-orders__payment-methods-content-section.credit-card-date-item {
+    display: block;
 }
 
 .main-orders__payment-methods-content-section.paypal {
