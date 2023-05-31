@@ -290,6 +290,8 @@ const paymentMethodsContainer = document.querySelector('.main-orders__payment');
 const confirmationTitle = document.querySelector('.main-orders__title');
 const orderNumber = document.querySelector('#orderNumber');
 const backButtonArrow = document.querySelector('.main-orders__payment-back-btn');
+const itemTitles = document.querySelector('.main-orders__content-titles')
+const overlay = document.getElementById('overlay');
 
 continueToPaymentButton.addEventListener('click', function () {
     backButtonArrow.style.display = 'block';
@@ -297,7 +299,11 @@ continueToPaymentButton.addEventListener('click', function () {
     paymentMethodsContainer.classList.remove('hidden');
     confirmationTitle.textContent = 'Confirmation';
     orderNumber.style.display = 'block';
+    itemTitles.style.display = 'none';
     orderNumber.innerHTML = 'Orders #22';
+    overlay.style.display = 'block';
+
+
 });
 
 backButtonArrow.addEventListener('click', function () {
@@ -306,6 +312,8 @@ backButtonArrow.addEventListener('click', function () {
     orderNumber.style.display = 'none';
     continueToPaymentButton.classList.remove('hidden');
     backButtonArrow.style.display = 'none';
+    itemTitles.style.display = 'flex';
+    overlay.style.display = 'none';
 });
 
 //Cancel
@@ -318,6 +326,8 @@ function cancelPayment() {
     orderNumber.style.display = 'none';
     confirmationTitle.textContent = 'Order #22';
     backButtonArrow.style.display = 'none';
+    itemTitles.style.display = 'flex';
+    overlay.style.display = 'none';
 }
 
 //Modal

@@ -108,7 +108,7 @@
                     <div class="main-content__offers"></div>
                 </section>
 
-
+                <div id="overlay"></div>
 
 
                 <section class="main-orders">
@@ -143,6 +143,7 @@
                     </div>
 
                     <button class="main-orders__content-button">Continue to Payment</button>
+                 
 
                     <div class="main-orders__payment hidden">
                         <h2 class="main-orders__payment-title">Payment</h2>
@@ -184,27 +185,39 @@
                                 <section class="main-orders__payment-methods-content-section">
                                     <div id="creditCardSection"
                                         class="main-orders__payment-methods-content-section credit-card">
-                                        <!-- <form class=" main-orders__payment-methods-content-form"> -->
-                                        <label for="cardholderName">Cardholder Name:</label>
-                                        <input type="text" id="cardholderName" />
-                                        <label for="cardNumber">Card Number:</label>
-                                        <input type="text" id="cardNumber" />
-                                        <div class="main-orders__payment-methods-content-section credit-card-date">
-                                            <div class="main-orders__payment-methods-content-section credit-card-date-item">
-                                                <label for="expirationDate">Expiration Date:</label>
-                                                <input type="text" id="expirationDate" placeholder="MM/YYYY" />
+                                        <form class=" main-orders__payment-methods-content-form">
+                                            <label for="cardholderName">Cardholder Name:</label>
+                                            <input type="text" id="cardholderName" />
+                                            <label for="cardNumber">Card Number:</label>
+                                            <input type="text" id="cardNumber" />
+                                            <div class="main-orders__payment-methods-content-section credit-card-form">
+                                                <div
+                                                    class="main-orders__payment-methods-content-section credit-card-date-item">
+                                                    <label for="expirationDate">Expiration Date:</label>
+                                                    <input type="text" id="expirationDate" placeholder="MM/YYYY" />
+                                                </div>
+                                                <div>
+                                                    <label for="cvv">CVV</label>
+                                                    <input type="password" id="cvv" max="3" required />
+                                                </div>
                                             </div>
-                                            <div>
-                                                <label for="cvv">CVV</label>
-                                                <input type="password" id="cvv" max="3" required />
+                                            <div class="main-orders__payment-methods-content-section credit-card-form">
+                                                <div class="main-orders__payment-methods-content-section-select">
+                                                    <label for="orderType">Order Type:</label>
+                                                    <select id="orderType">
+                                                        <option value="dine-in">Dine In</option>
+                                                        <option value="take-away">Take Away</option>
+                                                        <option value="delivery">Delivery</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label for="orderTable">Table no.</label>
+                                                    <input type="text" id="tableNumber" />
+                                                </div>
+
                                             </div>
 
-
-                                        </div>
-
-                                        <label for="orderType">Order Type:</label>
-                                        <input type="text" id="orderType" />
-                                        <!-- </form> -->
+                                        </form>
                                     </div>
                                     <div id="payPalSection" class="main-orders__payment-methods-content-section paypal">
                                         <form class=" main-orders__payment-methods-content-form">
@@ -216,18 +229,48 @@
                                             <input type="text" id="FirstName" />
                                             <label for="password">PayPal Password</label>
                                             <input type="password" id="password" autocomplete="current-password" />
+                                            <div class="main-orders__payment-methods-content-section credit-card-form">
+                                                <div class="main-orders__payment-methods-content-section-select">
+                                                    <label for="orderType">Order Type:</label>
+                                                    <select id="orderType">
+                                                        <option value="dine-in">Dine In</option>
+                                                        <option value="take-away">Take Away</option>
+                                                        <option value="delivery">Delivery</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label for="orderTable">Table no.</label>
+                                                    <input type="text" id="tableNumber" />
+                                                </div>
+
+                                            </div>
                                         </form>
 
                                     </div>
                                     <div id="cashSection" class="main-orders__payment-methods-content-section cash">
-                                        <!-- <form class=" main-orders__payment-methods-content-form"> -->
+                                        <form class=" main-orders__payment-methods-content-form">
                                         <label for="lastName">Last Name</label>
                                         <input type="text" id="LastNameCash" />
                                         <label for="firstName">First Name</label>
                                         <input type="text" id="FirstNameCash" />
                                         <label for="phoneNumber">Phone Number</label>
                                         <input type="text" id="phoneNumber" />
-                                        <!-- </form> -->
+                                        <div class="main-orders__payment-methods-content-section credit-card-form">
+                                            <div class="main-orders__payment-methods-content-section-select">
+                                                <label for="orderType">Order Type:</label>
+                                                <select id="orderType">
+                                                    <option value="dine-in">Dine In</option>
+                                                    <option value="take-away">Take Away</option>
+                                                    <option value="delivery">Delivery</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label for="orderTable">Table no.</label>
+                                                <input type="text" id="tableNumber" />
+                                            </div>
+
+                                        </div>
+                                        </form>
 
 
                                     </div>

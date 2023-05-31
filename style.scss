@@ -350,6 +350,9 @@ body {
         font-size: 14px;
         line-height: 140%;
         color: #abbbc2;
+        &:first-child {
+            margin-bottom: 1em;
+        }
     }
     &__content-order-total {
         font-weight: 500;
@@ -372,6 +375,8 @@ input[type="number"]:focus {
 }
 //Payment
 .main-orders {
+    height: 70%;
+    z-index: 2;
     &__payment {
         position: absolute;
         top: 0;
@@ -380,7 +385,7 @@ input[type="number"]:focus {
         padding: 1.5em;
         background: #1f1d2b;
         border-radius: 8px;
-        height: 100%;
+        z-index: 2;
     }
     &__payment-back-btn {
         display: none;
@@ -448,8 +453,15 @@ input[type="number"]:focus {
     }
     &__payment-methods-content-section {
         display: grid;
-        max-width: 25.5em;
-        width: 100%;
+        justify-content: flex-start;
+        display: grid;
+        grid-template-columns: 45% 45%;
+        gap: 1em;
+        width: 20.5em;
+        max-width: 100%;
+        &:last-child {
+            margin-bottom: 3em;
+        }
     }
 
     &__payment-buttons {
@@ -470,6 +482,10 @@ input[type="number"]:focus {
 }
 .main-orders__payment-methods-content-section input {
     @include input;
+    max-width: 22.3em;
+    min-width: 10.7em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
 }
 .hidden {
     display: none;
@@ -504,26 +520,44 @@ input[type="number"]:focus {
 .main-orders__payment-methods-content-section.credit-card {
     display: none;
 }
-.main-orders__payment-methods-content-section.credit-card-date {
-    display: grid;
-    grid-template-columns: 40% 40%;
-    gap: 0.7em;
-    align-items: center;
-}
+
 .main-orders__payment-methods-content-section.credit-card-date-item {
     display: block;
 }
 
-.main-orders__payment-methods-content-section.paypal {
-    display: none;
-}
-
+.main-orders__payment-methods-content-section.paypal,
 .main-orders__payment-methods-content-section.cash {
     display: none;
 }
+
 .main-orders__payment-methods-content-form {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 20em));
 }
 #orderNumber {
     display: none;
+}
+
+//custom select
+.main-orders__payment-methods-content-section-select select {
+    -webkit-appearance: none;
+    @include input;
+    padding: 0.8em 2.5em;
+    margin-top: 0.5em;
+    cursor: pointer;
+    background-image: url(img/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-position: 8%;
+    color: #ffffff;
+}
+//overlay
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
 }
