@@ -138,12 +138,12 @@
 
                     </div>
                     <div class="main-orders__price">
-                        <p class="main-orders__price-text">Discount</p>
-                        <p id="ordersPrice" class="main-orders__price-text">Sub total</p>
+                        <p id="ordersDiscount" class="main-orders__price-text">Discount <span class="main-orders__price-text-span">$0.00</span></p>
+                        <p id="ordersPrice" class="main-orders__price-text">Sub total <span class="main-orders__price-text-span">$0.00</span></p>
                     </div>
 
                     <button class="main-orders__content-button">Continue to Payment</button>
-                 
+
 
                     <div class="main-orders__payment hidden">
                         <h2 class="main-orders__payment-title">Payment</h2>
@@ -194,17 +194,17 @@
                                                 <div
                                                     class="main-orders__payment-methods-content-section credit-card-date-item">
                                                     <label for="expirationDate">Expiration Date:</label>
-                                                    <input type="text" id="expirationDate" placeholder="MM/YYYY" />
+                                                    <input type="text" id="expirationDate" placeholder="MM/YYYY" required autocomplete="cc-exp"/>
                                                 </div>
                                                 <div>
                                                     <label for="cvv">CVV</label>
-                                                    <input type="password" id="cvv" max="3" required />
+                                                    <input type="password" id="cvv" max="3" required autocomplete="current-password" />
                                                 </div>
                                             </div>
                                             <div class="main-orders__payment-methods-content-section credit-card-form">
                                                 <div class="main-orders__payment-methods-content-section-select">
                                                     <label for="orderType">Order Type:</label>
-                                                    <select id="orderType">
+                                                    <select id="orderType1">
                                                         <option value="dine-in">Dine In</option>
                                                         <option value="take-away">Take Away</option>
                                                         <option value="delivery">Delivery</option>
@@ -212,7 +212,7 @@
                                                 </div>
                                                 <div>
                                                     <label for="orderTable">Table no.</label>
-                                                    <input type="text" id="tableNumber" />
+                                                    <input type="text"  />
                                                 </div>
 
                                             </div>
@@ -232,7 +232,7 @@
                                             <div class="main-orders__payment-methods-content-section credit-card-form">
                                                 <div class="main-orders__payment-methods-content-section-select">
                                                     <label for="orderType">Order Type:</label>
-                                                    <select id="orderType">
+                                                    <select id="orderType2">
                                                         <option value="dine-in">Dine In</option>
                                                         <option value="take-away">Take Away</option>
                                                         <option value="delivery">Delivery</option>
@@ -240,7 +240,7 @@
                                                 </div>
                                                 <div>
                                                     <label for="orderTable">Table no.</label>
-                                                    <input type="text" id="tableNumber" />
+                                                    <input type="text"  />
                                                 </div>
 
                                             </div>
@@ -249,27 +249,27 @@
                                     </div>
                                     <div id="cashSection" class="main-orders__payment-methods-content-section cash">
                                         <form class=" main-orders__payment-methods-content-form">
-                                        <label for="lastName">Last Name</label>
-                                        <input type="text" id="LastNameCash" />
-                                        <label for="firstName">First Name</label>
-                                        <input type="text" id="FirstNameCash" />
-                                        <label for="phoneNumber">Phone Number</label>
-                                        <input type="text" id="phoneNumber" />
-                                        <div class="main-orders__payment-methods-content-section credit-card-form">
-                                            <div class="main-orders__payment-methods-content-section-select">
-                                                <label for="orderType">Order Type:</label>
-                                                <select id="orderType">
-                                                    <option value="dine-in">Dine In</option>
-                                                    <option value="take-away">Take Away</option>
-                                                    <option value="delivery">Delivery</option>
-                                                </select>
-                                            </div>
-                                            <div>
-                                                <label for="orderTable">Table no.</label>
-                                                <input type="text" id="tableNumber" />
-                                            </div>
+                                            <label for="lastName">Last Name</label>
+                                            <input type="text" id="LastNameCash" />
+                                            <label for="firstName">First Name</label>
+                                            <input type="text" id="FirstNameCash" />
+                                            <label for="phoneNumber">Phone Number</label>
+                                            <input type="text" id="phoneNumber" />
+                                            <div class="main-orders__payment-methods-content-section credit-card-form">
+                                                <div class="main-orders__payment-methods-content-section-select">
+                                                    <label for="orderType">Order Type:</label>
+                                                    <select id="orderType3">
+                                                        <option value="dine-in">Dine In</option>
+                                                        <option value="take-away">Take Away</option>
+                                                        <option value="delivery">Delivery</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label for="orderTable">Table no.</label>
+                                                    <input type="text"  />
+                                                </div>
 
-                                        </div>
+                                            </div>
                                         </form>
 
 

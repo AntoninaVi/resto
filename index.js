@@ -140,6 +140,7 @@ function handleSearch() {
 
 let totalAmount = 0;
 
+
 function addDishToOrder(event) {
     const selectedDish = event.target.closest('.main-content__offers-dish');
     const dishTitle = selectedDish.querySelector('.main-content__offers-dish-title').textContent;
@@ -229,8 +230,8 @@ function addDishToOrder(event) {
     localStorage.setItem('order', JSON.stringify(order));
 
     totalAmount += parseFloat(dishPrice.substring(1));
-    const subTotalText = document.querySelector('#ordersPrice');
-    subTotalText.textContent = `Sub total: $${totalAmount.toFixed(2)}`;
+    const subTotalText = document.querySelector('#ordersPrice span');
+    subTotalText.textContent = ` $${totalAmount.toFixed(2)}`;
 
 }
 
@@ -280,6 +281,7 @@ function updateTotalAmount() {
     if (!isNaN(totalAmount)) {
         subTotalText.textContent = `Sub total: $${totalAmount.toFixed(2)}`;
     }
+    
 }
 
 
@@ -337,6 +339,7 @@ const modalCloseButton = document.querySelector('.main-orders__payment-modal-but
 
 confirmPaymentButton.addEventListener('click', showPaymentModal);
 modalCloseButton.addEventListener('click', hidePaymentModal);
+document.addEventListener('keydown', handleKeyDown);
 
 function showPaymentModal() {
     modalOverlay.classList.remove('hidden');
@@ -345,7 +348,11 @@ function showPaymentModal() {
 function hidePaymentModal() {
     modalOverlay.classList.add('hidden');
 }
-
+function handleKeyDown(event) {
+    if (event.key === 'Escape') {
+        hidePaymentModal();
+    }
+}
 //Methods
 const creditCardItem = document.getElementById('creditCard');
 const creditCardSection = document.getElementById('creditCardSection');
