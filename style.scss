@@ -56,9 +56,10 @@ body {
     padding: 2em;
 }
 .header {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 48% 75%;
+    justify-items: center;
+    align-items: baseline;
     width: 48em;
     margin-bottom: 1.5em;
 }
@@ -166,7 +167,7 @@ body {
     margin-bottom: 3.6em;
 }
 .main-content {
-    flex-basis: 60%;
+    flex-basis: 57%;
 }
 .main-content__offers {
     display: grid;
@@ -237,6 +238,9 @@ body {
     height: 70%;
     min-height: 25em;
     z-index: 2;
+    max-width: 24em;
+    min-width: 24em;
+    width: 100%;
 
     &__title {
         @include h2;
@@ -433,16 +437,16 @@ input[type="number"]:focus {
         border-bottom: 1px solid #393c49;
     }
 
-    &__payment-methods {
-    }
+    // &__payment-methods {
+    // }
 
     &__payment-methods-title {
         @include h2;
         margin-bottom: 1em;
     }
 
-    &__payment-methods-content {
-    }
+    // &__payment-methods-content {
+    // }
     &__payment-methods-content-cards {
         display: flex;
         align-items: center;

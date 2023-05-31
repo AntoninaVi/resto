@@ -17,14 +17,14 @@ body {
 }
 
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 48% 75%;
+  grid-template-columns: 48% 75%;
+  justify-items: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   width: 48em;
   margin-bottom: 1.5em;
 }
@@ -150,8 +150,8 @@ body {
 }
 
 .main-content {
-  -ms-flex-preferred-size: 60%;
-      flex-basis: 60%;
+  -ms-flex-preferred-size: 57%;
+      flex-basis: 57%;
 }
 
 .main-content__offers {
@@ -224,6 +224,9 @@ body {
   height: 70%;
   min-height: 25em;
   z-index: 2;
+  max-width: 24em;
+  min-width: 24em;
+  width: 100%;
 }
 .main-orders__title {
   font-style: normal;
