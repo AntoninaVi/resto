@@ -365,4 +365,37 @@ cashlItem.addEventListener('click', function () {
     creditCardSection.style.display = 'none';
 });
 
+// CREDIT CARD expiration date format
+const expirationDateInput = document.getElementById('expirationDate');
+
+expirationDateInput.addEventListener('input', function () {
+    const enteredValue = expirationDateInput.value;
+    const formattedValue = formatExpirationDate(enteredValue);
+    expirationDateInput.value = formattedValue;
+});
+
+function formatExpirationDate(value) {
+    const deletedValue = value.replace(/\D/g, '');
+    const month = deletedValue.substr(0, 2);
+    const year = deletedValue.substr(2, 4);
+    let formattedValue = '';
+
+    switch (true) {
+        case Boolean(month):
+            formattedValue += month;
+            break;
+        default:
+            break;
+    }
+
+    switch (true) {
+        case Boolean(year):
+            formattedValue += '/' + year;
+            break;
+        default:
+            break;
+    }
+
+    return formattedValue;
+}
 
