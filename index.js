@@ -183,6 +183,11 @@ function addDishToOrder(event) {
     itemQty.min = '1';
     itemQty.max = '10';
     itemInfo.appendChild(itemQty);
+    itemQty.addEventListener('input', function () {
+        if (parseInt(itemQty.value) > 10) {
+            itemQty.value = '10';
+        }
+    });
 
 
     const orderTotal = document.createElement('div');
@@ -233,12 +238,12 @@ function addDishToOrder(event) {
     subTotalText.textContent = ` $${totalAmount.toFixed(2)}`;
 
 }
-
-document.addEventListener('click', function (event) { //add item to order
-    if (event.target.matches('.main-content__offers-dish')) {
+document.addEventListener('click', function (event) {
+    if (event.target.matches('.main-content__offers-dish') || event.target.closest('.main-content__offers-dish-img') || event.target.matches('.main-content__offers-dish-title')) {
         addDishToOrder(event);
     }
 });
+
 
 function deleteOrderItem(event) {
     const orderItem = event.target.closest('.main-orders__content-order-item');
@@ -337,6 +342,12 @@ const modalCloseButton = document.querySelector('.main-orders__payment-modal-but
 
 confirmPaymentButton.addEventListener('click', showPaymentModal);
 modalCloseButton.addEventListener('click', hidePaymentModal);
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        hidePaymentModal();
+    }
+});
 
 function showPaymentModal() {
     modalOverlay.classList.remove('hidden');
