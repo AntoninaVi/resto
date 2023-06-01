@@ -40,6 +40,7 @@ const mainContent = document.querySelector('.main-content__offers');
 const tabs = document.querySelectorAll('.main-tabs__tab');
 const dateToday = document.querySelector('.header-date');
 const searchInput = document.querySelector('.header-search__input');
+const mainOrdersSection = document.querySelector('.main-orders');
 
 
 
@@ -312,6 +313,7 @@ continueToPaymentButton.addEventListener('click', function () {
     itemTitles.style.display = 'none';
     orderNumber.innerHTML = 'Orders #22';
     overlay.style.display = 'block';
+    mainOrdersSection.style.right = '28em';
 
 
 });
@@ -324,6 +326,7 @@ backButtonArrow.addEventListener('click', function () {
     backButtonArrow.style.display = 'none';
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
+    mainOrdersSection.style.right = '-1.5em';
 });
 
 //Cancel
@@ -338,6 +341,7 @@ function cancelPayment() {
     backButtonArrow.style.display = 'none';
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
+    mainOrdersSection.style.right = '-1.5em';
 }
 
 //Modal

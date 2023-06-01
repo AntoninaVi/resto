@@ -176,6 +176,16 @@ body {
             margin-bottom: -1em;
             transition: ease-out 0.2s;
         }
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -0.2em;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #ea7c69;
+                z-index: -1;
+            }
     }
 }
 .main-title {
@@ -570,8 +580,8 @@ input[type="number"]:focus {
 //Modal window
 .main-orders__payment-modal-content {
     position: absolute;
-    right: 200%;
-    top: 30%;
+    right: 50%;
+    top: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
