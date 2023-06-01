@@ -113,29 +113,41 @@ body {
     bottom: 9em;
     left: -1.5em;
     height: 52em;
-    padding: 1.4em 0.4em 1.4em 0.4em;
+    padding: 1em;
+    width: 5em;
     background-color: #1f1d2b;
     border-radius: 16px;
+    z-index: 2;
     &__btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: #ea7c69;
         margin-bottom: 3em;
-        padding: 1em;
+        width: 3.5em;
+        height: 3.5em;
+        border-radius: 8px;
+        z-index: 2;
+
         &:first-child {
             padding: 0;
+            background: transparent;
+            box-shadow: none;
+            border: none;
+            outline: none;
         }
         &:last-child {
             margin-bottom: 0;
         }
         &:hover {
+            // position: relative;
+            // z-index: 3;
             background: #ea7c69;
-            box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.32);
-            border-radius: 8px;
+            outline: 0.5em solid #252836;
             color: #ffffff;
         }
-        &:first-child:hover {
-            background: transparent;
-            box-shadow: none;
-        }
+    
     }
 }
 
@@ -536,7 +548,7 @@ input[type="number"]:focus {
 .main-tabs__tab.active {
     color: #ea7c69;
     border-top: none;
-    border-left:none ;
+    border-left: none;
     border-right: none;
     border-bottom: 2px solid #ea7c69;
     padding-bottom: 0.8em;
