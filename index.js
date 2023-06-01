@@ -41,6 +41,7 @@ const tabs = document.querySelectorAll('.main-tabs__tab');
 const dateToday = document.querySelector('.header-date');
 const searchInput = document.querySelector('.header-search__input');
 const mainOrdersSection = document.querySelector('.main-orders');
+const sidebarButtons = document.querySelectorAll('.main-sidebar__btn');
 
 
 
@@ -406,12 +407,6 @@ cashlItem.addEventListener('click', function () {
     creditCardItem.classList.remove('active');
 });
 
-
-
-
-
-
-
 // CREDIT CARD expiration date format
 const expirationDateInput = document.getElementById('expirationDate');
 
@@ -462,3 +457,62 @@ function formatCVV(value) {
     return formattedValue;
 }
 
+// Sidebar buttons and its sections
+sidebarButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        sidebarButtons.forEach(function (btn) {
+            btn.classList.remove('active');
+        });
+        button.classList.add('active');
+    });
+});
+
+const homeSectionButton = document.getElementById('home');
+const discountSectionButton = document.getElementById('discount');
+const dashboardSectionButton = document.getElementById('dashboard');
+const mainTitle = document.querySelector('.main-title');
+
+const mainPage = document.querySelector('.main-content__offers');
+const discountSection = document.querySelector('#discountSection');
+const dashboardSection = document.querySelector('#dashboardSection');
+
+homeSectionButton.addEventListener('click', function () {
+    mainPage.style.display = 'grid';
+    discountSection.style.display = 'none';
+    dashboardSection.style.display = 'none';
+    mainTitle.textContent = "Choose Dishes";
+});
+
+discountSectionButton.addEventListener('click', function () {
+    mainPage.style.display = 'none';
+    discountSection.style.display = 'block';
+    mainTitle.textContent = 'There is no available discounts for you'
+});
+dashboardSectionButton.addEventListener('click', function () {
+    mainPage.style.display = 'none';
+    discountSection.style.display = 'none';
+    dashboardSection.style.display = 'block';
+    mainTitle.textContent = 'Our restaurant is happy to see you again! ☺'
+})
+
+
+// Additional
+const settingsButton = document.getElementById('settings');
+const colorMenu = document.getElementById('colorMenu');
+const colorOptions = colorMenu.querySelectorAll('input[name="color"]');
+
+settingsButton.addEventListener('click', function () {
+    colorMenu.classList.remove('hidden');
+    mainPage.style.display = 'none';
+    discountSection.style.display = 'none';
+    dashboardSection.style.display ='none';
+    mainTitle.textContent = 'Select Background Color'
+});
+
+colorOptions.forEach(function (option) {
+    option.addEventListener('change', function () {
+        const selectedColor = this.value;
+        document.body.style.backgroundColor = selectedColor;
+        
+    });
+});

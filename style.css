@@ -260,6 +260,7 @@ body {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
+  margin-bottom: 3em;
 }
 .main-orders__content {
   border-bottom: 1px solid #393c49;
@@ -619,6 +620,19 @@ input[type=number]:focus {
   margin-bottom: -1em;
 }
 
+.main-sidebar__btn.active {
+  background: #ea7c69;
+  outline: 0.5em solid #252836;
+  color: #ffffff;
+  border: none;
+}
+
+#colorMenu {
+  position: absolute;
+  top: 30%;
+  left: 200%;
+}
+
 #creditCard.active::after,
 #payPal.active::after,
 #cash.active::after {
@@ -733,4 +747,8 @@ input[type=number]:focus {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
+}
+
+.main__discount {
+  display: none;
 }
