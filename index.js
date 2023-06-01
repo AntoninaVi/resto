@@ -98,7 +98,12 @@ function filterDishesByType(type) {
 }
 tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
-        const selectedType = tab.textContent.toLowerCase();
+        tabs.forEach((tab) => {
+            tab.classList.remove('active');  ///active class for tabs
+        });
+        tab.classList.add('active');
+
+        const selectedType = tab.textContent.toLowerCase(); // filter for tabs
         filterDishesByType(selectedType);
     });
 });

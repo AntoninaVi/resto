@@ -19,8 +19,8 @@ body {
 .header {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 48% 75%;
-  grid-template-columns: 48% 75%;
+  -ms-grid-columns: 39% 80%;
+  grid-template-columns: 39% 80%;
   justify-items: center;
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
@@ -69,8 +69,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
 }
 
 .main-sidebar {
@@ -86,7 +84,7 @@ body {
           align-items: center;
   position: relative;
   bottom: 9em;
-  left: 0;
+  left: -1.5em;
   height: 52em;
   padding: 1.4em 0.4em 1.4em 0.4em;
   background-color: #1f1d2b;
@@ -139,6 +137,11 @@ body {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: #ea7c69;
+  border-bottom: 2px solid #ea7c69;
+  padding-bottom: 0.8em;
+  margin-bottom: -1em;
+  -webkit-transition: ease-out 0.2s;
+  transition: ease-out 0.2s;
 }
 
 .main-title {
@@ -213,13 +216,14 @@ body {
 
 .main-orders {
   position: relative;
-  right: 0;
+  right: -1.5em;
   bottom: 9em;
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
   padding: 1.5em;
   background: #1f1d2b;
-  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
   margin-bottom: 5em;
   height: 70%;
   min-height: 25em;
@@ -368,8 +372,6 @@ body {
   max-width: 22.5em;
   width: 100%;
   background: #ea7c69;
-  -webkit-box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
-          box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -545,8 +547,6 @@ input[type=number]:focus {
   max-width: 22.5em;
   width: 100%;
   background: #ea7c69;
-  -webkit-box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
-          box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -586,6 +586,16 @@ input[type=number]:focus {
   border: 1px solid #abbbc2;
 }
 
+.main-tabs__tab.active {
+  color: #ea7c69;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #ea7c69;
+  padding-bottom: 0.8em;
+  margin-bottom: -1em;
+}
+
 #creditCard.active::after,
 #payPal.active::after,
 #cash.active::after {
@@ -620,8 +630,6 @@ input[type=number]:focus {
   width: 100%;
   padding: 1.5em;
   background: #ea7c69;
-  -webkit-box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.4);
-          box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.4);
   border-radius: 8px;
 }
 
@@ -640,8 +648,6 @@ input[type=number]:focus {
   max-width: 22.5em;
   width: 100%;
   background: #ea7c69;
-  -webkit-box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
-          box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
   border-radius: 8px;
   border: none;
   cursor: pointer;
