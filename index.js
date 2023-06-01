@@ -367,24 +367,41 @@ const payPalSection = document.getElementById('payPalSection');
 const cashlItem = document.getElementById('cash');
 const cashSection = document.getElementById('cashSection');
 
-
 creditCardItem.addEventListener('click', function () {
     creditCardSection.style.display = 'grid';
     payPalSection.style.display = 'none';
     cashSection.style.display = 'none';
+
+    creditCardItem.classList.add('active');
+    payPalItem.classList.remove('active');
+    cashlItem.classList.remove('active');
 });
 
 payPalItem.addEventListener('click', function () {
     payPalSection.style.display = 'grid';
     creditCardSection.style.display = 'none';
     cashSection.style.display = 'none';
+
+    payPalItem.classList.add('active');
+    creditCardItem.classList.remove('active');
+    cashlItem.classList.remove('active');
 });
 
 cashlItem.addEventListener('click', function () {
     cashSection.style.display = 'grid';
     payPalSection.style.display = 'none';
     creditCardSection.style.display = 'none';
+
+    cashlItem.classList.add('active');
+    payPalItem.classList.remove('active');
+    creditCardItem.classList.remove('active');
 });
+
+
+
+
+
+
 
 // CREDIT CARD expiration date format
 const expirationDateInput = document.getElementById('expirationDate');

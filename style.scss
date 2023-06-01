@@ -375,7 +375,7 @@ body {
         font-size: 14px;
         line-height: 130%;
         text-align: right;
-        color: #FFFFFF;
+        color: #ffffff;
     }
     &__content-order-total {
         font-weight: 500;
@@ -399,7 +399,6 @@ input[type="number"]:focus {
 }
 //Payment
 .main-orders {
-
     &__payment {
         position: absolute;
         top: 0;
@@ -409,7 +408,7 @@ input[type="number"]:focus {
         background: #1f1d2b;
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
-        border-left: 1px solid #393C49;
+        border-left: 1px solid #393c49;
         z-index: 2;
         min-height: 25em;
     }
@@ -455,6 +454,7 @@ input[type="number"]:focus {
 
     &__payment-methods-content-item {
         width: 6.3em;
+        height: 4em;
         text-align: center;
         padding: 10px 16px;
         border: 1px solid #393c49;
@@ -467,6 +467,12 @@ input[type="number"]:focus {
             margin-right: 0;
         }
         &:hover {
+            background: #252836;
+            border: 1px solid #abbbc2;
+            transition: ease-in 0.3s;
+        }
+
+        &:focus {
             background: #252836;
             border: 1px solid #abbbc2;
         }
@@ -506,6 +512,7 @@ input[type="number"]:focus {
         }
     }
 }
+
 .main-orders__payment-methods-content-section input {
     @include input;
     max-width: 22.3em;
@@ -513,9 +520,27 @@ input[type="number"]:focus {
     margin-top: 0.5em;
     margin-bottom: 1em;
 }
+//extra classes
 .hidden {
     display: none;
 }
+.active {
+    background: #252836;
+    border: 1px solid #abbbc2;
+}
+#creditCard.active::after,
+#payPal.active::after,
+#cash.active::after {
+    content: url(img/checkmark.svg);
+    display: block;
+    position: relative;
+    left: 3.4em;
+    bottom: 3.2em;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+}
+
 //Modal window
 .main-orders__payment-modal-content {
     position: absolute;

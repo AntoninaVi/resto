@@ -402,7 +402,7 @@ body {
   font-size: 14px;
   line-height: 130%;
   text-align: right;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .main-orders__content-order-total {
   font-weight: 500;
@@ -437,7 +437,7 @@ input[type=number]:focus {
   background: #1f1d2b;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  border-left: 1px solid #393C49;
+  border-left: 1px solid #393c49;
   z-index: 2;
   min-height: 25em;
 }
@@ -483,6 +483,7 @@ input[type=number]:focus {
 }
 .main-orders__payment-methods-content-item {
   width: 6.3em;
+  height: 4em;
   text-align: center;
   padding: 10px 16px;
   border: 1px solid #393c49;
@@ -496,6 +497,12 @@ input[type=number]:focus {
   margin-right: 0;
 }
 .main-orders__payment-methods-content-item:hover {
+  background: #252836;
+  border: 1px solid #abbbc2;
+  -webkit-transition: ease-in 0.3s;
+  transition: ease-in 0.3s;
+}
+.main-orders__payment-methods-content-item:focus {
   background: #252836;
   border: 1px solid #abbbc2;
 }
@@ -572,6 +579,24 @@ input[type=number]:focus {
 
 .hidden {
   display: none;
+}
+
+.active {
+  background: #252836;
+  border: 1px solid #abbbc2;
+}
+
+#creditCard.active::after,
+#payPal.active::after,
+#cash.active::after {
+  content: url(img/checkmark.svg);
+  display: block;
+  position: relative;
+  left: 3.4em;
+  bottom: 3.2em;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
 }
 
 .main-orders__payment-modal-content {
