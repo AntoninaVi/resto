@@ -355,22 +355,21 @@ body {
 .main-orders__content-info {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 15% 52% 17% 16%;
-  grid-template-columns: 15% 52% 17% 16%;
+  -ms-grid-columns: 14% 53% 17% 16%;
+  grid-template-columns: 14% 53% 17% 16%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 0.8em;
 }
 .main-orders__content-options {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80% 1em 14%;
+  grid-template-columns: 80% 14%;
+  -webkit-column-gap: 1em;
+     -moz-column-gap: 1em;
+          column-gap: 1em;
 }
 .main-orders__content-text-items {
   margin-right: 3.8em;
@@ -488,6 +487,7 @@ input[type=number]:focus {
   font-size: 16px;
   line-height: 140%;
   color: #abbbc2;
+  padding-bottom: 1.5em;
   margin-bottom: 1.5em;
   border-bottom: 1px solid #393c49;
 }
@@ -714,6 +714,7 @@ input[type=number]:focus {
 
 #orderNumber {
   display: none;
+  padding-bottom: 1.5em;
 }
 
 .main-orders__payment-methods-content-section-select select {

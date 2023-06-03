@@ -354,14 +354,14 @@ body {
 
     &__content-info {
         display: grid;
-        grid-template-columns: 15% 52% 17% 16%;
+        grid-template-columns: 14% 53% 17% 16%;
         align-items: center;
         margin-bottom: 0.8em;
     }
     &__content-options {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: 80% 14%;
+        column-gap: 1em;
     }
     &__content-text-items {
         margin-right: 3.8em;
@@ -460,6 +460,7 @@ input[type="number"]:focus {
         font-size: 16px;
         line-height: 140%;
         color: #abbbc2;
+        padding-bottom: 1.5em;
         margin-bottom: 1.5em;
         border-bottom: 1px solid #393c49;
     }
@@ -636,6 +637,7 @@ input[type="number"]:focus {
 }
 #orderNumber {
     display: none;
+    padding-bottom: 1.5em;
 }
 
 //custom select

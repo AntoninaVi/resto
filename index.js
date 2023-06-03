@@ -309,7 +309,11 @@ continueToPaymentButton.addEventListener('click', function () {
     backButtonArrow.style.display = 'block';
     continueToPaymentButton.classList.add('hidden');
     paymentMethodsContainer.classList.remove('hidden');
+
     confirmationTitle.textContent = 'Confirmation';
+    confirmationTitle.style.fontSize = '28px';
+    confirmationTitle.style.marginBottom = '0.5em';
+
     orderNumber.style.display = 'block';
     itemTitles.style.display = 'none';
     orderNumber.innerHTML = 'Orders #22';
@@ -322,12 +326,15 @@ continueToPaymentButton.addEventListener('click', function () {
 backButtonArrow.addEventListener('click', function () {
     paymentMethodsContainer.classList.add('hidden');
     confirmationTitle.textContent = 'Orders #22';
+    confirmationTitle.style.fontSize = '20px';
+    confirmationTitle.style.marginBottom = '5em';
     orderNumber.style.display = 'none';
     continueToPaymentButton.classList.remove('hidden');
     backButtonArrow.style.display = 'none';
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
     mainOrdersSection.style.right = '-1.5em';
+    
 });
 
 //Cancel
