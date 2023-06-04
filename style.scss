@@ -541,6 +541,11 @@ input[type="number"]:focus {
         }
     }
 }
+.main-orders__payment-methods-content-section.credit-card-form{
+    border-top: 1px solid #393C49;
+    padding-top: 1em;
+}
+
 
 .main-orders__payment-methods-content-section input {
     @include input;
@@ -666,4 +671,8 @@ input[type="number"]:focus {
 //SIDEBAR sections
 .main__discount{
     display: none;
+}
+//Additional option change color
+#colorMenu{
+   
 }

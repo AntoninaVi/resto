@@ -583,6 +583,11 @@ input[type=number]:focus {
   margin-right: 0.5em;
 }
 
+.main-orders__payment-methods-content-section.credit-card-form {
+  border-top: 1px solid #393C49;
+  padding-top: 1em;
+}
+
 .main-orders__payment-methods-content-section input {
   max-width: 220px;
   width: 100%;

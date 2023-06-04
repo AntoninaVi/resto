@@ -488,17 +488,20 @@ homeSectionButton.addEventListener('click', function () {
     discountSection.style.display = 'none';
     dashboardSection.style.display = 'none';
     mainTitle.textContent = "Choose Dishes";
+    colorMenu.style.display = 'none';
 });
 
 discountSectionButton.addEventListener('click', function () {
     mainPage.style.display = 'none';
     discountSection.style.display = 'block';
+    colorMenu.style.display = 'none'
     mainTitle.textContent = 'There is no available discounts for you'
 });
 dashboardSectionButton.addEventListener('click', function () {
     mainPage.style.display = 'none';
     discountSection.style.display = 'none';
     dashboardSection.style.display = 'block';
+    colorMenu.style.display = 'none'
     mainTitle.textContent = 'Our restaurant is happy to see you again! ☺'
 })
 
@@ -507,19 +510,19 @@ dashboardSectionButton.addEventListener('click', function () {
 const settingsButton = document.getElementById('settings');
 const colorMenu = document.getElementById('colorMenu');
 const colorOptions = colorMenu.querySelectorAll('input[name="color"]');
+const wrapper = document.querySelector('.wrapper');
 
 settingsButton.addEventListener('click', function () {
-    colorMenu.classList.remove('hidden');
+    colorMenu.style.display = 'flex';
     mainPage.style.display = 'none';
     discountSection.style.display = 'none';
     dashboardSection.style.display ='none';
-    mainTitle.textContent = 'Select Background Color'
+    mainTitle.textContent = 'Select Background Color';
 });
 
 colorOptions.forEach(function (option) {
     option.addEventListener('change', function () {
         const selectedColor = this.value;
-        document.body.style.backgroundColor = selectedColor;
-        
+        wrapper.style.backgroundColor = selectedColor;
     });
 });
