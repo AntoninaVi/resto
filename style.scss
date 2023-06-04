@@ -57,7 +57,7 @@ body {
 }
 .header {
     display: grid;
-    grid-template-columns: 39% 80%;
+    grid-template-columns: 42% 80%;
     justify-items: center;
     align-items: baseline;
     width: 48em;
@@ -577,11 +577,6 @@ input[type="number"]:focus {
     color: #ffffff;
     border: none;
 }
-#colorMenu{
-    position: absolute;
-    top: 30%;
-    left: 200%;
-}
 
 #creditCard.active::after,
 #payPal.active::after,
@@ -672,7 +667,19 @@ input[type="number"]:focus {
 .main__discount{
     display: none;
 }
-//Additional option change color
 #colorMenu{
-   
+    position: absolute;
+    top: 32%;
+    left: 10em;
+}
+#colorMenu label{
+    display: flex;
+    align-items: center;
+    &:first-child{
+        margin-right: 3em;
+    }
+}
+#colorMenu input{
+    margin-right: 1em;
+    cursor: pointer;
 }
