@@ -32,9 +32,21 @@ body {
 }
 @media screen and (max-width: 1220px) {
   .header {
-    -ms-grid-columns: 45% 15%;
-    grid-template-columns: 45% 15%;
+    -ms-grid-columns: 46% 15%;
+    grid-template-columns: 46% 15%;
     row-gap: 1em;
+  }
+}
+@media screen and (max-width: 970px) {
+  .header {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 770px) {
+  .header {
+    -ms-grid-columns: 62% 17%;
+    grid-template-columns: 62% 17%;
+    width: 100%;
   }
 }
 
@@ -162,6 +174,11 @@ body {
 @media screen and (max-width: 970px) {
   .main-tabs {
     overflow: scroll;
+  }
+}
+@media screen and (max-width: 630px) {
+  .main-tabs {
+    width: 20em;
   }
 }
 .main-tabs__tab {
@@ -341,6 +358,11 @@ body {
     border-top-left-radius: 8px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .main-orders {
+    right: 25em;
   }
 }
 .main-orders__title {
@@ -921,5 +943,10 @@ input[type=number]:focus {
     border: none;
     outline: none;
     cursor: pointer;
+  }
+}
+@media screen and (max-width: 630px) {
+  .toggle-orders-btn {
+    right: 6em;
   }
 }

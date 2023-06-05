@@ -66,8 +66,15 @@ body {
     width: 48em;
     margin-bottom: 1.5em;
     @media screen and (max-width: 1220px) {
-        grid-template-columns: 45% 15%;
+        grid-template-columns: 46% 15%;
         row-gap: 1em;
+    }
+    @media screen and (max-width: 970px) {
+        width: 100%;
+    }
+    @media screen and (max-width: 770px) {
+        grid-template-columns: 62% 17%;
+        width: 100%;
     }
 }
 // .header-content {
@@ -176,6 +183,9 @@ body {
     border-bottom: 1px solid #393c49;
     @media screen and (max-width: 970px) {
         overflow: scroll;
+    }
+    @media screen and (max-width: 630px) {
+        width: 20em;
     }
     &__tab {
         font-style: normal;
@@ -325,13 +335,16 @@ body {
     @media screen and (max-width: 823px) {
         right: 37em;
     }
+    
     @media screen and (max-width: 800px) {
         border-top-right-radius: 8px;
         border-top-left-radius: 8px;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
     }
-
+    @media screen and (max-width: 630px) {
+        right: 25em;
+    }
     &__title {
         @include h2;
         margin-bottom: 3em;
@@ -797,5 +810,8 @@ input[type="number"]:focus {
         border: none;
         outline: none;
         cursor: pointer;
+    }
+    @media screen and (max-width: 630px) {
+        right: 6em;
     }
 }
