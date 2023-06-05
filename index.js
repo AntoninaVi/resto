@@ -304,6 +304,7 @@ const orderNumber = document.querySelector('#orderNumber');
 const backButtonArrow = document.querySelector('.main-orders__payment-back-btn');
 const itemTitles = document.querySelector('.main-orders__content-titles')
 const overlay = document.getElementById('overlay');
+const mainOrdersContent = document.querySelector('.main-orders__content');
 
 continueToPaymentButton.addEventListener('click', function () {
     backButtonArrow.style.display = 'block';
@@ -319,6 +320,7 @@ continueToPaymentButton.addEventListener('click', function () {
     orderNumber.innerHTML = 'Orders #22';
     overlay.style.display = 'block';
     mainOrdersSection.style.right = '28em';
+    mainOrdersContent.style.borderTop = '1px solid #393c49';
 
 
 });
@@ -334,6 +336,7 @@ backButtonArrow.addEventListener('click', function () {
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
     mainOrdersSection.style.right = '-1.5em';
+    mainOrdersContent.style.borderTop = 'none';
     
 });
 
@@ -350,6 +353,7 @@ function cancelPayment() {
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
     mainOrdersSection.style.right = '-1.5em';
+    mainOrdersContent.style.borderTop = 'none';
 }
 
 //Modal

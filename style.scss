@@ -45,7 +45,7 @@ body {
 }
 
 .wrapper {
-    background-color: #252836;
+    background-color: #444654;
     min-height: 100vh;
 }
 .container {
@@ -118,6 +118,7 @@ body {
     background-color: #1f1d2b;
     border-radius: 16px;
     z-index: 2;
+
     &__btn {
         position: relative;
         display: flex;
@@ -136,6 +137,12 @@ body {
             box-shadow: none;
             border: none;
             outline: none;
+            &:hover{
+                background: transparent;
+                box-shadow: none;
+                border: none;
+                outline: none;
+            }
         }
         &:last-child {
             margin-bottom: 0;
@@ -275,6 +282,8 @@ body {
     }
 
     &__content {
+        // border-top: 1px solid #393c49;
+        padding-top: 1em;
         border-bottom: 1px solid #393c49;
     }
     &__content-order {
@@ -354,7 +363,7 @@ body {
 
     &__content-info {
         display: grid;
-        grid-template-columns: 14% 53% 17% 16%;
+        grid-template-columns: 15% 53% 17% 16%;
         align-items: center;
         margin-bottom: 0.8em;
     }
@@ -568,6 +577,7 @@ input[type="number"]:focus {
     border-left: none;
     border-right: none;
     border-bottom: 2px solid #ea7c69;
+    background: transparent;
     padding-bottom: 0.8em;
     margin-bottom: -1em;
 }
@@ -576,6 +586,11 @@ input[type="number"]:focus {
     outline: 0.5em solid #252836;
     color: #ffffff;
     border: none;
+}
+.main-sidebar__btn:first-child.active{
+    border: none;
+    outline: none;
+    background-color: transparent;
 }
 
 #creditCard.active::after,
@@ -675,6 +690,10 @@ input[type="number"]:focus {
 #colorMenu label{
     display: flex;
     align-items: center;
+    text-transform: uppercase;
+    line-height: 140%;
+    font-weight: 600;
+    cursor: pointer;
     &:first-child{
         margin-right: 3em;
     }
