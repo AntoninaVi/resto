@@ -499,7 +499,7 @@ discountSectionButton.addEventListener('click', function () {
     mainPage.style.display = 'none';
     discountSection.style.display = 'block';
     colorMenu.style.display = 'none'
-    mainTitle.textContent = 'There is no available discounts for you'
+    mainTitle.textContent = 'There are no available discounts for you'
 });
 dashboardSectionButton.addEventListener('click', function () {
     mainPage.style.display = 'none';
