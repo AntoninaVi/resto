@@ -184,7 +184,7 @@ body {
         border: none;
         color: #ffffff;
         margin-right: 2em;
-      
+
         &:last-child {
             margin-right: 0;
         }
@@ -243,7 +243,7 @@ body {
     @media screen and (max-width: 970px) {
         position: relative;
         top: 6em;
-        grid-template-columns: repeat(auto-fit, minmax(8.2em, 18em));
+        grid-template-columns: repeat(auto-fit, minmax(8.2em, 25em));
         gap: 13.7em;
     }
 
@@ -315,6 +315,11 @@ body {
     max-width: 24em;
     min-width: 23em;
     width: 100%;
+    @media screen and (max-width: 970px) {
+        display: none;
+        right: 34em;
+        transform: scale(0.9);
+    }
 
     &__title {
         @include h2;
@@ -460,6 +465,14 @@ body {
         line-height: 140%;
         white-space: nowrap;
         width: 3em;
+    }
+    &__button-close-responsive {
+        position: relative;
+        left: 18em;
+        width: 2em;
+        height: 2em;
+        background-color: transparent;
+        border: none;
     }
 }
 input[type="number"]::-webkit-inner-spin-button,
@@ -747,5 +760,20 @@ input[type="number"]:focus {
     display: none;
     @media screen and (max-width: 970px) {
         display: block;
+    }
+}
+.toggle-orders-btn {
+    display: none;
+    @media screen and (max-width: 970px) {
+        display: block;
+        position: relative;
+        top: 4em;
+        right: 4em;
+        width: 4em;
+        height: 4em;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
     }
 }

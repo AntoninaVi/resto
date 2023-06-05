@@ -319,9 +319,7 @@ continueToPaymentButton.addEventListener('click', function () {
     itemTitles.style.display = 'none';
     orderNumber.innerHTML = 'Orders #22';
     overlay.style.display = 'block';
-    mainOrdersSection.style.right = '28em';
     mainOrdersContent.style.borderTop = '1px solid #393c49';
-
 
 });
 
@@ -335,10 +333,15 @@ backButtonArrow.addEventListener('click', function () {
     backButtonArrow.style.display = 'none';
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
-    mainOrdersSection.style.right = '-1.5em';
+    // mainOrdersSection.style.right = '-1.5em';
     mainOrdersContent.style.borderTop = 'none';
-    
+    if (window.innerWidth <= 970) {
+        mainOrdersSection.style.right = '34em';
+    } else {
+        mainOrdersSection.style.right = '-1.5em';
+    }
 });
+
 
 //Cancel
 const cancelButton = document.querySelector('.main-orders__payment-buttons-item:first-child');
@@ -352,8 +355,14 @@ function cancelPayment() {
     backButtonArrow.style.display = 'none';
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
-    mainOrdersSection.style.right = '-1.5em';
+    // mainOrdersSection.style.right = '-1.5em';
     mainOrdersContent.style.borderTop = 'none';
+    if (window.innerWidth <= 970) {
+        mainOrdersSection.style.right = '34em';
+    } else {
+        mainOrdersSection.style.right = '-1.5em';
+    }
+
 }
 
 //Modal
@@ -520,7 +529,7 @@ settingsButton.addEventListener('click', function () {
     colorMenu.style.display = 'flex';
     mainPage.style.display = 'none';
     discountSection.style.display = 'none';
-    dashboardSection.style.display ='none';
+    dashboardSection.style.display = 'none';
     mainTitle.textContent = 'Select Background Color';
 });
 
@@ -532,16 +541,47 @@ colorOptions.forEach(function (option) {
 });
 
 
-// Инициализация Swiper
+//  Swiper
 var swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
     spaceBetween: 10,
-  
-  });
-  
-  // Добавление слайдера только при ширине экрана 970px и менее
-  if (window.innerWidth <= 970) {
+
+});
+
+
+if (window.innerWidth <= 970) {
     swiper.init();
-  } else {
+} else {
     swiper.destroy();
-  }
+}
+
+
+const toggleOrdersButton = document.querySelector('.toggle-orders-btn');
+
+
+toggleOrdersButton.addEventListener('click', function () {
+    mainOrdersSection.style.display = 'block';
+});
+
+// window.addEventListener('resize', function () {
+//     if (window.innerWidth <= 970) {
+//         mainOrdersSection.style.display = 'none';
+//     } else {
+//         mainOrdersSection.style.display = 'block';
+//     }
+// });
+
+//Button 'close' for main-orders section 970px and less
+const closeButtonResponsive = document.querySelector('.main-orders__button-close-responsive');
+
+closeButtonResponsive.addEventListener('click', function () {
+    mainOrdersSection.style.display = 'none';
+});
+
+window.addEventListener('resize', function () {
+    if (window.innerWidth <= 970) {
+        closeButtonResponsive.style.display = 'block';
+    } else {
+        closeButtonResponsive.style.display = 'none';
+    }
+});
