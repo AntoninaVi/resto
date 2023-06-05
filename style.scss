@@ -45,7 +45,7 @@ body {
 }
 
 .wrapper {
-    background-color: #444654;
+    background-color: #252836;
     min-height: 100vh;
 }
 .container {
@@ -62,6 +62,10 @@ body {
     align-items: baseline;
     width: 48em;
     margin-bottom: 1.5em;
+    @media screen and (max-width: 1220px) {
+        grid-template-columns: 45% 15%;
+        row-gap: 1em;
+    }
 }
 // .header-content {
 // }
@@ -97,6 +101,10 @@ body {
         width: 1.2em;
         height: 1.2em;
         vertical-align: middle;
+        @media screen and (max-width: 1220px) {
+            top: 2em;
+            left: 0.5em;
+        }
     }
 }
 
@@ -118,6 +126,9 @@ body {
     background-color: #1f1d2b;
     border-radius: 16px;
     z-index: 2;
+    @media screen and (max-width: 1220px) {
+        bottom: 10em;
+    }
 
     &__btn {
         position: relative;
@@ -137,7 +148,7 @@ body {
             box-shadow: none;
             border: none;
             outline: none;
-            &:hover{
+            &:hover {
                 background: transparent;
                 box-shadow: none;
                 border: none;
@@ -154,7 +165,6 @@ body {
             outline: 0.5em solid #252836;
             color: #ffffff;
         }
-    
     }
 }
 
@@ -162,6 +172,9 @@ body {
     margin-bottom: 1.5em;
     padding-bottom: 0.8em;
     border-bottom: 1px solid #393c49;
+    @media screen and (max-width: 970px) {
+        overflow: scroll;
+    }
     &__tab {
         font-style: normal;
         font-weight: 600;
@@ -171,6 +184,7 @@ body {
         border: none;
         color: #ffffff;
         margin-right: 2em;
+      
         &:last-child {
             margin-right: 0;
         }
@@ -182,19 +196,36 @@ body {
             padding-bottom: 0.8em;
             margin-bottom: -1em;
             transition: ease-out 0.2s;
-        }
-            &::before {
-                content: "";
-                position: absolute;
-                bottom: -0.2em;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: #ea7c69;
-                z-index: -1;
+            @media screen and (max-width: 970px) {
+                background-color: transparent;
             }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -0.2em;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ea7c69;
+            z-index: -1;
+            @media screen and (max-width: 970px) {
+                background-color: transparent;
+            }
+        }
     }
 }
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    max-width: 10em;
+    height: 100%;
+    padding: 10px;
+}
+
 .main-title {
     @include h2;
     margin-bottom: 3.6em;
@@ -209,6 +240,12 @@ body {
     row-gap: 4.6em;
     // justify-content: center;
     align-items: center;
+    @media screen and (max-width: 970px) {
+        position: relative;
+        top: 6em;
+        grid-template-columns: repeat(auto-fit, minmax(8.2em, 18em));
+        gap: 13.7em;
+    }
 
     &-dish {
         margin: 0 auto;
@@ -219,6 +256,9 @@ body {
         border-radius: 16px;
         padding: 0 1.5em 1.5em 1.5em;
         cursor: pointer;
+        @media screen and (max-width: 970px) {
+            transform: scale(1.5);
+        }
     }
 
     &-dish-img {
@@ -273,7 +313,7 @@ body {
     min-height: 25em;
     z-index: 2;
     max-width: 24em;
-    min-width: 24em;
+    min-width: 23em;
     width: 100%;
 
     &__title {
@@ -550,11 +590,10 @@ input[type="number"]:focus {
         }
     }
 }
-.main-orders__payment-methods-content-section.credit-card-form{
-    border-top: 1px solid #393C49;
+.main-orders__payment-methods-content-section.credit-card-form {
+    border-top: 1px solid #393c49;
     padding-top: 1em;
 }
-
 
 .main-orders__payment-methods-content-section input {
     @include input;
@@ -581,13 +620,13 @@ input[type="number"]:focus {
     padding-bottom: 0.8em;
     margin-bottom: -1em;
 }
-.main-sidebar__btn.active{
+.main-sidebar__btn.active {
     background: #ea7c69;
     outline: 0.5em solid #252836;
     color: #ffffff;
     border: none;
 }
-.main-sidebar__btn:first-child.active{
+.main-sidebar__btn:first-child.active {
     border: none;
     outline: none;
     background-color: transparent;
@@ -679,26 +718,34 @@ input[type="number"]:focus {
     z-index: 1;
 }
 //SIDEBAR sections
-.main__discount{
+.main__discount {
     display: none;
 }
-#colorMenu{
+#colorMenu {
     position: absolute;
     top: 32%;
     left: 10em;
 }
-#colorMenu label{
+#colorMenu label {
     display: flex;
     align-items: center;
     text-transform: uppercase;
     line-height: 140%;
     font-weight: 600;
     cursor: pointer;
-    &:first-child{
+    &:first-child {
         margin-right: 3em;
     }
 }
-#colorMenu input{
+#colorMenu input {
     margin-right: 1em;
     cursor: pointer;
+}
+
+//Swiper tabs
+.swiper-container {
+    display: none;
+    @media screen and (max-width: 970px) {
+        display: block;
+    }
 }

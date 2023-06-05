@@ -530,3 +530,18 @@ colorOptions.forEach(function (option) {
         wrapper.style.backgroundColor = selectedColor;
     });
 });
+
+
+// Инициализация Swiper
+var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+  
+  });
+  
+  // Добавление слайдера только при ширине экрана 970px и менее
+  if (window.innerWidth <= 970) {
+    swiper.init();
+  } else {
+    swiper.destroy();
+  }

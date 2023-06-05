@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -115,14 +119,17 @@
 
                 <section class="main-content">
                     <section class="main-tabs">
-                        <button class="main-tabs__tab">Hot Dishes</button>
-                        <button class="main-tabs__tab">Cold Dishes</button>
-                        <button class="main-tabs__tab">Soup</button>
-                        <button class="main-tabs__tab">Grill</button>
-                        <button class="main-tabs__tab">Appetizer</button>
-                        <button class="main-tabs__tab">Dessert</button>
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <button class="swiper-slide main-tabs__tab">Hot Dishes</button>
+                                <button class="swiper-slide main-tabs__tab">Cold Dishes</button>
+                                <button class="swiper-slide main-tabs__tab">Soup</button>
+                                <button class="swiper-slide main-tabs__tab">Grill</button>
+                                <button class="swiper-slide main-tabs__tab">Appetizer</button>
+                                <button class="swiper-slide main-tabs__tab">Dessert</button>
+                            </div>
+                        </div>
                     </section>
-
                     <h2 class="main-title">Choose Dishes</h2>
                     <div class="main-content__offers"></div>
                     <!-- sidebar sections    -->

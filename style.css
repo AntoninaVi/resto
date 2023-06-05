@@ -4,7 +4,7 @@ body {
 }
 
 .wrapper {
-  background-color: #444654;
+  background-color: #252836;
   min-height: 100vh;
 }
 
@@ -27,6 +27,13 @@ body {
           align-items: baseline;
   width: 48em;
   margin-bottom: 1.5em;
+}
+@media screen and (max-width: 1220px) {
+  .header {
+    -ms-grid-columns: 45% 15%;
+    grid-template-columns: 45% 15%;
+    row-gap: 1em;
+  }
 }
 
 .header-title {
@@ -63,6 +70,12 @@ body {
   height: 1.2em;
   vertical-align: middle;
 }
+@media screen and (max-width: 1220px) {
+  .header-search__img {
+    top: 2em;
+    left: 0.5em;
+  }
+}
 
 .main {
   position: relative;
@@ -91,6 +104,11 @@ body {
   background-color: #1f1d2b;
   border-radius: 16px;
   z-index: 2;
+}
+@media screen and (max-width: 1220px) {
+  .main-sidebar {
+    bottom: 10em;
+  }
 }
 .main-sidebar__btn {
   position: relative;
@@ -139,6 +157,11 @@ body {
   padding-bottom: 0.8em;
   border-bottom: 1px solid #393c49;
 }
+@media screen and (max-width: 970px) {
+  .main-tabs {
+    overflow: scroll;
+  }
+}
 .main-tabs__tab {
   font-style: normal;
   font-weight: 600;
@@ -163,6 +186,11 @@ body {
   -webkit-transition: ease-out 0.2s;
   transition: ease-out 0.2s;
 }
+@media screen and (max-width: 970px) {
+  .main-tabs__tab:hover {
+    background-color: transparent;
+  }
+}
 .main-tabs__tab::before {
   content: "";
   position: absolute;
@@ -172,6 +200,22 @@ body {
   height: 100%;
   background-color: #ea7c69;
   z-index: -1;
+}
+@media screen and (max-width: 970px) {
+  .main-tabs__tab::before {
+    background-color: transparent;
+  }
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  max-width: 10em;
+  height: 100%;
+  padding: 10px;
 }
 
 .main-title {
@@ -199,6 +243,14 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+@media screen and (max-width: 970px) {
+  .main-content__offers {
+    position: relative;
+    top: 6em;
+    grid-template-columns: repeat(auto-fit, minmax(8.2em, 18em));
+    gap: 13.7em;
+  }
+}
 .main-content__offers-dish {
   margin: 0 auto;
   height: 13.6em;
@@ -207,6 +259,12 @@ body {
   border-radius: 16px;
   padding: 0 1.5em 1.5em 1.5em;
   cursor: pointer;
+}
+@media screen and (max-width: 970px) {
+  .main-content__offers-dish {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
 }
 .main-content__offers-dish-img {
   position: relative;
@@ -259,7 +317,7 @@ body {
   min-height: 25em;
   z-index: 2;
   max-width: 24em;
-  min-width: 24em;
+  min-width: 23em;
   width: 100%;
 }
 .main-orders__title {
@@ -592,7 +650,7 @@ input[type=number]:focus {
 }
 
 .main-orders__payment-methods-content-section.credit-card-form {
-  border-top: 1px solid #393C49;
+  border-top: 1px solid #393c49;
   padding-top: 1em;
 }
 
@@ -793,4 +851,13 @@ input[type=number]:focus {
 #colorMenu input {
   margin-right: 1em;
   cursor: pointer;
+}
+
+.swiper-container {
+  display: none;
+}
+@media screen and (max-width: 970px) {
+  .swiper-container {
+    display: block;
+  }
 }
