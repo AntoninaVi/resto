@@ -42,11 +42,13 @@
 body {
     font-family: "Barlow", sans-serif;
     color: #ffffff;
+    height: 100%;
 }
 
 .wrapper {
     background-color: #252836;
     min-height: 100vh;
+    height: 100%;
 }
 .container {
     max-width: 1258px;
@@ -55,6 +57,7 @@ body {
     margin-right: auto;
     padding: 2em;
 }
+
 .header {
     display: grid;
     grid-template-columns: 42% 80%;
@@ -111,7 +114,6 @@ body {
 .main {
     position: relative;
     display: flex;
-    // justify-content: space-around;
 }
 .main-sidebar {
     display: flex;
@@ -320,6 +322,15 @@ body {
         right: 34em;
         transform: scale(0.9);
     }
+    @media screen and (max-width: 823px) {
+        right: 37em;
+    }
+    @media screen and (max-width: 800px) {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
 
     &__title {
         @include h2;
@@ -467,6 +478,7 @@ body {
         width: 3em;
     }
     &__button-close-responsive {
+        display: none;
         position: relative;
         left: 18em;
         width: 2em;
@@ -501,6 +513,16 @@ input[type="number"]:focus {
         border-left: 1px solid #393c49;
         z-index: 2;
         min-height: 25em;
+        @media screen and (max-width: 800px) {
+            top: 25em;
+            right: -0em;
+            max-width: 24em;
+            min-width: 23em;
+            width: 100%;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
     }
     &__payment-back-btn {
         display: none;

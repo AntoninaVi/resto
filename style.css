@@ -1,11 +1,13 @@
 body {
   font-family: "Barlow", sans-serif;
   color: #ffffff;
+  height: 100%;
 }
 
 .wrapper {
   background-color: #252836;
   min-height: 100vh;
+  height: 100%;
 }
 
 .container {
@@ -328,6 +330,19 @@ body {
             transform: scale(0.9);
   }
 }
+@media screen and (max-width: 823px) {
+  .main-orders {
+    right: 37em;
+  }
+}
+@media screen and (max-width: 800px) {
+  .main-orders {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}
 .main-orders__title {
   font-style: normal;
   font-weight: 600;
@@ -511,6 +526,7 @@ body {
   width: 3em;
 }
 .main-orders__button-close-responsive {
+  display: none;
   position: relative;
   left: 18em;
   width: 2em;
@@ -547,6 +563,18 @@ input[type=number]:focus {
   border-left: 1px solid #393c49;
   z-index: 2;
   min-height: 25em;
+}
+@media screen and (max-width: 800px) {
+  .main-orders__payment {
+    top: 25em;
+    right: 0em;
+    max-width: 24em;
+    min-width: 23em;
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
 }
 .main-orders__payment-back-btn {
   display: none;

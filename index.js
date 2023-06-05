@@ -556,26 +556,21 @@ if (window.innerWidth <= 970) {
 }
 
 
+// Basket button responsive version 970px
 const toggleOrdersButton = document.querySelector('.toggle-orders-btn');
-
 
 toggleOrdersButton.addEventListener('click', function () {
     mainOrdersSection.style.display = 'block';
+    closeButtonResponsive.style.display = 'block';
 });
 
-// window.addEventListener('resize', function () {
-//     if (window.innerWidth <= 970) {
-//         mainOrdersSection.style.display = 'none';
-//     } else {
-//         mainOrdersSection.style.display = 'block';
-//     }
-// });
 
 //Button 'close' for main-orders section 970px and less
 const closeButtonResponsive = document.querySelector('.main-orders__button-close-responsive');
 
 closeButtonResponsive.addEventListener('click', function () {
     mainOrdersSection.style.display = 'none';
+    overlay.style.display = 'none';
 });
 
 window.addEventListener('resize', function () {
