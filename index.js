@@ -322,7 +322,7 @@ continueToPaymentButton.addEventListener('click', function () {
     mainOrdersContent.style.borderTop = '1px solid #393c49';
     mainOrdersSection.style.right = '34em';
     if (window.innerWidth <= 970) {
-        mainOrdersSection.style.right = '32em';
+        mainOrdersSection.style.right = '38em';
     }
 
 });
@@ -339,7 +339,7 @@ backButtonArrow.addEventListener('click', function () {
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
     mainOrdersContent.style.borderTop = 'none';
-    
+
     if (window.innerWidth <= 970) {
         mainOrdersSection.style.right = '32em';
     } else {
@@ -369,7 +369,7 @@ function cancelPayment() {
         mainOrdersSection.style.right = '-1.5em';
     }
 
-  
+
 
 }
 
