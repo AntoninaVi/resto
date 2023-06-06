@@ -320,9 +320,14 @@ continueToPaymentButton.addEventListener('click', function () {
     orderNumber.innerHTML = 'Orders #22';
     overlay.style.display = 'block';
     mainOrdersContent.style.borderTop = '1px solid #393c49';
+    mainOrdersSection.style.right = '34em';
+    if (window.innerWidth <= 970) {
+        mainOrdersSection.style.right = '32em';
+    }
 
 });
 
+//Back button <--
 backButtonArrow.addEventListener('click', function () {
     paymentMethodsContainer.classList.add('hidden');
     confirmationTitle.textContent = 'Orders #22';
@@ -333,18 +338,15 @@ backButtonArrow.addEventListener('click', function () {
     backButtonArrow.style.display = 'none';
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
-    // mainOrdersSection.style.right = '-1.5em';
     mainOrdersContent.style.borderTop = 'none';
+    
     if (window.innerWidth <= 970) {
-        mainOrdersSection.style.right = '34em';
+        mainOrdersSection.style.right = '32em';
     } else {
         mainOrdersSection.style.right = '-1.5em';
     }
-
-    if (window.innerWidth <= 630) {
-        mainOrdersSection.style.right = '25em';
-    } 
 });
+
 
 
 //Cancel
@@ -359,17 +361,15 @@ function cancelPayment() {
     backButtonArrow.style.display = 'none';
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
-    // mainOrdersSection.style.right = '-1.5em';
+
     mainOrdersContent.style.borderTop = 'none';
     if (window.innerWidth <= 970) {
-        mainOrdersSection.style.right = '34em';
+        mainOrdersSection.style.right = '32em';
     } else {
         mainOrdersSection.style.right = '-1.5em';
     }
 
-    if (window.innerWidth <= 630) {
-        mainOrdersSection.style.right = '25em';
-    } 
+  
 
 }
 

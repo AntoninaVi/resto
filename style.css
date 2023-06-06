@@ -171,7 +171,7 @@ body {
   padding-bottom: 0.8em;
   border-bottom: 1px solid #393c49;
 }
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 1200px) {
   .main-tabs {
     overflow: scroll;
   }
@@ -204,26 +204,7 @@ body {
   margin-bottom: -1em;
   -webkit-transition: ease-out 0.2s;
   transition: ease-out 0.2s;
-}
-@media screen and (max-width: 970px) {
-  .main-tabs__tab:hover {
-    background-color: transparent;
-  }
-}
-.main-tabs__tab::before {
-  content: "";
-  position: absolute;
-  bottom: -0.2em;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ea7c69;
-  z-index: -1;
-}
-@media screen and (max-width: 970px) {
-  .main-tabs__tab::before {
-    background-color: transparent;
-  }
+  background-color: transparent;
 }
 
 .swiper-container {
@@ -232,9 +213,8 @@ body {
 }
 
 .swiper-slide {
-  max-width: 10em;
-  height: 100%;
-  padding: 10px;
+  max-width: 6em;
+  white-space: nowrap;
 }
 
 .main-title {
@@ -342,7 +322,7 @@ body {
 @media screen and (max-width: 970px) {
   .main-orders {
     display: none;
-    right: 34em;
+    right: 32em;
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
   }
@@ -919,10 +899,7 @@ input[type=number]:focus {
   cursor: pointer;
 }
 
-.swiper-container {
-  display: none;
-}
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 1200px) {
   .swiper-container {
     display: block;
   }

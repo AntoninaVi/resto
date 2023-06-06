@@ -181,7 +181,7 @@ body {
     margin-bottom: 1.5em;
     padding-bottom: 0.8em;
     border-bottom: 1px solid #393c49;
-    @media screen and (max-width: 970px) {
+    @media screen and (max-width: 1200px) {
         overflow: scroll;
     }
     @media screen and (max-width: 630px) {
@@ -208,34 +208,36 @@ body {
             padding-bottom: 0.8em;
             margin-bottom: -1em;
             transition: ease-out 0.2s;
-            @media screen and (max-width: 970px) {
-                background-color: transparent;
-            }
+            background-color: transparent;
+            // @media screen and (max-width: 970px) {
+            //     background-color: transparent;
+            // }
         }
-        &::before {
-            content: "";
-            position: absolute;
-            bottom: -0.2em;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ea7c69;
-            z-index: -1;
-            @media screen and (max-width: 970px) {
-                background-color: transparent;
-            }
-        }
+        // &::before {
+        //     content: "";
+        //     position: absolute;
+        //     bottom: -0.2em;
+        //     left: 0;
+        //     width: 100%;
+        //     height: 100%;
+        //     background-color: transparent;
+        //     z-index: -1;
+        //     // @media screen and (max-width: 970px) {
+        //     //     background-color: transparent;
+        //     // }
+        // }
     }
 }
+
+//SWIPER responsive version
 .swiper-container {
     width: 100%;
     height: 100%;
 }
 
 .swiper-slide {
-    max-width: 10em;
-    height: 100%;
-    padding: 10px;
+    max-width: 6em;
+    white-space: nowrap;
 }
 
 .main-title {
@@ -329,7 +331,7 @@ body {
     width: 100%;
     @media screen and (max-width: 970px) {
         display: none;
-        right: 34em;
+        right: 32em;
         transform: scale(0.9);
     }
     @media screen and (max-width: 823px) {
@@ -792,8 +794,8 @@ input[type="number"]:focus {
 
 //Swiper tabs
 .swiper-container {
-    display: none;
-    @media screen and (max-width: 970px) {
+    // display: none;
+    @media screen and (max-width: 1200px) {
         display: block;
     }
 }
