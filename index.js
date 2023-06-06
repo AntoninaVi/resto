@@ -340,6 +340,10 @@ backButtonArrow.addEventListener('click', function () {
     } else {
         mainOrdersSection.style.right = '-1.5em';
     }
+
+    if (window.innerWidth <= 630) {
+        mainOrdersSection.style.right = '25em';
+    } 
 });
 
 
@@ -362,6 +366,10 @@ function cancelPayment() {
     } else {
         mainOrdersSection.style.right = '-1.5em';
     }
+
+    if (window.innerWidth <= 630) {
+        mainOrdersSection.style.right = '25em';
+    } 
 
 }
 
@@ -562,6 +570,7 @@ const toggleOrdersButton = document.querySelector('.toggle-orders-btn');
 toggleOrdersButton.addEventListener('click', function () {
     mainOrdersSection.style.display = 'block';
     closeButtonResponsive.style.display = 'block';
+    overlay.style.display = 'block';
 });
 
 
@@ -570,6 +579,7 @@ const closeButtonResponsive = document.querySelector('.main-orders__button-close
 
 closeButtonResponsive.addEventListener('click', function () {
     mainOrdersSection.style.display = 'none';
+    overlay.style.display = 'none';
     overlay.style.display = 'none';
 });
 
