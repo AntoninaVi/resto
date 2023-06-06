@@ -320,28 +320,31 @@ continueToPaymentButton.addEventListener('click', function () {
     orderNumber.innerHTML = 'Orders #22';
     overlay.style.display = 'block';
     mainOrdersContent.style.borderTop = '1px solid #393c49';
-    mainOrdersSection.style.right = '34em';
-    if (window.innerWidth <= 970) {
-        mainOrdersSection.style.right = '35em';
-    }
-    if (window.innerWidth <= 630) {
-        mainOrdersSection.style.right = '25em';
-    }
 
-    if (window.innerWidth <= 450) {
-        mainOrdersSection.style.right = '0em';
+    switch (true) {
+        case (window.innerWidth <= 970):
+            mainOrdersSection.style.right = '35em';
+            break;
+        case (window.innerWidth <= 630):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth <= 450):
+            mainOrdersSection.style.right = '0em';
+            break;
+        case (window.innerWidth <= 380):
+            mainOrdersSection.style.right = '3em';
+            break;
+        case (window.innerWidth <= 330):
+            mainOrdersSection.style.right = '4.5em';
+            break;
+        default:
+            mainOrdersSection.style.right = '34em';
+            break;
     }
-
-    if (window.innerWidth <= 380) {
-        mainOrdersSection.style.right = '3em';
-    }
-    if (window.innerWidth <= 330) {
-        mainOrdersSection.style.right = '4.5em';
-    }
-
 });
 
-//Back button <--
+
+// Back button <--
 backButtonArrow.addEventListener('click', function () {
     paymentMethodsContainer.classList.add('hidden');
     confirmationTitle.textContent = 'Orders #22';
@@ -351,33 +354,31 @@ backButtonArrow.addEventListener('click', function () {
     continueToPaymentButton.classList.remove('hidden');
     backButtonArrow.style.display = 'none';
     itemTitles.style.display = 'flex';
-    // overlay.style.display = 'none';
     mainOrdersContent.style.borderTop = 'none';
 
-    if (window.innerWidth <= 970) {
-        mainOrdersSection.style.right = '32em';
-    } else {
-        mainOrdersSection.style.right = '-1.5em';
+    switch (true) {
+        case (window.innerWidth <= 970):
+            mainOrdersSection.style.right = '32em';
+            break;
+        case (window.innerWidth <= 630):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth <= 450):
+            mainOrdersSection.style.right = '0em';
+            break;
+        case (window.innerWidth <= 380):
+            mainOrdersSection.style.right = '3em';
+            break;
+        case (window.innerWidth <= 330):
+            mainOrdersSection.style.right = '4.5em';
+            break;
+        default:
+            mainOrdersSection.style.right = '-1.5em';
+            break;
     }
-
-    if (window.innerWidth <= 630) {
-        mainOrdersSection.style.right = '25em';
-    }
-    if (window.innerWidth <= 450) {
-        mainOrdersSection.style.right = '0em';
-    }
-    if (window.innerWidth <= 380) {
-        mainOrdersSection.style.right = '3em';
-    }
-    if (window.innerWidth <= 330) {
-        mainOrdersSection.style.right = '4.5em';
-    }
-
 });
 
-
-
-//Cancel
+// Cancel
 const cancelButton = document.querySelector('.main-orders__payment-buttons-item:first-child');
 cancelButton.addEventListener('click', cancelPayment);
 
@@ -389,31 +390,30 @@ function cancelPayment() {
     backButtonArrow.style.display = 'none';
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
-
     mainOrdersContent.style.borderTop = 'none';
-    if (window.innerWidth <= 970) {
-        mainOrdersSection.style.right = '32em';
-    } else {
-        mainOrdersSection.style.right = '-1.5em';
-    }
 
-    if (window.innerWidth <= 630) {
-        mainOrdersSection.style.right = '25em';
+    switch (true) {
+        case (window.innerWidth <= 970):
+            mainOrdersSection.style.right = '32em';
+            break;
+        case (window.innerWidth <= 630):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth <= 450):
+            mainOrdersSection.style.right = '0em';
+            break;
+        case (window.innerWidth <= 380):
+            mainOrdersSection.style.right = '3em';
+            break;
+        case (window.innerWidth <= 330):
+            mainOrdersSection.style.right = '4.5em';
+            break;
+        default:
+            mainOrdersSection.style.right = '-1.5em';
+            break;
     }
-    if (window.innerWidth <= 450) {
-        mainOrdersSection.style.right = '0em';
-    }
-    if (window.innerWidth <= 380) {
-        mainOrdersSection.style.right = '3em';
-    }
-    if (window.innerWidth <= 330) {
-        mainOrdersSection.style.right = '4.5em';
-    }
-
-
-
-
 }
+
 
 //Modal
 const confirmPaymentButton = document.querySelector('.main-orders__payment-buttons-item:last-child');
