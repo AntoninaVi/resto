@@ -353,6 +353,7 @@ backButtonArrow.addEventListener('click', function () {
     orderNumber.style.display = 'none';
     continueToPaymentButton.classList.remove('hidden');
     backButtonArrow.style.display = 'none';
+    overlay.style.display = 'none';
     itemTitles.style.display = 'flex';
     mainOrdersContent.style.borderTop = 'none';
 
