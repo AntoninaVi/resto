@@ -217,7 +217,7 @@ body {
         @media screen and (max-width: 320px) {
             margin-right: 0.4em;
         }
-        @media screen and (max-width: 280px) {
+        @media screen and (max-width: 300px) {
             margin-right: 0.2em;
             transform: scale(0.9);
         }
@@ -248,7 +248,7 @@ body {
         width: 65%;
         overflow-y: hidden;
     }
-    @media screen and (max-width: 280px) {
+    @media screen and (max-width: 300px) {
         max-width: 15em;
         width: 65%;
         overflow-y: hidden;
@@ -320,7 +320,7 @@ body {
         font-size: 25px;
         max-width: 9em;
     }
-    @media screen and (max-width: 280px) {
+    @media screen and (max-width: 300px) {
         font-size: 18px;
     }
 }
@@ -343,7 +343,7 @@ body {
     @media screen and (max-width: 450px) {
         grid-template-columns: repeat(auto-fit, minmax(8.2em, 19em));
     }
-    @media screen and (max-width: 280px) {
+    @media screen and (max-width: 300px) {
         grid-template-columns: repeat(auto-fit, minmax(8.2em, 13em));
     }
 
@@ -424,7 +424,7 @@ body {
         transform: scale(0.9);
     }
     @media screen and (max-width: 823px) {
-        right: 37em;
+        right: 35em;
     }
 
     @media screen and (max-width: 800px) {
@@ -435,6 +435,17 @@ body {
     }
     @media screen and (max-width: 630px) {
         right: 25em;
+    }
+    @media screen and (max-width: 450px) {
+        right: 0;
+    }
+    @media screen and (max-width: 380px) {
+        right: 2em;
+        transform: scale(0.9);
+    }
+    @media screen and (max-width: 360px) {
+        right: 4em;
+        transform: scale(0.7);
     }
     &__title {
         @include h2;
@@ -875,7 +886,7 @@ input[type="number"]:focus {
         top: 38em;
         left: 4em;
     }
-    @media screen and (max-width: 280px) {
+    @media screen and (max-width: 300px) {
         left: 2em;
     }
 }
@@ -926,7 +937,7 @@ input[type="number"]:focus {
     @media screen and (max-width: 380px) {
         right: -14em;
     }
-    @media screen and (max-width: 280px) {
+    @media screen and (max-width: 300px) {
         right: -10em;
     }
 }

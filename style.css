@@ -248,7 +248,7 @@ body {
     margin-right: 0.4em;
   }
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 300px) {
   .main-sidebar__btn {
     margin-right: 0.2em;
     -webkit-transform: scale(0.9);
@@ -291,7 +291,7 @@ body {
     overflow-y: hidden;
   }
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 300px) {
   .main-tabs {
     max-width: 15em;
     width: 65%;
@@ -358,7 +358,7 @@ body {
     max-width: 9em;
   }
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 300px) {
   .main-title {
     font-size: 18px;
   }
@@ -394,7 +394,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(8.2em, 19em));
   }
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 300px) {
   .main-content__offers {
     grid-template-columns: repeat(auto-fit, minmax(8.2em, 13em));
   }
@@ -484,7 +484,7 @@ body {
 }
 @media screen and (max-width: 823px) {
   .main-orders {
-    right: 37em;
+    right: 35em;
   }
 }
 @media screen and (max-width: 800px) {
@@ -498,6 +498,25 @@ body {
 @media screen and (max-width: 630px) {
   .main-orders {
     right: 25em;
+  }
+}
+@media screen and (max-width: 450px) {
+  .main-orders {
+    right: 0;
+  }
+}
+@media screen and (max-width: 380px) {
+  .main-orders {
+    right: 2em;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+@media screen and (max-width: 360px) {
+  .main-orders {
+    right: 4em;
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
   }
 }
 .main-orders__title {
@@ -1049,7 +1068,7 @@ input[type=number]:focus {
     left: 4em;
   }
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 300px) {
   #colorMenu {
     left: 2em;
   }
@@ -1115,7 +1134,7 @@ input[type=number]:focus {
     right: -14em;
   }
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 300px) {
   .toggle-orders-btn {
     right: -10em;
   }

@@ -322,7 +322,21 @@ continueToPaymentButton.addEventListener('click', function () {
     mainOrdersContent.style.borderTop = '1px solid #393c49';
     mainOrdersSection.style.right = '34em';
     if (window.innerWidth <= 970) {
-        mainOrdersSection.style.right = '38em';
+        mainOrdersSection.style.right = '35em';
+    }
+    if (window.innerWidth <= 630) {
+        mainOrdersSection.style.right = '25em';
+    }
+
+    if (window.innerWidth <= 450) {
+        mainOrdersSection.style.right = '0em';
+    }
+
+    if (window.innerWidth <= 380) {
+        mainOrdersSection.style.right = '3em';
+    }
+    if (window.innerWidth <= 330) {
+        mainOrdersSection.style.right = '4.5em';
     }
 
 });
@@ -337,7 +351,7 @@ backButtonArrow.addEventListener('click', function () {
     continueToPaymentButton.classList.remove('hidden');
     backButtonArrow.style.display = 'none';
     itemTitles.style.display = 'flex';
-    overlay.style.display = 'none';
+    // overlay.style.display = 'none';
     mainOrdersContent.style.borderTop = 'none';
 
     if (window.innerWidth <= 970) {
@@ -345,6 +359,20 @@ backButtonArrow.addEventListener('click', function () {
     } else {
         mainOrdersSection.style.right = '-1.5em';
     }
+
+    if (window.innerWidth <= 630) {
+        mainOrdersSection.style.right = '25em';
+    }
+    if (window.innerWidth <= 450) {
+        mainOrdersSection.style.right = '0em';
+    }
+    if (window.innerWidth <= 380) {
+        mainOrdersSection.style.right = '3em';
+    }
+    if (window.innerWidth <= 330) {
+        mainOrdersSection.style.right = '4.5em';
+    }
+
 });
 
 
@@ -368,6 +396,20 @@ function cancelPayment() {
     } else {
         mainOrdersSection.style.right = '-1.5em';
     }
+
+    if (window.innerWidth <= 630) {
+        mainOrdersSection.style.right = '25em';
+    }
+    if (window.innerWidth <= 450) {
+        mainOrdersSection.style.right = '0em';
+    }
+    if (window.innerWidth <= 380) {
+        mainOrdersSection.style.right = '3em';
+    }
+    if (window.innerWidth <= 330) {
+        mainOrdersSection.style.right = '4.5em';
+    }
+
 
 
 
