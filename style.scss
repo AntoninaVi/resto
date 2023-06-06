@@ -248,6 +248,11 @@ body {
         width: 65%;
         overflow-y: hidden;
     }
+    @media screen and (max-width: 280px) {
+        max-width: 15em;
+        width: 65%;
+        overflow-y: hidden;
+    }
     &__tab {
         font-style: normal;
         font-weight: 600;
@@ -262,6 +267,7 @@ body {
         }
         @media screen and (max-width: 360px) {
             font-size: 24px;
+            margin-right: 0.3em;
         }
 
         &:last-child {
@@ -335,7 +341,7 @@ body {
         gap: 13.7em;
     }
     @media screen and (max-width: 450px) {
-        grid-template-columns: repeat(auto-fit, minmax(8.2em, 18em));
+        grid-template-columns: repeat(auto-fit, minmax(8.2em, 19em));
     }
     @media screen and (max-width: 280px) {
         grid-template-columns: repeat(auto-fit, minmax(8.2em, 13em));

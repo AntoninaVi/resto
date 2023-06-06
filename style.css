@@ -291,6 +291,13 @@ body {
     overflow-y: hidden;
   }
 }
+@media screen and (max-width: 280px) {
+  .main-tabs {
+    max-width: 15em;
+    width: 65%;
+    overflow-y: hidden;
+  }
+}
 .main-tabs__tab {
   font-style: normal;
   font-weight: 600;
@@ -310,6 +317,7 @@ body {
 @media screen and (max-width: 360px) {
   .main-tabs__tab {
     font-size: 24px;
+    margin-right: 0.3em;
   }
 }
 .main-tabs__tab:last-child {
@@ -383,7 +391,7 @@ body {
 }
 @media screen and (max-width: 450px) {
   .main-content__offers {
-    grid-template-columns: repeat(auto-fit, minmax(8.2em, 18em));
+    grid-template-columns: repeat(auto-fit, minmax(8.2em, 19em));
   }
 }
 @media screen and (max-width: 280px) {
