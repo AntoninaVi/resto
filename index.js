@@ -323,7 +323,7 @@ continueToPaymentButton.addEventListener('click', function () {
 
     switch (true) {
         case (window.innerWidth <= 970):
-            mainOrdersSection.style.right = '35em';
+            mainOrdersSection.style.right = '32em';
             break;
         case (window.innerWidth <= 630):
             mainOrdersSection.style.right = '25em';
@@ -397,6 +397,9 @@ function cancelPayment() {
         case (window.innerWidth <= 970):
             mainOrdersSection.style.right = '32em';
             break;
+            case (window.innerWidth <= 830):
+                mainOrdersSection.style.right = '34em';
+                break;
         case (window.innerWidth <= 630):
             mainOrdersSection.style.right = '25em';
             break;

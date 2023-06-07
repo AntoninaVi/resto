@@ -482,9 +482,9 @@ body {
             transform: scale(0.9);
   }
 }
-@media screen and (max-width: 823px) {
+@media screen and (max-width: 830px) {
   .main-orders {
-    right: 35em;
+    right: 33em;
   }
 }
 @media screen and (max-width: 800px) {
