@@ -320,13 +320,11 @@ continueToPaymentButton.addEventListener('click', function () {
     orderNumber.innerHTML = 'Orders #22';
     overlay.style.display = 'block';
     mainOrdersContent.style.borderTop = '1px solid #393c49';
+    mainOrdersSection.style.right = '25em';
 
     switch (true) {
         case (window.innerWidth >= 1000 && window.innerWidth <= 1280):
-            mainOrdersSection.style.right = '23em';
-            break;
-        default:
-            mainOrdersSection.style.right = '-1.5em';
+            mainOrdersSection.style.right = '25em';
             break;
     }
 });
@@ -347,29 +345,29 @@ backButtonArrow.addEventListener('click', function () {
     itemTitles.style.display = 'flex';
     mainOrdersContent.style.borderTop = 'none';
     // mainOrdersSection.style.right = '-1.5em'
-    // switch (true) {
-    //     case (window.innerWidth <= 970):
-    //         mainOrdersSection.style.right = '32em';
-    //         break;
-    //     case (window.innerWidth <= 830):
-    //         mainOrdersSection.style.right = '34em';
-    //         break;
-    //     case (window.innerWidth <= 630):
-    //         mainOrdersSection.style.right = '25em';
-    //         break;
-    //     case (window.innerWidth <= 450):
-    //         mainOrdersSection.style.right = '0em';
-    //         break;
-    //     case (window.innerWidth <= 380):
-    //         mainOrdersSection.style.right = '3em';
-    //         break;
-    //     case (window.innerWidth <= 330):
-    //         mainOrdersSection.style.right = '4.5em';
-    //         break;
-    // default:
-    //     mainOrdersSection.style.right = '-1.5em';
-    //     break;
-    // }
+    switch (true) {
+        case (window.innerWidth <= 970):
+            mainOrdersSection.style.right = '32em';
+            break;
+        case (window.innerWidth <= 830):
+            mainOrdersSection.style.right = '34em';
+            break;
+        case (window.innerWidth <= 630):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth <= 450):
+            mainOrdersSection.style.right = '0em';
+            break;
+        case (window.innerWidth <= 380):
+            mainOrdersSection.style.right = '3em';
+            break;
+        case (window.innerWidth <= 330):
+            mainOrdersSection.style.right = '4.5em';
+            break;
+    default:
+        mainOrdersSection.style.right = '0em';
+        break;
+    }
    
 
 });
@@ -390,29 +388,29 @@ function cancelPayment() {
     // mainOrdersSection.style.right = '-1.5em'
 
 
-    // switch (true) {
-    //     case (window.innerWidth <= 970):
-    //         mainOrdersSection.style.right = '32em';
-    //         break;
-    //     case (window.innerWidth <= 830):
-    //         mainOrdersSection.style.right = '34em';
-    //         break;
-    //     case (window.innerWidth <= 630):
-    //         mainOrdersSection.style.right = '25em';
-    //         break;
-    //     case (window.innerWidth <= 450):
-    //         mainOrdersSection.style.right = '0em';
-    //         break;
-    //     case (window.innerWidth <= 380):
-    //         mainOrdersSection.style.right = '3em';
-    //         break;
-    //     case (window.innerWidth <= 330):
-    //         mainOrdersSection.style.right = '4.5em';
-    //         break;
-    //     // default:
-    //     //     mainOrdersSection.style.right = '-1.5em';
-    //     //     break;
-    // }
+    switch (true) {
+        case (window.innerWidth <= 970):
+            mainOrdersSection.style.right = '32em';
+            break;
+        case (window.innerWidth <= 830):
+            mainOrdersSection.style.right = '34em';
+            break;
+        case (window.innerWidth <= 630):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth <= 450):
+            mainOrdersSection.style.right = '0em';
+            break;
+        case (window.innerWidth <= 380):
+            mainOrdersSection.style.right = '3em';
+            break;
+        case (window.innerWidth <= 330):
+            mainOrdersSection.style.right = '4.5em';
+            break;
+        default:
+            mainOrdersSection.style.right = '0em';
+            break;
+    }
 }
 
 
