@@ -404,7 +404,7 @@ body {
 }
 .main-orders {
     position: relative;
-    right: -1.5em;
+    // right: -1.5em;
     bottom: 9em;
     flex-basis: 30%;
     padding: 1.5em;
@@ -446,6 +446,9 @@ body {
     @media screen and (max-width: 360px) {
         right: 4em;
         transform: scale(0.7);
+    }
+    @media screen and (max-width: 280px) {
+        right: 5em;
     }
     &__title {
         @include h2;
