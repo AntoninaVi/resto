@@ -319,7 +319,7 @@ body {
 @media screen and (max-width: 420px) {
   .main-tabs__tab {
     font-size: 26px;
-    margin-right: -3em;
+    margin-right: 0;
   }
 }
 .main-tabs__tab:last-child {
