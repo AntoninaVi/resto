@@ -63,6 +63,7 @@ body {
             align-items: flex-start;
     margin-left: 20%;
     max-width: 20em;
+    margin-bottom: 0.8em;
   }
 }
 @media screen and (max-width: 450px) {
@@ -101,6 +102,7 @@ body {
 @media screen and (max-width: 680px) {
   .header-search__input {
     width: 100%;
+    min-width: 17em;
   }
 }
 .header-search__img {
