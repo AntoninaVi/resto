@@ -379,9 +379,9 @@ backButtonArrow.addEventListener('click', function () {
         case (window.innerWidth <= 330):
             mainOrdersSection.style.right = '4.5em';
             break;
-        default:
-            mainOrdersSection.style.right = '-1.5em';
-            break;
+        // default:
+        //     mainOrdersSection.style.right = '-1.5em';
+        //     break;
     }
 });
 
@@ -418,9 +418,9 @@ function cancelPayment() {
         case (window.innerWidth <= 330):
             mainOrdersSection.style.right = '4.5em';
             break;
-        default:
-            mainOrdersSection.style.right = '-1.5em';
-            break;
+        // default:
+        //     mainOrdersSection.style.right = '-1.5em';
+        //     break;
     }
 }
 
