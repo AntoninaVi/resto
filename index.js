@@ -322,6 +322,13 @@ continueToPaymentButton.addEventListener('click', function () {
     mainOrdersContent.style.borderTop = '1px solid #393c49';
     mainOrdersSection.style.right = '27em';
 
+    switch (true) {
+     
+        case (window.innerWidth <= 540):
+            mainOrdersSection.style.right = '4.5em';
+            break;
+      
+    }
 });
 
 
