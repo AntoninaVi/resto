@@ -323,8 +323,8 @@ continueToPaymentButton.addEventListener('click', function () {
     mainOrdersSection.style.right = '25em';
 
     switch (true) {
-        case (window.innerWidth >= 1000 && window.innerWidth <= 1280):
-            mainOrdersSection.style.right = '25em';
+        case (window.innerWidth <= 1000):
+            mainOrdersSection.style.right = '0em';
             break;
     }
 });
@@ -364,11 +364,11 @@ backButtonArrow.addEventListener('click', function () {
         case (window.innerWidth <= 330):
             mainOrdersSection.style.right = '4.5em';
             break;
-    default:
-        mainOrdersSection.style.right = '0em';
-        break;
+        default:
+            mainOrdersSection.style.right = '0em';
+            break;
     }
-   
+
 
 });
 
