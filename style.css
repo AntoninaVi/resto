@@ -314,10 +314,10 @@ body {
     font-size: 22px;
   }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 420px) {
   .main-tabs__tab {
-    font-size: 24px;
-    margin-right: 0.3em;
+    font-size: 26px;
+    margin-right: -3em;
   }
 }
 .main-tabs__tab:last-child {
