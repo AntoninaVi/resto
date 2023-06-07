@@ -425,9 +425,9 @@ body {
         right: 32em;
         transform: scale(0.9);
     }
-    @media screen and (max-width: 830px) {
-        right: 33em;
-    }
+    // @media screen and (max-width: 830px) {
+    //     right: 33em;
+    // }
 
     @media screen and (max-width: 800px) {
         border-top-right-radius: 8px;

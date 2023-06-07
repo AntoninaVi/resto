@@ -320,13 +320,8 @@ continueToPaymentButton.addEventListener('click', function () {
     orderNumber.innerHTML = 'Orders #22';
     overlay.style.display = 'block';
     mainOrdersContent.style.borderTop = '1px solid #393c49';
-    mainOrdersSection.style.right = '25em';
+    mainOrdersSection.style.right = '27em';
 
-    switch (true) {
-        case (window.innerWidth <= 1000):
-            mainOrdersSection.style.right = '0em';
-            break;
-    }
 });
 
 
@@ -364,9 +359,7 @@ backButtonArrow.addEventListener('click', function () {
         case (window.innerWidth <= 330):
             mainOrdersSection.style.right = '4.5em';
             break;
-        default:
-            mainOrdersSection.style.right = '0em';
-            break;
+      
     }
 
 
