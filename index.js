@@ -21,11 +21,11 @@ const dishesRef = collection(db, 'dishes');
 
 // Add data to Firebase
 // addDoc(dishesRef, {
-//     image: 'img/dishes/grill12.png',
-//     title: 'Combo grill',
-//     price: '$ 5.29',
-//     availability: '16 Bowls available',
-//     type: 'dessert'
+//     image: '/img/dishes/misosoup.jpg',
+//     title: 'Miso Soup',
+//     price: '$ 1.89',
+//     availability: '13 Bowls available',
+//     type: 'soup'
 // })
 //     .then((docRef) => {
 //         console.log('Dish has been added', docRef.id);
@@ -107,6 +107,7 @@ tabs.forEach((tab) => {
 
         const selectedType = tab.textContent.toLowerCase(); // filter for tabs
         filterDishesByType(selectedType);
+        clearSearchInput();
     });
 });
 
@@ -130,8 +131,8 @@ searchInput.addEventListener('input', handleSearch);
 function handleSearch() {
     const searchText = searchInput.value.toLowerCase();
 
-    const activeTab = document.querySelector('.main-tabs__tab.active');
-    const activeTabType = activeTab.textContent.toLowerCase();
+    const activeTab = document.querySelector('.main-tabs__tab.active'); 
+    const activeTabType = activeTab.textContent.toLowerCase(); 
 
     const dishes = document.querySelectorAll(`.main-content__offers-dish[data-type="${activeTabType}"]`); 
 
@@ -144,9 +145,12 @@ function handleSearch() {
         }
     });
 }
-
+function clearSearchInput() {
+    searchInput.value = '';
+}
 
 //Orders
+
 
 let totalAmount = 0;
 
@@ -328,13 +332,13 @@ continueToPaymentButton.addEventListener('click', function () {
     window.addEventListener('resize', function () {
         if (window.innerWidth <= 1500) {
             mainOrdersSection.style.right = '27em';
-        }
+        } 
         else if (window.innerWidth <= 830) {
             mainOrdersSection.style.right = '32em';
-        }
+        } 
         else if (window.innerWidth <= 830) {
             mainOrdersSection.style.right = '34em';
-        }
+        } 
         else if (window.innerWidth <= 630) {
             mainOrdersSection.style.right = '25em';
         } else if (window.innerWidth <= 450) {
@@ -366,13 +370,13 @@ backButtonArrow.addEventListener('click', function () {
     window.addEventListener('resize', function () {
         if (window.innerWidth <= 1400) {
             mainOrdersSection.style.right = '-1.5em';
-        }
+        } 
         else if (window.innerWidth <= 830) {
             mainOrdersSection.style.right = '32em';
-        }
+        } 
         else if (window.innerWidth <= 830) {
             mainOrdersSection.style.right = '34em';
-        }
+        } 
         else if (window.innerWidth <= 630) {
             mainOrdersSection.style.right = '25em';
         } else if (window.innerWidth <= 450) {
@@ -405,13 +409,13 @@ function cancelPayment() {
     window.addEventListener('resize', function () {
         if (window.innerWidth <= 1400) {
             mainOrdersSection.style.right = '-1.5em';
-        }
+        } 
         else if (window.innerWidth <= 830) {
             mainOrdersSection.style.right = '32em';
-        }
+        } 
         else if (window.innerWidth <= 830) {
             mainOrdersSection.style.right = '34em';
-        }
+        } 
         else if (window.innerWidth <= 630) {
             mainOrdersSection.style.right = '25em';
         } else if (window.innerWidth <= 450) {
