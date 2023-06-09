@@ -507,7 +507,6 @@ body {
 
 .main-orders {
   position: relative;
-  right: -1.5em;
   bottom: 9em;
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;

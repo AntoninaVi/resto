@@ -375,7 +375,7 @@ backButtonArrow.addEventListener('click', function () {
             mainOrdersSection.style.right = '-1.5em';
         } 
         else if (window.innerWidth <= 970) {
-            mainOrdersSection.style.right = '32em';
+            mainOrdersSection.style.right = '33em';
         } 
         else if (window.innerWidth <= 830) {
             mainOrdersSection.style.right = '34em';
