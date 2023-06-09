@@ -21,7 +21,7 @@ const dishesRef = collection(db, 'dishes');
 
 // Add data to Firebase
 // addDoc(dishesRef, {
-//     image: '/img/dishes/misosoup.jpg',
+//     image: 'img/dishes/misosoup.jpg',
 //     title: 'Miso Soup',
 //     price: '$ 1.89',
 //     availability: '13 Bowls available',
@@ -327,7 +327,7 @@ continueToPaymentButton.addEventListener('click', function () {
     orderNumber.innerHTML = 'Orders #22';
     overlay.style.display = 'block';
     mainOrdersContent.style.borderTop = '1px solid #393c49';
-    // mainOrdersSection.style.right = '23em';
+    mainOrdersSection.style.right = '23em';
 
     window.addEventListener('resize', function () {
         if (window.innerWidth <= 1500) {
@@ -366,7 +366,7 @@ backButtonArrow.addEventListener('click', function () {
     overlay.style.display = 'none';
     itemTitles.style.display = 'flex';
     mainOrdersContent.style.borderTop = 'none';
-    // mainOrdersSection.style.right = '-1.5em'
+    mainOrdersSection.style.right = '-1.5em'
     window.addEventListener('resize', function () {
         if (window.innerWidth <= 1400) {
             mainOrdersSection.style.right = '-1.5em';
@@ -404,7 +404,7 @@ function cancelPayment() {
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
     mainOrdersContent.style.borderTop = 'none';
-    // mainOrdersSection.style.right = '-1.5em'
+    mainOrdersSection.style.right = '-1.5em'
 
     window.addEventListener('resize', function () {
         if (window.innerWidth <= 1400) {
