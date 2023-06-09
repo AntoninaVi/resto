@@ -161,7 +161,7 @@ body {
   left: -1.5em;
   height: 52em;
   padding: 1em;
-  width: 5.5em;
+  width: 6em;
   background-color: #1f1d2b;
   border-radius: 16px;
   z-index: 2;
@@ -206,7 +206,7 @@ body {
           justify-content: center;
   color: #ea7c69;
   margin-bottom: 3em;
-  width: 100%;
+  width: 3.5em;
   height: 3.5em;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -232,40 +232,14 @@ body {
 }
 .main-sidebar__btn:hover {
   background: #ea7c69;
-  outline: 0.5em solid #252836;
+  outline: 0.8em solid #252836;
   color: #ffffff;
 }
-.main-sidebar__btn::before {
-  content: "";
+.main-sidebar__btn:hover::before {
+  content: url(img/rectangle1.svg);
   position: absolute;
-  top: -2em;
-  left: 2.5em;
-  width: 0;
-  height: 0;
-  border-top: 40px solid transparent;
-  border-bottom: 13px solid transparent;
-  border-right: 55px solid #252836;
-  border-top-right-radius: 14px;
-  z-index: -1;
-  -webkit-transform: scale(0.5);
-  transform: scale(0.3);
-  rotate: 40deg;
-}
-.main-sidebar__btn::after {
-  content: "";
-  position: absolute;
-  top: 2em;
-  left: 2.1em;
-  width: 0;
-  height: 0;
-  border-top: 26px solid transparent;
-  border-bottom: 14px solid transparent;
-  border-right: 53px solid #252836;
-  border-top-right-radius: 32px;
-  z-index: -1;
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
-  rotate: -4deg;
+  top: -1.5em;
+  left: 4.3em;
 }
 @media screen and (max-width: 450px) {
   .main-sidebar__btn {
@@ -291,11 +265,13 @@ body {
   }
 }
 .main-sidebar__btn-span {
+  display: none;
   position: absolute;
-  top: 0em;
+  top: -0.5em;
   left: 4em;
   width: 1em;
-  height: 3.6em;
+  height: 4.2em;
+  z-index: -2;
   background-color: #252836;
 }
 
@@ -957,15 +933,25 @@ input[type=number]:focus {
 
 .main-sidebar__btn.active {
   background: #ea7c69;
-  outline: 0.5em solid #252836;
+  outline: 0.8em solid #252836;
   color: #ffffff;
   border: none;
+}
+.main-sidebar__btn.active::before {
+  content: url(img/rectangle1.svg);
+  position: absolute;
+  top: -1.5em;
+  left: 4.3em;
 }
 @media screen and (max-width: 450px) {
   .main-sidebar__btn.active {
     background: transparent;
     outline: none;
   }
+}
+
+.main-sidebar__btn-span.active {
+  display: block;
 }
 
 .main-sidebar__btn:first-child.active {
