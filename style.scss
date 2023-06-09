@@ -216,17 +216,20 @@ body {
             content: "";
             position: absolute;
             top: -2em;
-            left: 2.4em;
+            left: 2.5em;
             width: 0;
             height: 0;
-            border-top: 40px solid transparent;
-            border-bottom: 11px solid transparent;
-            border-right: 53px solid #252836;
-            border-top-right-radius: 32px;
+            border-top: -5px solid transparent;
+            border-bottom: 47px solid transparent;
+            border-right: 52px solid #1f1d2b;
+            border-top-right-radius: 35px;
+            border-top-left-radius: 54px;
+            border-bottom-right-radius: 61px;
+            border-bottom-left-radius: 29px;
             z-index: -1;
             -webkit-transform: scale(0.5);
             transform: scale(0.3);
-            rotate: 40deg;
+            rotate: 107deg;
         }
         &::after {
             content: "";
@@ -257,6 +260,15 @@ body {
             margin-right: 0.2em;
             transform: scale(0.9);
         }
+    }
+    &__btn-span{
+        position: absolute;
+        top: -0.5em;
+        left: 4em;
+        width: 1em;
+        height: 3.7em;
+        z-index: -2;
+        background-color: #252836;
     }
 }
 

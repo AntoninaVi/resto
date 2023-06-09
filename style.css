@@ -239,13 +239,13 @@ body {
   content: "";
   position: absolute;
   top: -2em;
-  left: 2.4em;
+  left: 2.5em;
   width: 0;
   height: 0;
   border-top: 40px solid transparent;
-  border-bottom: 11px solid transparent;
-  border-right: 53px solid #252836;
-  border-top-right-radius: 32px;
+  border-bottom: 13px solid transparent;
+  border-right: 55px solid #252836;
+  border-top-right-radius: 14px;
   z-index: -1;
   -webkit-transform: scale(0.5);
   transform: scale(0.3);
@@ -289,6 +289,14 @@ body {
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
   }
+}
+.main-sidebar__btn-span {
+  position: absolute;
+  top: 0em;
+  left: 4em;
+  width: 1em;
+  height: 3.6em;
+  background-color: #252836;
 }
 
 .main-tabs {
