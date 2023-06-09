@@ -21,8 +21,8 @@ body {
 .header {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 42% 80%;
-  grid-template-columns: 42% 80%;
+  -ms-grid-columns: 48% 74%;
+  grid-template-columns: 48% 74%;
   justify-items: center;
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
@@ -158,7 +158,7 @@ body {
           align-items: center;
   position: relative;
   bottom: 9em;
-  left: -1.5em;
+  left: -2.5em;
   height: 52em;
   padding: 1em;
   width: 6em;
