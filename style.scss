@@ -38,7 +38,9 @@
     font-size: 14px;
     line-height: 140%;
 }
-
+html{
+    height: 100%;
+}
 body {
     font-family: "Barlow", sans-serif;
     color: #ffffff;
@@ -47,8 +49,6 @@ body {
 
 .wrapper {
     background-color: #252836;
-    min-height: 150vh;
-    height: 100%;
 }
 .container {
     max-width: 1258px;
@@ -56,6 +56,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 2em;
+   
 }
 
 .header {

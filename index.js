@@ -327,13 +327,16 @@ continueToPaymentButton.addEventListener('click', function () {
     orderNumber.innerHTML = 'Orders #22';
     overlay.style.display = 'block';
     mainOrdersContent.style.borderTop = '1px solid #393c49';
-    mainOrdersSection.style.right = '23em';
+    // mainOrdersSection.style.right = '23em';
 
     window.addEventListener('resize', function () {
-        if (window.innerWidth <= 1500) {
+        if (window.innerWidth <= 1400) {
             mainOrdersSection.style.right = '27em';
         } 
-        else if (window.innerWidth <= 830) {
+        else if (window.innerWidth <= 1280) {
+            mainOrdersSection.style.right = '25em';
+        } 
+        else if (window.innerWidth <= 970) {
             mainOrdersSection.style.right = '32em';
         } 
         else if (window.innerWidth <= 830) {
@@ -344,9 +347,9 @@ continueToPaymentButton.addEventListener('click', function () {
         } else if (window.innerWidth <= 450) {
             mainOrdersSection.style.right = '0em';
         } else if (window.innerWidth <= 380) {
-            mainOrdersSection.style.right = '3em';
-        } else if (window.innerWidth <= 330) {
-            mainOrdersSection.style.right = '4.5em';
+            mainOrdersSection.style.right = '4em';
+        } else if (window.innerWidth <= 280) {
+            mainOrdersSection.style.right = '5em';
         }
     });
 });
@@ -366,12 +369,12 @@ backButtonArrow.addEventListener('click', function () {
     overlay.style.display = 'none';
     itemTitles.style.display = 'flex';
     mainOrdersContent.style.borderTop = 'none';
-    mainOrdersSection.style.right = '-1.5em'
+    // mainOrdersSection.style.right = '-1.5em'
     window.addEventListener('resize', function () {
         if (window.innerWidth <= 1400) {
             mainOrdersSection.style.right = '-1.5em';
         } 
-        else if (window.innerWidth <= 830) {
+        else if (window.innerWidth <= 970) {
             mainOrdersSection.style.right = '32em';
         } 
         else if (window.innerWidth <= 830) {
@@ -404,13 +407,13 @@ function cancelPayment() {
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
     mainOrdersContent.style.borderTop = 'none';
-    mainOrdersSection.style.right = '-1.5em'
+    // mainOrdersSection.style.right = '-1.5em'
 
     window.addEventListener('resize', function () {
         if (window.innerWidth <= 1400) {
             mainOrdersSection.style.right = '-1.5em';
         } 
-        else if (window.innerWidth <= 830) {
+        else if (window.innerWidth <= 970) {
             mainOrdersSection.style.right = '32em';
         } 
         else if (window.innerWidth <= 830) {
