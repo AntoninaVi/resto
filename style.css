@@ -232,14 +232,15 @@ body {
 }
 .main-sidebar__btn:hover {
   background: #ea7c69;
-  outline: 0.8em solid #252836;
+  outline: 0.7em solid #252836;
   color: #ffffff;
 }
 .main-sidebar__btn:hover::before {
   content: url(img/rectangle1.svg);
   position: absolute;
-  top: -1.5em;
-  left: 4.3em;
+  top: -1.3em;
+  left: 3.7em;
+  z-index: -1;
 }
 @media screen and (max-width: 450px) {
   .main-sidebar__btn {
@@ -264,15 +265,31 @@ body {
             transform: scale(0.9);
   }
 }
-.main-sidebar__btn-span {
-  display: none;
+
+.main-sidebar__btn.active {
+  background: #ea7c69;
+  outline: 0.7em solid #252836;
+  color: #ffffff;
+  border: none;
+}
+.main-sidebar__btn.active::before {
+  content: url(img/rectangle1.svg);
   position: absolute;
-  top: -0.5em;
-  left: 4em;
-  width: 1em;
-  height: 4.2em;
-  z-index: -2;
-  background-color: #252836;
+  top: -1.3em;
+  left: 3.7em;
+  z-index: -1;
+}
+@media screen and (max-width: 450px) {
+  .main-sidebar__btn.active {
+    background: transparent;
+    outline: none;
+  }
+}
+
+.main-sidebar__btn:first-child.active {
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 .main-tabs {
@@ -929,35 +946,6 @@ input[type=number]:focus {
   background: transparent;
   padding-bottom: 0.8em;
   margin-bottom: -1em;
-}
-
-.main-sidebar__btn.active {
-  background: #ea7c69;
-  outline: 0.8em solid #252836;
-  color: #ffffff;
-  border: none;
-}
-.main-sidebar__btn.active::before {
-  content: url(img/rectangle1.svg);
-  position: absolute;
-  top: -1.5em;
-  left: 4.3em;
-}
-@media screen and (max-width: 450px) {
-  .main-sidebar__btn.active {
-    background: transparent;
-    outline: none;
-  }
-}
-
-.main-sidebar__btn-span.active {
-  display: block;
-}
-
-.main-sidebar__btn:first-child.active {
-  border: none;
-  outline: none;
-  background-color: transparent;
 }
 
 #creditCard.active::after,
