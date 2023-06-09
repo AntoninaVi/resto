@@ -216,6 +216,12 @@ body {
             top: -1.3em;
             left: 3.7em;
             z-index: -1;
+            @media screen and (max-width:450px) {
+                display: none;
+            }
+        }
+        &:first-child::before {
+            display: none;
         }
         @media screen and (max-width: 450px) {
             margin-bottom: 0;
@@ -244,6 +250,9 @@ body {
         top: -1.3em;
         left: 3.7em;
         z-index: -1;
+    }
+    &:first-child::before {
+        display: none;
     }
     @media screen and (max-width: 450px) {
         background: transparent;

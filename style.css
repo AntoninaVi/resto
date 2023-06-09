@@ -243,6 +243,14 @@ body {
   z-index: -1;
 }
 @media screen and (max-width: 450px) {
+  .main-sidebar__btn:hover::before {
+    display: none;
+  }
+}
+.main-sidebar__btn:first-child::before {
+  display: none;
+}
+@media screen and (max-width: 450px) {
   .main-sidebar__btn {
     margin-bottom: 0;
     margin-right: 1em;
@@ -278,6 +286,9 @@ body {
   top: -1.3em;
   left: 3.7em;
   z-index: -1;
+}
+.main-sidebar__btn.active:first-child::before {
+  display: none;
 }
 @media screen and (max-width: 450px) {
   .main-sidebar__btn.active {
