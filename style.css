@@ -525,7 +525,6 @@ body {
 @media screen and (max-width: 970px) {
   .main-orders {
     display: none;
-    right: 32em;
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
   }
@@ -538,33 +537,16 @@ body {
     border-bottom-right-radius: 0px;
   }
 }
-@media screen and (max-width: 630px) {
-  .main-orders {
-    right: 25em;
-  }
-}
-@media screen and (max-width: 450px) {
-  .main-orders {
-    right: 0;
-  }
-}
 @media screen and (max-width: 380px) {
   .main-orders {
-    right: 2em;
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
   }
 }
 @media screen and (max-width: 360px) {
   .main-orders {
-    right: 4em;
     -webkit-transform: scale(0.7);
             transform: scale(0.7);
-  }
-}
-@media screen and (max-width: 280px) {
-  .main-orders {
-    right: 5em;
   }
 }
 .main-orders__title {

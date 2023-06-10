@@ -313,6 +313,7 @@ const itemTitles = document.querySelector('.main-orders__content-titles')
 const overlay = document.getElementById('overlay');
 const mainOrdersContent = document.querySelector('.main-orders__content');
 
+
 continueToPaymentButton.addEventListener('click', function () {
     backButtonArrow.style.display = 'block';
     continueToPaymentButton.classList.add('hidden');
@@ -327,32 +328,37 @@ continueToPaymentButton.addEventListener('click', function () {
     orderNumber.innerHTML = 'Orders #22';
     overlay.style.display = 'block';
     mainOrdersContent.style.borderTop = '1px solid #393c49';
-    // mainOrdersSection.style.right = '23em';
+    // mainOrdersSection.style.right = '27em';
 
-    window.addEventListener('resize', function () {
-        if (window.innerWidth <= 1400) {
-            mainOrdersSection.style.right = '27em';
-        } 
-        else if (window.innerWidth <= 1280) {
-            mainOrdersSection.style.right = '25em';
-        } 
-        else if (window.innerWidth <= 970) {
-            mainOrdersSection.style.right = '32em';
-        } 
-        else if (window.innerWidth <= 830) {
-            mainOrdersSection.style.right = '34em';
-        } 
-        else if (window.innerWidth <= 630) {
-            mainOrdersSection.style.right = '25em';
-        } else if (window.innerWidth <= 450) {
-            mainOrdersSection.style.right = '0em';
-        } else if (window.innerWidth <= 380) {
-            mainOrdersSection.style.right = '4em';
-        } else if (window.innerWidth <= 280) {
-            mainOrdersSection.style.right = '5em';
-        }
-    });
+    updateMainOrdersSectionPosition();
 });
+
+function updateMainOrdersSectionPosition() {
+    if (window.innerWidth >= 1500) {
+        mainOrdersSection.style.right = '27em';
+    } 
+    else if (window.innerWidth >= 1280) {
+        mainOrdersSection.style.right = '25em';
+    } 
+    else if (window.innerWidth >= 970) {
+        mainOrdersSection.style.right = '32em';
+    } 
+    else if (window.innerWidth >= 830) {
+        mainOrdersSection.style.right = '34em';
+    }
+    else if (window.innerWidth >= 630) {
+        mainOrdersSection.style.right = '25em';
+    }
+    else if (window.innerWidth >= 450) {
+        mainOrdersSection.style.right = '0em';
+    }
+    else if (window.innerWidth >= 380) {
+        mainOrdersSection.style.right = '2em';
+    }
+    else if (window.innerWidth >= 280) {
+        mainOrdersSection.style.right = '5em';
+    }
+}
 
 
 
@@ -375,7 +381,7 @@ backButtonArrow.addEventListener('click', function () {
             mainOrdersSection.style.right = '-1.5em';
         } 
         else if (window.innerWidth <= 970) {
-            mainOrdersSection.style.right = '33em';
+            mainOrdersSection.style.right = '3em';
         } 
         else if (window.innerWidth <= 830) {
             mainOrdersSection.style.right = '34em';

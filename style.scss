@@ -463,7 +463,7 @@ body {
     width: 100%;
     @media screen and (max-width: 970px) {
         display: none;
-        right: 32em;
+        // right: 32em;
         transform: scale(0.9);
     }
     // @media screen and (max-width: 830px) {
@@ -477,22 +477,22 @@ body {
         border-bottom-right-radius: 0px;
     }
     @media screen and (max-width: 630px) {
-        right: 25em;
+        // right: 25em;
     }
     @media screen and (max-width: 450px) {
-        right: 0;
+        // right: 0;
     }
     @media screen and (max-width: 380px) {
-        right: 2em;
+        // right: 2em;
         transform: scale(0.9);
     }
     @media screen and (max-width: 360px) {
-        right: 4em;
+        // right: 4em;
         transform: scale(0.7);
     }
-    @media screen and (max-width: 280px) {
-        right: 5em;
-    }
+    // @media screen and (max-width: 280px) {
+    //     right: 5em;
+    // }
     &__title {
         @include h2;
         margin-bottom: 3em;
