@@ -387,7 +387,7 @@ function updateMainOrdersBackButton() {
         mainOrdersSection.style.right = '9em';
     } 
     else if (window.innerWidth >= 830) {
-        mainOrdersSection.style.right = '34em';
+        mainOrdersSection.style.right = '30em';
     }
     else if (window.innerWidth >= 630) {
         mainOrdersSection.style.right = '25em';
@@ -399,7 +399,7 @@ function updateMainOrdersBackButton() {
         mainOrdersSection.style.right = '3em';
     }
     else if (window.innerWidth >= 330) {
-        mainOrdersSection.style.right = '4.5';
+        mainOrdersSection.style.right = '4.5em';
     }
 }
 
@@ -419,30 +419,84 @@ function cancelPayment() {
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
     mainOrdersContent.style.borderTop = 'none';
-    // mainOrdersSection.style.right = '-1.5em'
-
-    window.addEventListener('resize', function () {
-        if (window.innerWidth <= 1400) {
-            mainOrdersSection.style.right = '-1.5em';
-        } 
-        else if (window.innerWidth <= 970) {
-            mainOrdersSection.style.right = '32em';
-        } 
-        else if (window.innerWidth <= 830) {
-            mainOrdersSection.style.right = '34em';
-        } 
-        else if (window.innerWidth <= 630) {
-            mainOrdersSection.style.right = '25em';
-        } else if (window.innerWidth <= 450) {
-            mainOrdersSection.style.right = '0em';
-        } else if (window.innerWidth <= 380) {
-            mainOrdersSection.style.right = '3em';
-        } else if (window.innerWidth <= 330) {
-            mainOrdersSection.style.right = '4.5em';
-        }
-    });
+ 
+    updateMainOrdersCancelButton();
+}
+function updateMainOrdersCancelButton() {
+    if (window.innerWidth >= 1500) {
+        mainOrdersSection.style.right = '-1.5em';
+    } 
+    else if (window.innerWidth >= 970) {
+        mainOrdersSection.style.right = '9em';
+    } 
+    else if (window.innerWidth >= 830) {
+        mainOrdersSection.style.right = '34em';
+    }
+    else if (window.innerWidth >= 630) {
+        mainOrdersSection.style.right = '25em';
+    }
+    else if (window.innerWidth >= 450) {
+        mainOrdersSection.style.right = '0em';
+    }
+    else if (window.innerWidth >= 380) {
+        mainOrdersSection.style.right = '3em';
+    }
+    else if (window.innerWidth >= 330) {
+        mainOrdersSection.style.right = '4.5em';
+    }
 }
 
+window.addEventListener('resize', updateMainOrdersCancelButton);
+
+// Basket button responsive version 970px
+const toggleOrdersButton = document.querySelector('.toggle-orders-btn');
+
+toggleOrdersButton.addEventListener('click', function () {
+    mainOrdersSection.style.display = 'block';
+    closeButtonResponsive.style.display = 'block';
+    overlay.style.display = 'block';
+    updateMainOrdersToggleButton();
+});
+
+function updateMainOrdersToggleButton() {
+    if (window.innerWidth >= 970) {
+        mainOrdersSection.style.right = '34em';
+    } 
+    else if (window.innerWidth >= 830) {
+        mainOrdersSection.style.right = '25em';
+    }
+    else if (window.innerWidth >= 500) {
+        mainOrdersSection.style.right = '10em';
+    }
+    else if (window.innerWidth >= 380) {
+        mainOrdersSection.style.right = '3em';
+    }
+    else if (window.innerWidth >= 330) {
+        mainOrdersSection.style.right = '4em';
+    }
+    else if (window.innerWidth >= 290) {
+        mainOrdersSection.style.right = '5em';
+    }
+}
+
+window.addEventListener('resize', updateMainOrdersToggleButton);
+
+//Button 'close' for main-orders section 970px and less
+const closeButtonResponsive = document.querySelector('.main-orders__button-close-responsive');
+
+closeButtonResponsive.addEventListener('click', function () {
+    mainOrdersSection.style.display = 'none';
+    overlay.style.display = 'none';
+    overlay.style.display = 'none';
+});
+
+window.addEventListener('resize', function () {
+    if (window.innerWidth <= 970) {
+        closeButtonResponsive.style.display = 'block';
+    } else {
+        closeButtonResponsive.style.display = 'none';
+    }
+});
 
 //Modal
 const confirmPaymentButton = document.querySelector('.main-orders__payment-buttons-item:last-child');
@@ -635,29 +689,4 @@ if (window.innerWidth <= 970) {
 }
 
 
-// Basket button responsive version 970px
-const toggleOrdersButton = document.querySelector('.toggle-orders-btn');
 
-toggleOrdersButton.addEventListener('click', function () {
-    mainOrdersSection.style.display = 'block';
-    closeButtonResponsive.style.display = 'block';
-    overlay.style.display = 'block';
-});
-
-
-//Button 'close' for main-orders section 970px and less
-const closeButtonResponsive = document.querySelector('.main-orders__button-close-responsive');
-
-closeButtonResponsive.addEventListener('click', function () {
-    mainOrdersSection.style.display = 'none';
-    overlay.style.display = 'none';
-    overlay.style.display = 'none';
-});
-
-window.addEventListener('resize', function () {
-    if (window.innerWidth <= 970) {
-        closeButtonResponsive.style.display = 'block';
-    } else {
-        closeButtonResponsive.style.display = 'none';
-    }
-});
