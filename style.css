@@ -985,9 +985,9 @@ input[type=number]:focus {
   background: #ea7c69;
   border-radius: 8px;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
   .main-orders__payment-modal-content {
-    right: 30em;
+    right: 0;
     top: 10%;
   }
 }
@@ -999,7 +999,7 @@ input[type=number]:focus {
 }
 @media screen and (max-width: 390px) {
   .main-orders__payment-modal-content {
-    right: 1em;
+    right: -19em;
     top: -9em;
   }
 }

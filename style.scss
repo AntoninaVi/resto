@@ -842,8 +842,8 @@ input[type="number"]:focus {
     background: #ea7c69;
     // box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.4);
     border-radius: 8px;
-    @media screen and (max-width: 750px) {
-        right: 30em;
+    @media screen and (max-width: 768px) {
+        right: 0;
         top: 10%;
     }
     @media screen and (max-width: 500px) {
@@ -851,7 +851,7 @@ input[type="number"]:focus {
         top: 10%;
     }
     @media screen and (max-width: 390px) {
-        right: 1em;
+        right: -19em;
         top: -9em;
     }
 }

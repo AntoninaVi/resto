@@ -501,7 +501,7 @@ function updateMainOrdersToggleButton() {
     else if (window.innerWidth >= 330) {
         mainOrdersSection.style.right = '5em';
     }
-    else if (window.innerWidth >= 290) {
+    else if (window.innerWidth <= 290) {
         mainOrdersSection.style.right = '5em';
     }
 }
