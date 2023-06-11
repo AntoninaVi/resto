@@ -350,6 +350,9 @@ function updateMainOrdersPaymentButton() {
     }
 }
 
+window.addEventListener('resize', updateMainOrdersPaymentButton);
+
+
 
 // Back button <--
 backButtonArrow.addEventListener('click', function () {
