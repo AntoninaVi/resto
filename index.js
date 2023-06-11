@@ -383,6 +383,9 @@ function updateMainOrdersBackButton() {
     if (window.innerWidth >= 1500) {
         mainOrdersSection.style.right = '-1.5em';
     } 
+    else if (window.innerWidth >= 1280) {
+        mainOrdersSection.style.right = '-1em';
+    }
     else if (window.innerWidth >= 970) {
         mainOrdersSection.style.right = '9em';
     } 
@@ -426,6 +429,9 @@ function updateMainOrdersCancelButton() {
     if (window.innerWidth >= 1500) {
         mainOrdersSection.style.right = '-1.5em';
     } 
+    else if (window.innerWidth >= 1280) {
+        mainOrdersSection.style.right = '-1em';
+    }
     else if (window.innerWidth >= 970) {
         mainOrdersSection.style.right = '9em';
     } 
