@@ -392,6 +392,9 @@ function updateMainOrdersBackButton() {
     else if (window.innerWidth >= 970) {
         mainOrdersSection.style.right = '9em';
     } 
+    else if (window.innerWidth >= 912) {
+        mainOrdersSection.style.right = '28em';
+    }
     else if (window.innerWidth >= 830) {
         mainOrdersSection.style.right = '30em';
     }
