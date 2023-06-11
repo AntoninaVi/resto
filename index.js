@@ -478,11 +478,11 @@ function updateMainOrdersToggleButton() {
         mainOrdersSection.style.right = '3em';
     }
     else if (window.innerWidth >= 330) {
-        mainOrdersSection.style.right = '4em';
-    }
-    else if (window.innerWidth >= 290) {
         mainOrdersSection.style.right = '5em';
     }
+    // else if (window.innerWidth >= 290) {
+    //     mainOrdersSection.style.right = '5em';
+    // }
 }
 
 window.addEventListener('resize', updateMainOrdersToggleButton);
