@@ -344,11 +344,11 @@ function updateMainOrdersPaymentButton() {
         mainOrdersSection.style.right = '32em';
     } 
     else if (window.innerWidth >= 830) {
-        mainOrdersSection.style.right = '34em';
-    }
-    else if (window.innerWidth >= 630) {
         mainOrdersSection.style.right = '25em';
     }
+    // else if (window.innerWidth >= 630) {
+    //     mainOrdersSection.style.right = '25em';
+    // }
     else if (window.innerWidth >= 450) {
         mainOrdersSection.style.right = '0em';
     }
