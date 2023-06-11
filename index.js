@@ -320,6 +320,24 @@ continueToPaymentButton.addEventListener('click', function () {
     updateMainOrdersPaymentButton();
 });
 
+continueToPaymentButton.addEventListener('click', function () {
+    backButtonArrow.style.display = 'block';
+    continueToPaymentButton.classList.add('hidden');
+    paymentMethodsContainer.classList.remove('hidden');
+
+    confirmationTitle.textContent = 'Confirmation';
+    confirmationTitle.style.fontSize = '28px';
+    confirmationTitle.style.marginBottom = '0.5em';
+
+    orderNumber.style.display = 'block';
+    itemTitles.style.display = 'none';
+    orderNumber.innerHTML = 'Orders #22';
+    overlay.style.display = 'block';
+    mainOrdersContent.style.borderTop = '1px solid #393c49';
+
+    updateMainOrdersPaymentButton();
+});
+
 function updateMainOrdersPaymentButton() {
     if (window.innerWidth >= 1500) {
         mainOrdersSection.style.right = '27em';
@@ -327,31 +345,30 @@ function updateMainOrdersPaymentButton() {
     else if (window.innerWidth >= 1280) {
         mainOrdersSection.style.right = '25em';
     } 
-    else if (window.innerWidth >= 970) {
-        mainOrdersSection.style.right = '32em';
-    } 
     else if (window.innerWidth >= 915) {
         mainOrdersSection.style.right = '30em';
     } 
-    else if (window.innerWidth <= 840) {
+    else if (window.innerWidth >= 840) {
         mainOrdersSection.style.right = '34em';
     }
-    else if (window.innerWidth <= 450) {
-        mainOrdersSection.style.right = '20em';
+    else if (window.innerWidth >= 630) {
+        mainOrdersSection.style.right = '25em';
     }
-    else if (window.innerWidth <= 412) {
-        mainOrdersSection.style.right = '1em';
+    else if (window.innerWidth >= 450) {
+        mainOrdersSection.style.right = '0em';
     }
-    else if (window.innerWidth <= 380) {
-        mainOrdersSection.style.right = '2em';
+    else if (window.innerWidth >= 412) {
+        mainOrdersSection.style.right = '4em';
+    }
+    else if (window.innerWidth >= 380) {
+        mainOrdersSection.style.right = '5em';
     }
     else if (window.innerWidth >= 280) {
-        mainOrdersSection.style.right = '5em';
+        mainOrdersSection.style.right = '4.5em';
     }
 }
 
 window.addEventListener('resize', updateMainOrdersPaymentButton);
-
 
 
 // Back button <--
@@ -481,15 +498,13 @@ function updateMainOrdersToggleButton() {
     else if (window.innerWidth >= 500) {
         mainOrdersSection.style.right = '21em';
     }
-    else if (window.innerWidth <= 420) {
+    else if (window.innerWidth >= 420) {
         mainOrdersSection.style.right = '1em';
     }
     else if (window.innerWidth >= 340) {
-        mainOrdersSection.style.right = '4em';
+        mainOrdersSection.style.right = '4.5em';
     }
-    else if (window.innerWidth <= 290) {
-        mainOrdersSection.style.right = '5em';
-    }
+   
 }
 window.addEventListener('resize', updateMainOrdersToggleButton);
 
