@@ -346,19 +346,16 @@ function updateMainOrdersPaymentButton() {
     else if (window.innerWidth >= 915) {
         mainOrdersSection.style.right = '30em';
     } 
-    else if (window.innerWidth >= 840) {
-        mainOrdersSection.style.right = '25em';
+    else if (window.innerWidth <= 840) {
+        mainOrdersSection.style.right = '34em';
     }
-    // else if (window.innerWidth >= 630) {
-    //     mainOrdersSection.style.right = '25em';
-    // }
     else if (window.innerWidth >= 450) {
         mainOrdersSection.style.right = '20em';
     }
-    else if (window.innerWidth >= 420) {
+    else if (window.innerWidth <= 412) {
         mainOrdersSection.style.right = '1em';
     }
-    else if (window.innerWidth >= 380) {
+    else if (window.innerWidth <= 380) {
         mainOrdersSection.style.right = '2em';
     }
     else if (window.innerWidth >= 280) {
@@ -496,9 +493,9 @@ function updateMainOrdersToggleButton() {
         mainOrdersSection.style.right = '25em';
     }
     else if (window.innerWidth >= 500) {
-        mainOrdersSection.style.right = '10em';
+        mainOrdersSection.style.right = '21em';
     }
-    else if (window.innerWidth >= 420) {
+    else if (window.innerWidth <= 420) {
         mainOrdersSection.style.right = '1em';
     }
     else if (window.innerWidth >= 330) {
