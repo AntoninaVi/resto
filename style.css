@@ -537,10 +537,10 @@ body {
     border-bottom-right-radius: 0px;
   }
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 412px) {
   .main-orders {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
   }
 }
 @media screen and (max-width: 360px) {
@@ -957,7 +957,7 @@ input[type=number]:focus {
 
 .main-orders__payment-modal-content {
   position: absolute;
-  right: 28em;
+  right: 24em;
   top: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -986,8 +986,14 @@ input[type=number]:focus {
 }
 @media screen and (max-width: 500px) {
   .main-orders__payment-modal-content {
-    right: 10em;
+    right: 2em;
     top: 10%;
+  }
+}
+@media screen and (max-width: 390px) {
+  .main-orders__payment-modal-content {
+    right: 1em;
+    top: -9em;
   }
 }
 

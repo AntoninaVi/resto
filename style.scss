@@ -482,9 +482,9 @@ body {
     @media screen and (max-width: 450px) {
         // right: 0;
     }
-    @media screen and (max-width: 380px) {
+    @media screen and (max-width: 412px) {
         // right: 2em;
-        transform: scale(0.9);
+        transform: scale(0.8);
     }
     @media screen and (max-width: 360px) {
         // right: 4em;
@@ -833,7 +833,7 @@ input[type="number"]:focus {
 //Modal window
 .main-orders__payment-modal-content {
     position: absolute;
-    right: 28em;
+    right: 24em;
     top: 40%;
     display: flex;
     flex-direction: column;
@@ -850,8 +850,12 @@ input[type="number"]:focus {
         top: 10%;
     }
     @media screen and (max-width:500px) {
-        right: 10em;
+        right: 2em;
         top: 10%;
+    }
+    @media screen and (max-width:390px) {
+        right: 1em;
+        top: -9em;
     }
 }
 .main-orders__payment-modal-message,

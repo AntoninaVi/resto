@@ -343,7 +343,10 @@ function updateMainOrdersPaymentButton() {
     else if (window.innerWidth >= 970) {
         mainOrdersSection.style.right = '32em';
     } 
-    else if (window.innerWidth >= 830) {
+    else if (window.innerWidth >= 915) {
+        mainOrdersSection.style.right = '30em';
+    } 
+    else if (window.innerWidth >= 840) {
         mainOrdersSection.style.right = '25em';
     }
     // else if (window.innerWidth >= 630) {
@@ -351,6 +354,9 @@ function updateMainOrdersPaymentButton() {
     // }
     else if (window.innerWidth >= 450) {
         mainOrdersSection.style.right = '20em';
+    }
+    else if (window.innerWidth >= 420) {
+        mainOrdersSection.style.right = '1em';
     }
     else if (window.innerWidth >= 380) {
         mainOrdersSection.style.right = '2em';
@@ -395,8 +401,14 @@ function updateMainOrdersBackButton() {
     else if (window.innerWidth >= 630) {
         mainOrdersSection.style.right = '25em';
     }
+    else if (window.innerWidth >= 550) {
+        mainOrdersSection.style.right = '22em';
+    }
     else if (window.innerWidth >= 450) {
         mainOrdersSection.style.right = '0em';
+    }
+    else if (window.innerWidth >= 420) {
+        mainOrdersSection.style.right = '1em';
     }
     else if (window.innerWidth >= 380) {
         mainOrdersSection.style.right = '3em';
@@ -432,6 +444,9 @@ function updateMainOrdersCancelButton() {
     else if (window.innerWidth >= 1280) {
         mainOrdersSection.style.right = '-1em';
     }
+    else if (window.innerWidth >= 1024) {
+        mainOrdersSection.style.right = '1em';
+    }
     else if (window.innerWidth >= 970) {
         mainOrdersSection.style.right = '9em';
     } 
@@ -441,8 +456,14 @@ function updateMainOrdersCancelButton() {
     else if (window.innerWidth >= 630) {
         mainOrdersSection.style.right = '25em';
     }
+    else if (window.innerWidth >= 550) {
+        mainOrdersSection.style.right = '22em';
+    }
     else if (window.innerWidth >= 450) {
         mainOrdersSection.style.right = '0em';
+    }
+    else if (window.innerWidth >= 420) {
+        mainOrdersSection.style.right = '1em';
     }
     else if (window.innerWidth >= 380) {
         mainOrdersSection.style.right = '3em';
@@ -471,18 +492,21 @@ function updateMainOrdersToggleButton() {
     else if (window.innerWidth >= 830) {
         mainOrdersSection.style.right = '25em';
     }
+    else if (window.innerWidth >= 730) {
+        mainOrdersSection.style.right = '25em';
+    }
     else if (window.innerWidth >= 500) {
         mainOrdersSection.style.right = '10em';
     }
-    else if (window.innerWidth >= 380) {
-        mainOrdersSection.style.right = '3em';
+    else if (window.innerWidth >= 420) {
+        mainOrdersSection.style.right = '1em';
     }
     else if (window.innerWidth >= 330) {
         mainOrdersSection.style.right = '5em';
     }
-    // else if (window.innerWidth >= 290) {
-    //     mainOrdersSection.style.right = '5em';
-    // }
+    else if (window.innerWidth >= 290) {
+        mainOrdersSection.style.right = '5em';
+    }
 }
 
 window.addEventListener('resize', updateMainOrdersToggleButton);
