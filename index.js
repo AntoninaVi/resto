@@ -350,7 +350,7 @@ function updateMainOrdersPaymentButton() {
     //     mainOrdersSection.style.right = '25em';
     // }
     else if (window.innerWidth >= 450) {
-        mainOrdersSection.style.right = '0em';
+        mainOrdersSection.style.right = '20em';
     }
     else if (window.innerWidth >= 380) {
         mainOrdersSection.style.right = '2em';
@@ -422,7 +422,7 @@ function cancelPayment() {
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
     mainOrdersContent.style.borderTop = 'none';
- 
+
     updateMainOrdersCancelButton();
 }
 function updateMainOrdersCancelButton() {

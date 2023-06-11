@@ -957,8 +957,8 @@ input[type=number]:focus {
 
 .main-orders__payment-modal-content {
   position: absolute;
-  right: 50%;
-  top: 50%;
+  right: 28em;
+  top: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -977,6 +977,18 @@ input[type=number]:focus {
   padding: 1.5em;
   background: #ea7c69;
   border-radius: 8px;
+}
+@media screen and (max-width: 750px) {
+  .main-orders__payment-modal-content {
+    right: 30em;
+    top: 10%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .main-orders__payment-modal-content {
+    right: 10em;
+    top: 10%;
+  }
 }
 
 .main-orders__payment-modal-message,
