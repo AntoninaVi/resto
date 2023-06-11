@@ -42,7 +42,19 @@ const dateToday = document.querySelector('.header-date');
 const searchInput = document.querySelector('.header-search__input');
 const mainOrdersSection = document.querySelector('.main-orders');
 const sidebarButtons = document.querySelectorAll('.main-sidebar__btn');
+let totalAmount = 0;
 
+//payment
+const continueToPaymentButton = document.querySelector('.main-orders__content-button');
+const paymentMethodsContainer = document.querySelector('.main-orders__payment');
+const confirmationTitle = document.querySelector('.main-orders__title');
+const orderNumber = document.querySelector('#orderNumber');
+const backButtonArrow = document.querySelector('.main-orders__payment-back-btn');
+const itemTitles = document.querySelector('.main-orders__content-titles')
+const overlay = document.getElementById('overlay');
+const mainOrdersContent = document.querySelector('.main-orders__content');
+const cancelButton = document.querySelector('.main-orders__payment-buttons-item:first-child');
+const toggleOrdersButton = document.querySelector('.toggle-orders-btn'); //responsive version
 
 
 getDocs(dishesRef)
@@ -113,7 +125,6 @@ tabs.forEach((tab) => {
 
 //date
 const today = new Date();
-
 const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -130,12 +141,9 @@ dateToday.textContent = formattedDate;
 searchInput.addEventListener('input', handleSearch);
 function handleSearch() {
     const searchText = searchInput.value.toLowerCase();
-
     const activeTab = document.querySelector('.main-tabs__tab.active'); 
     const activeTabType = activeTab.textContent.toLowerCase(); 
-
     const dishes = document.querySelectorAll(`.main-content__offers-dish[data-type="${activeTabType}"]`); 
-
     dishes.forEach((dish) => {
         const dishTitle = dish.querySelector('.main-content__offers-dish-title').textContent.toLowerCase();
         if (dishTitle.includes(searchText)) {
@@ -151,21 +159,16 @@ function clearSearchInput() {
 
 //Orders
 
-
-let totalAmount = 0;
-
 function addDishToOrder(event) {
     const selectedDish = event.target.closest('.main-content__offers-dish');
     const dishTitle = selectedDish.querySelector('.main-content__offers-dish-title').textContent;
     const dishPrice = selectedDish.querySelector('.main-content__offers-dish-price').textContent;
     const dishImage = selectedDish.querySelector('.main-content__offers-dish-img').src;
 
-
     const orderContent = document.querySelector('.main-orders__content-order');
 
     const orderItem = document.createElement('div');
     orderItem.className = 'main-orders__content-order-item';
-
 
     const itemInfo = document.createElement('div');
     itemInfo.className = 'main-orders__content-info';
@@ -203,7 +206,6 @@ function addDishToOrder(event) {
         }
     });
 
-
     const orderTotal = document.createElement('div');
     orderTotal.className = 'main-orders__content-order-total'; // price total for each
     orderTotal.textContent = dishPrice;
@@ -221,7 +223,6 @@ function addDishToOrder(event) {
 
     const itemDelete = document.createElement('button');
     itemDelete.className = 'main-orders__content-order-button'; //delete item from order
-    // itemDelete.textContent = 'Delete';
     itemOptions.appendChild(itemDelete);
     itemDelete.addEventListener('click', deleteOrderItem);
 
@@ -231,7 +232,6 @@ function addDishToOrder(event) {
         const quantity = parseInt(itemQty.value);
         const price = parseFloat(dishPrice.substring(1));
         const total = quantity * price;
-
         orderTotal.textContent = ` $${total.toFixed(2)}`;
 
         updateTotalAmount();
@@ -301,19 +301,7 @@ function updateTotalAmount() {
     }
 }
 
-
-
 //Payment
-const continueToPaymentButton = document.querySelector('.main-orders__content-button');
-const paymentMethodsContainer = document.querySelector('.main-orders__payment');
-const confirmationTitle = document.querySelector('.main-orders__title');
-const orderNumber = document.querySelector('#orderNumber');
-const backButtonArrow = document.querySelector('.main-orders__payment-back-btn');
-const itemTitles = document.querySelector('.main-orders__content-titles')
-const overlay = document.getElementById('overlay');
-const mainOrdersContent = document.querySelector('.main-orders__content');
-
-
 continueToPaymentButton.addEventListener('click', function () {
     backButtonArrow.style.display = 'block';
     continueToPaymentButton.classList.add('hidden');
@@ -329,7 +317,6 @@ continueToPaymentButton.addEventListener('click', function () {
     overlay.style.display = 'block';
     mainOrdersContent.style.borderTop = '1px solid #393c49';
     // mainOrdersSection.style.right = '27em';
-
     updateMainOrdersPaymentButton();
 });
 
@@ -362,8 +349,6 @@ function updateMainOrdersPaymentButton() {
         mainOrdersSection.style.right = '5em';
     }
 }
-
-
 
 
 // Back button <--
@@ -417,12 +402,10 @@ function updateMainOrdersBackButton() {
         mainOrdersSection.style.right = '4.5em';
     }
 }
-
 window.addEventListener('resize', updateMainOrdersBackButton);
 
 
 // Cancel
-const cancelButton = document.querySelector('.main-orders__payment-buttons-item:first-child');
 cancelButton.addEventListener('click', cancelPayment);
 
 function cancelPayment() {
@@ -472,12 +455,9 @@ function updateMainOrdersCancelButton() {
         mainOrdersSection.style.right = '4.5em';
     }
 }
-
 window.addEventListener('resize', updateMainOrdersCancelButton);
 
 // Basket button responsive version 970px
-const toggleOrdersButton = document.querySelector('.toggle-orders-btn');
-
 toggleOrdersButton.addEventListener('click', function () {
     mainOrdersSection.style.display = 'block';
     closeButtonResponsive.style.display = 'block';
@@ -508,7 +488,6 @@ function updateMainOrdersToggleButton() {
         mainOrdersSection.style.right = '5em';
     }
 }
-
 window.addEventListener('resize', updateMainOrdersToggleButton);
 
 //Button 'close' for main-orders section 970px and less
@@ -532,7 +511,6 @@ window.addEventListener('resize', function () {
 const confirmPaymentButton = document.querySelector('.main-orders__payment-buttons-item:last-child');
 const modalOverlay = document.querySelector('.main-orders__payment-modal');
 const modalCloseButton = document.querySelector('.main-orders__payment-modal-button');
-
 confirmPaymentButton.addEventListener('click', showPaymentModal);
 modalCloseButton.addEventListener('click', hidePaymentModal);
 
@@ -682,7 +660,7 @@ dashboardSectionButton.addEventListener('click', function () {
 })
 
 
-// Additional
+// Additional color wrapper change
 const settingsButton = document.getElementById('settings');
 const colorMenu = document.getElementById('colorMenu');
 const colorOptions = colorMenu.querySelectorAll('input[name="color"]');
@@ -704,13 +682,12 @@ colorOptions.forEach(function (option) {
 });
 
 
-//  Swiper
+//  Swiper for tabs (responsive version)
 var swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
     spaceBetween: 10,
 
 });
-
 
 if (window.innerWidth <= 970) {
     swiper.init();
