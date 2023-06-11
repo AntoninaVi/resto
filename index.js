@@ -336,7 +336,7 @@ function updateMainOrdersPaymentButton() {
     else if (window.innerWidth <= 840) {
         mainOrdersSection.style.right = '34em';
     }
-    else if (window.innerWidth >= 450) {
+    else if (window.innerWidth <= 450) {
         mainOrdersSection.style.right = '20em';
     }
     else if (window.innerWidth <= 412) {
@@ -481,8 +481,8 @@ function updateMainOrdersToggleButton() {
     else if (window.innerWidth <= 420) {
         mainOrdersSection.style.right = '1em';
     }
-    else if (window.innerWidth >= 330) {
-        mainOrdersSection.style.right = '5em';
+    else if (window.innerWidth >= 340) {
+        mainOrdersSection.style.right = '4em';
     }
     else if (window.innerWidth <= 290) {
         mainOrdersSection.style.right = '5em';

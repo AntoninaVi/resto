@@ -239,6 +239,11 @@ body {
   outline: 0.7em solid #252836;
   color: #ffffff;
 }
+@media screen and (max-width: 450px) {
+  .main-sidebar__btn:hover {
+    display: none;
+  }
+}
 .main-sidebar__btn:hover::before {
   content: url(img/rectangle1.svg);
   position: absolute;
