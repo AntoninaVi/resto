@@ -50,9 +50,6 @@ body {
 .wrapper {
     background-color: #252836;
     min-height: 250vh;
-    @media screen and (max-width: 768px) {
-        min-height: 600vh;
-}
 }
 .container {
     max-width: 1258px;
@@ -373,6 +370,9 @@ body {
 }
 .main-content {
     flex-basis: 57%;
+    @media screen and (max-width: 790px) {
+        min-height: 530vh;
+    }
 }
 .main-content__offers {
     display: grid;
@@ -494,16 +494,13 @@ body {
         // right: 4em;
         transform: scale(0.7);
     }
-    // @media screen and (max-width: 280px) {
-    //     right: 5em;
-    // }
+
     &__title {
         @include h2;
         margin-bottom: 3em;
     }
 
     &__content {
-        // border-top: 1px solid #393c49;
         padding-top: 1em;
         border-bottom: 1px solid #393c49;
     }
@@ -514,10 +511,6 @@ body {
             width: 0px;
             height: 0px;
         }
-        // &::-webkit-scrollbar-thumb {
-        //     color: transparent;
-        //     background: rgb(235, 104, 33);
-        // }
     }
 
     &__content-dish-image {
