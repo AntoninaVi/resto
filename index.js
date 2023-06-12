@@ -356,7 +356,7 @@ function updateMainOrdersPaymentButton() {
             mainOrdersSection.style.right = '27em';
             break;
         default:
-            mainOrdersSection.style.right = '-1em';
+            mainOrdersSection.style.right = '22em';
             break;
     }
 }
