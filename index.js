@@ -1,8 +1,5 @@
-// Initialize Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
 import { getFirestore, orderBy, query, setDoc, collection, getDocs, addDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-firestore.js";
-// https://firebase.google.com/docs/web/setup#available-libraries
-
 
 const firebaseConfig = {
     apiKey: "AIzaSyDRFEYlAtoACnTpswgXq5DajkuqemVtJR0",
@@ -12,9 +9,7 @@ const firebaseConfig = {
     messagingSenderId: "671527093331",
     appId: "1:671527093331:web:5c457adda2e4cd06a6b2a6"
 };
-
 // Initialize Firebase
-
 initializeApp(firebaseConfig);
 const db = getFirestore();
 const dishesRef = collection(db, 'dishes');
@@ -33,8 +28,6 @@ const dishesRef = collection(db, 'dishes');
 //     .catch((error) => {
 //         console.error('Error adding dish: ', error);
 //     });
-
-
 
 const mainContent = document.querySelector('.main-content__offers');
 const tabs = document.querySelectorAll('.main-tabs__tab');
@@ -96,7 +89,6 @@ getDocs(dishesRef)
         })
     })
 
-
 //Tabs filter
 function filterDishesByType(type) {
     const dishes = document.querySelectorAll('.main-content__offers-dish');
@@ -136,7 +128,6 @@ const year = today.getFullYear();
 const formattedDate = `${dayOfWeek}, ${day} ${month} ${year}`;
 dateToday.textContent = formattedDate;
 
-
 //search
 searchInput.addEventListener('input', handleSearch);
 function handleSearch() {
@@ -158,7 +149,6 @@ function clearSearchInput() {
 }
 
 //Orders
-
 function addDishToOrder(event) {
     const selectedDish = event.target.closest('.main-content__offers-dish');
     const dishTitle = selectedDish.querySelector('.main-content__offers-dish-title').textContent;
@@ -250,14 +240,12 @@ function addDishToOrder(event) {
     totalAmount += parseFloat(dishPrice.substring(1));
     const subTotalText = document.querySelector('#ordersPriceSpan');
     subTotalText.textContent = ` $${totalAmount.toFixed(2)}`;
-
 }
 document.addEventListener('click', function (event) {
     if (event.target.matches('.main-content__offers-dish') || event.target.closest('.main-content__offers-dish-img') || event.target.matches('.main-content__offers-dish-title')) {
         addDishToOrder(event);
     }
 });
-
 
 function deleteOrderItem(event) {
     const orderItem = event.target.closest('.main-orders__content-order-item');
@@ -277,8 +265,6 @@ function deleteOrderItem(event) {
         localStorage.setItem('order', JSON.stringify(updatedOrder));
     }
 }
-
-
 
 //update sum Sub total
 function updateTotalAmount() {
@@ -334,7 +320,6 @@ continueToPaymentButton.addEventListener('click', function () {
     orderNumber.innerHTML = 'Orders #22';
     overlay.style.display = 'block';
     mainOrdersContent.style.borderTop = '1px solid #393c49';
-
     updateMainOrdersPaymentButton();
 });
 
@@ -343,9 +328,9 @@ function updateMainOrdersPaymentButton() {
         case (window.innerWidth >= 290):
             mainOrdersSection.style.right = '5em';
             break;
-            case (window.innerWidth >= 330):
-                mainOrdersSection.style.right = '4em';
-                break;
+        case (window.innerWidth >= 330):
+            mainOrdersSection.style.right = '4em';
+            break;
         case (window.innerWidth >= 395):
             mainOrdersSection.style.right = '1em';
             break;
@@ -375,9 +360,7 @@ function updateMainOrdersPaymentButton() {
             break;
     }
 }
-
 window.addEventListener('resize', updateMainOrdersPaymentButton);
-
 
 // Back button <--
 backButtonArrow.addEventListener('click', function () {
@@ -391,7 +374,6 @@ backButtonArrow.addEventListener('click', function () {
     overlay.style.display = 'none';
     itemTitles.style.display = 'flex';
     mainOrdersContent.style.borderTop = 'none';
-
     updateMainOrdersBackButton();
 });
 
@@ -435,14 +417,10 @@ function updateMainOrdersBackButton() {
             break;
     }
 }
-
-
 window.addEventListener('resize', updateMainOrdersBackButton);
-
 
 // Cancel
 cancelButton.addEventListener('click', cancelPayment);
-
 function cancelPayment() {
     continueToPaymentButton.classList.remove('hidden');
     paymentMethodsContainer.classList.add('hidden');
@@ -452,9 +430,9 @@ function cancelPayment() {
     itemTitles.style.display = 'flex';
     overlay.style.display = 'none';
     mainOrdersContent.style.borderTop = 'none';
-
     updateMainOrdersCancelButton();
 }
+
 function updateMainOrdersCancelButton() {
     switch (false) {
         case (window.innerWidth >= 340):
@@ -727,14 +705,14 @@ colorOptions.forEach(function (option) {
 var swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
     spaceBetween: 10,
-
 });
 
-if (window.innerWidth <= 970) {
-    swiper.init();
-} else {
-    swiper.destroy();
+switch (true) {
+    case (window.innerWidth <= 970):
+        swiper.init();
+        break;
+    default:
+        swiper.destroy();
+        break;
 }
-
-
 
