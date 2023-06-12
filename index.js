@@ -141,9 +141,9 @@ dateToday.textContent = formattedDate;
 searchInput.addEventListener('input', handleSearch);
 function handleSearch() {
     const searchText = searchInput.value.toLowerCase();
-    const activeTab = document.querySelector('.main-tabs__tab.active'); 
-    const activeTabType = activeTab.textContent.toLowerCase(); 
-    const dishes = document.querySelectorAll(`.main-content__offers-dish[data-type="${activeTabType}"]`); 
+    const activeTab = document.querySelector('.main-tabs__tab.active');
+    const activeTabType = activeTab.textContent.toLowerCase();
+    const dishes = document.querySelectorAll(`.main-content__offers-dish[data-type="${activeTabType}"]`);
     dishes.forEach((dish) => {
         const dishTitle = dish.querySelector('.main-content__offers-dish-title').textContent.toLowerCase();
         if (dishTitle.includes(searchText)) {
@@ -339,32 +339,37 @@ continueToPaymentButton.addEventListener('click', function () {
 });
 
 function updateMainOrdersPaymentButton() {
-    if (window.innerWidth >= 1500) {
-        mainOrdersSection.style.right = '27em';
-    } 
-    else if (window.innerWidth >= 1280) {
-        mainOrdersSection.style.right = '25em';
-    } 
-    else if (window.innerWidth >= 915) {
-        mainOrdersSection.style.right = '30em';
-    } 
-    else if (window.innerWidth >= 840) {
-        mainOrdersSection.style.right = '34em';
-    }
-    else if (window.innerWidth >= 630) {
-        mainOrdersSection.style.right = '25em';
-    }
-    else if (window.innerWidth >= 450) {
-        mainOrdersSection.style.right = '0em';
-    }
-    else if (window.innerWidth >= 412) {
-        mainOrdersSection.style.right = '4em';
-    }
-    else if (window.innerWidth >= 380) {
-        mainOrdersSection.style.right = '5em';
-    }
-    else if (window.innerWidth >= 280) {
-        mainOrdersSection.style.right = '4.5em';
+    switch (true) {
+        case (window.innerWidth >= 1500):
+            mainOrdersSection.style.right = '27em';
+            break;
+        case (window.innerWidth >= 1280):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth >= 915):
+            mainOrdersSection.style.right = '30em';
+            break;
+        case (window.innerWidth >= 840):
+            mainOrdersSection.style.right = '34em';
+            break;
+        case (window.innerWidth >= 630):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth >= 450):
+            mainOrdersSection.style.right = '0em';
+            break;
+        case (window.innerWidth >= 412):
+            mainOrdersSection.style.right = '4em';
+            break;
+        case (window.innerWidth >= 380):
+            mainOrdersSection.style.right = '5em';
+            break;
+        case (window.innerWidth >= 280):
+            mainOrdersSection.style.right = '4.5em';
+            break;
+        default:
+            mainOrdersSection.style.right = '-1em';
+            break;
     }
 }
 
@@ -388,38 +393,43 @@ backButtonArrow.addEventListener('click', function () {
 });
 
 function updateMainOrdersBackButton() {
-    if (window.innerWidth >= 1500) {
-        mainOrdersSection.style.right = '-1.5em';
-    } 
-    else if (window.innerWidth >= 1280) {
-        mainOrdersSection.style.right = '-1em';
-    }
-    else if (window.innerWidth >= 970) {
-        mainOrdersSection.style.right = '9em';
-    } 
-    else if (window.innerWidth >= 912) {
-        mainOrdersSection.style.right = '28em';
-    }
-    else if (window.innerWidth >= 830) {
-        mainOrdersSection.style.right = '30em';
-    }
-    else if (window.innerWidth >= 630) {
-        mainOrdersSection.style.right = '25em';
-    }
-    else if (window.innerWidth >= 550) {
-        mainOrdersSection.style.right = '22em';
-    }
-    else if (window.innerWidth >= 450) {
-        mainOrdersSection.style.right = '0em';
-    }
-    else if (window.innerWidth >= 420) {
-        mainOrdersSection.style.right = '1em';
-    }
-    else if (window.innerWidth >= 380) {
-        mainOrdersSection.style.right = '3em';
-    }
-    else if (window.innerWidth >= 330) {
-        mainOrdersSection.style.right = '4.5em';
+    switch (true) {
+        case (window.innerWidth >= 1500):
+            mainOrdersSection.style.right = '-1.5em';
+            break;
+        case (window.innerWidth >= 1280):
+            mainOrdersSection.style.right = '-1em';
+            break;
+        case (window.innerWidth >= 970):
+            mainOrdersSection.style.right = '9em';
+            break;
+        case (window.innerWidth >= 912):
+            mainOrdersSection.style.right = '28em';
+            break;
+        case (window.innerWidth >= 830):
+            mainOrdersSection.style.right = '30em';
+            break;
+        case (window.innerWidth >= 630):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth >= 550):
+            mainOrdersSection.style.right = '22em';
+            break;
+        case (window.innerWidth >= 450):
+            mainOrdersSection.style.right = '0em';
+            break;
+        case (window.innerWidth >= 420):
+            mainOrdersSection.style.right = '1em';
+            break;
+        case (window.innerWidth >= 380):
+            mainOrdersSection.style.right = '3em';
+            break;
+        case (window.innerWidth >= 330):
+            mainOrdersSection.style.right = '4.5em';
+            break;
+        default:
+            mainOrdersSection.style.right = '-1.5em';
+            break;
     }
 }
 window.addEventListener('resize', updateMainOrdersBackButton);
@@ -441,40 +451,46 @@ function cancelPayment() {
     updateMainOrdersCancelButton();
 }
 function updateMainOrdersCancelButton() {
-    if (window.innerWidth >= 1500) {
-        mainOrdersSection.style.right = '-1.5em';
-    } 
-    else if (window.innerWidth >= 1280) {
-        mainOrdersSection.style.right = '-1em';
-    }
-    else if (window.innerWidth >= 1024) {
-        mainOrdersSection.style.right = '1em';
-    }
-    else if (window.innerWidth >= 970) {
-        mainOrdersSection.style.right = '9em';
-    } 
-    else if (window.innerWidth >= 830) {
-        mainOrdersSection.style.right = '34em';
-    }
-    else if (window.innerWidth >= 630) {
-        mainOrdersSection.style.right = '25em';
-    }
-    else if (window.innerWidth >= 550) {
-        mainOrdersSection.style.right = '22em';
-    }
-    else if (window.innerWidth >= 450) {
-        mainOrdersSection.style.right = '0em';
-    }
-    else if (window.innerWidth >= 420) {
-        mainOrdersSection.style.right = '1em';
-    }
-    else if (window.innerWidth >= 380) {
-        mainOrdersSection.style.right = '3em';
-    }
-    else if (window.innerWidth >= 330) {
-        mainOrdersSection.style.right = '4.5em';
+    switch (true) {
+        case (window.innerWidth >= 1500):
+            mainOrdersSection.style.right = '-1.5em';
+            break;
+        case (window.innerWidth >= 1280):
+            mainOrdersSection.style.right = '-1em';
+            break;
+        case (window.innerWidth >= 1024):
+            mainOrdersSection.style.right = '1em';
+            break;
+        case (window.innerWidth >= 970):
+            mainOrdersSection.style.right = '9em';
+            break;
+        case (window.innerWidth >= 830):
+            mainOrdersSection.style.right = '34em';
+            break;
+        case (window.innerWidth >= 630):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth >= 550):
+            mainOrdersSection.style.right = '22em';
+            break;
+        case (window.innerWidth >= 450):
+            mainOrdersSection.style.right = '0em';
+            break;
+        case (window.innerWidth >= 420):
+            mainOrdersSection.style.right = '1em';
+            break;
+        case (window.innerWidth >= 380):
+            mainOrdersSection.style.right = '3em';
+            break;
+        case (window.innerWidth >= 330):
+            mainOrdersSection.style.right = '4.5em';
+            break;
+        default:
+            mainOrdersSection.style.right = '-1.5em';
+            break;
     }
 }
+
 window.addEventListener('resize', updateMainOrdersCancelButton);
 
 // Basket button responsive version 970px
@@ -488,7 +504,7 @@ toggleOrdersButton.addEventListener('click', function () {
 function updateMainOrdersToggleButton() {
     if (window.innerWidth >= 970) {
         mainOrdersSection.style.right = '34em';
-    } 
+    }
     else if (window.innerWidth >= 830) {
         mainOrdersSection.style.right = '25em';
     }
@@ -504,7 +520,7 @@ function updateMainOrdersToggleButton() {
     else if (window.innerWidth >= 340) {
         mainOrdersSection.style.right = '4.5em';
     }
-   
+
 }
 window.addEventListener('resize', updateMainOrdersToggleButton);
 
