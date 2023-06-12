@@ -420,18 +420,19 @@ function updateMainOrdersBackButton() {
 window.addEventListener('resize', updateMainOrdersBackButton);
 
 // Cancel
-cancelButton.addEventListener('click', cancelPayment);
-function cancelPayment() {
-    continueToPaymentButton.classList.remove('hidden');
-    paymentMethodsContainer.classList.add('hidden');
-    orderNumber.style.display = 'none';
-    confirmationTitle.textContent = 'Order #22';
-    backButtonArrow.style.display = 'none';
-    itemTitles.style.display = 'flex';
-    overlay.style.display = 'none';
-    mainOrdersContent.style.borderTop = 'none';
-    updateMainOrdersCancelButton();
-}
+cancelButton.addEventListener('click',
+    function cancelPayment() {
+        continueToPaymentButton.classList.remove('hidden');
+        paymentMethodsContainer.classList.add('hidden');
+        orderNumber.style.display = 'none';
+        confirmationTitle.textContent = 'Order #22';
+        backButtonArrow.style.display = 'none';
+        itemTitles.style.display = 'flex';
+        overlay.style.display = 'none';
+        mainOrdersContent.style.borderTop = 'none';
+        updateMainOrdersCancelButton();
+    });
+
 
 function updateMainOrdersCancelButton() {
     switch (false) {
