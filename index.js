@@ -507,22 +507,22 @@ toggleOrdersButton.addEventListener('click', function () {
 });
 
 function updateMainOrdersToggleButton() {
-    switch (true) {
-        case (window.innerWidth >= 970):
-            mainOrdersSection.style.right = '34em';
-            break;
-        case (window.innerWidth >= 830):
-        case (window.innerWidth >= 730):
-            mainOrdersSection.style.right = '25em';
-            break;
-        case (window.innerWidth >= 500):
-            mainOrdersSection.style.right = '21em';
+    switch (false) {
+        case (window.innerWidth >= 340):
+            mainOrdersSection.style.right = '4.5em';
             break;
         case (window.innerWidth >= 420):
             mainOrdersSection.style.right = '1em';
             break;
-        case (window.innerWidth >= 340):
-            mainOrdersSection.style.right = '4.5em';
+        case (window.innerWidth >= 500):
+            mainOrdersSection.style.right = '21em';
+            break;
+        case (window.innerWidth >= 730):
+        case (window.innerWidth >= 830):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth >= 970):
+            mainOrdersSection.style.right = '34em';
             break;
         default:
             mainOrdersSection.style.right = '0em';
