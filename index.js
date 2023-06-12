@@ -339,33 +339,36 @@ continueToPaymentButton.addEventListener('click', function () {
 });
 
 function updateMainOrdersPaymentButton() {
-    switch (true) {
-        case (window.innerWidth >= 1500):
-            mainOrdersSection.style.right = '27em';
-            break;
-        case (window.innerWidth >= 1280):
-            mainOrdersSection.style.right = '25em';
-            break;
-        case (window.innerWidth >= 915):
-            mainOrdersSection.style.right = '30em';
-            break;
-        case (window.innerWidth >= 840):
-            mainOrdersSection.style.right = '34em';
-            break;
-        case (window.innerWidth >= 630):
-            mainOrdersSection.style.right = '25em';
-            break;
-        case (window.innerWidth >= 450):
-            mainOrdersSection.style.right = '0em';
-            break;
-        case (window.innerWidth >= 412):
-            mainOrdersSection.style.right = '4em';
-            break;
-        case (window.innerWidth >= 380):
+    switch (false) {
+        case (window.innerWidth >= 290):
             mainOrdersSection.style.right = '5em';
             break;
-        case (window.innerWidth >= 280):
-            mainOrdersSection.style.right = '4.5em';
+            case (window.innerWidth >= 330):
+                mainOrdersSection.style.right = '4em';
+                break;
+        case (window.innerWidth >= 395):
+            mainOrdersSection.style.right = '1em';
+            break;
+        case (window.innerWidth >= 410):
+            mainOrdersSection.style.right = '4em';
+            break;
+        case (window.innerWidth >= 460):
+            mainOrdersSection.style.right = '0em';
+            break;
+        case (window.innerWidth >= 640):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth >= 850):
+            mainOrdersSection.style.right = '34em';
+            break;
+        case (window.innerWidth >= 925):
+            mainOrdersSection.style.right = '30em';
+            break;
+        case (window.innerWidth >= 1300):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth >= 1500):
+            mainOrdersSection.style.right = '27em';
             break;
         default:
             mainOrdersSection.style.right = '-1em';
@@ -393,45 +396,47 @@ backButtonArrow.addEventListener('click', function () {
 });
 
 function updateMainOrdersBackButton() {
-    switch (true) {
-        case (window.innerWidth >= 1500):
-            mainOrdersSection.style.right = '-1.5em';
+    switch (false) {
+        case (window.innerWidth >= 340):
+            mainOrdersSection.style.right = '4.5em';
             break;
-        case (window.innerWidth >= 1280):
-            mainOrdersSection.style.right = '-1em';
-            break;
-        case (window.innerWidth >= 970):
-            mainOrdersSection.style.right = '9em';
-            break;
-        case (window.innerWidth >= 912):
-            mainOrdersSection.style.right = '28em';
-            break;
-        case (window.innerWidth >= 830):
-            mainOrdersSection.style.right = '30em';
-            break;
-        case (window.innerWidth >= 630):
-            mainOrdersSection.style.right = '25em';
-            break;
-        case (window.innerWidth >= 550):
-            mainOrdersSection.style.right = '22em';
-            break;
-        case (window.innerWidth >= 450):
-            mainOrdersSection.style.right = '0em';
-            break;
-        case (window.innerWidth >= 420):
-            mainOrdersSection.style.right = '1em';
-            break;
-        case (window.innerWidth >= 380):
+        case (window.innerWidth >= 390):
             mainOrdersSection.style.right = '3em';
             break;
-        case (window.innerWidth >= 330):
-            mainOrdersSection.style.right = '4.5em';
+        case (window.innerWidth >= 430):
+            mainOrdersSection.style.right = '1em';
+            break;
+        case (window.innerWidth >= 460):
+            mainOrdersSection.style.right = '0em';
+            break;
+        case (window.innerWidth >= 560):
+            mainOrdersSection.style.right = '22em';
+            break;
+        case (window.innerWidth >= 640):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth >= 840):
+            mainOrdersSection.style.right = '30em';
+            break;
+        case (window.innerWidth >= 922):
+            mainOrdersSection.style.right = '28em';
+            break;
+        case (window.innerWidth >= 980):
+            mainOrdersSection.style.right = '9em';
+            break;
+        case (window.innerWidth >= 1290):
+            mainOrdersSection.style.right = '-1em';
+            break;
+        case (window.innerWidth >= 1500):
+            mainOrdersSection.style.right = '-1.5em';
             break;
         default:
             mainOrdersSection.style.right = '-1.5em';
             break;
     }
 }
+
+
 window.addEventListener('resize', updateMainOrdersBackButton);
 
 
@@ -451,39 +456,39 @@ function cancelPayment() {
     updateMainOrdersCancelButton();
 }
 function updateMainOrdersCancelButton() {
-    switch (true) {
-        case (window.innerWidth >= 1500):
-            mainOrdersSection.style.right = '-1.5em';
+    switch (false) {
+        case (window.innerWidth >= 340):
+            mainOrdersSection.style.right = '4.5em';
             break;
-        case (window.innerWidth >= 1280):
-            mainOrdersSection.style.right = '-1em';
-            break;
-        case (window.innerWidth >= 1024):
-            mainOrdersSection.style.right = '1em';
-            break;
-        case (window.innerWidth >= 970):
-            mainOrdersSection.style.right = '9em';
-            break;
-        case (window.innerWidth >= 830):
-            mainOrdersSection.style.right = '34em';
-            break;
-        case (window.innerWidth >= 630):
-            mainOrdersSection.style.right = '25em';
-            break;
-        case (window.innerWidth >= 550):
-            mainOrdersSection.style.right = '22em';
-            break;
-        case (window.innerWidth >= 450):
-            mainOrdersSection.style.right = '0em';
-            break;
-        case (window.innerWidth >= 420):
-            mainOrdersSection.style.right = '1em';
-            break;
-        case (window.innerWidth >= 380):
+        case (window.innerWidth >= 390):
             mainOrdersSection.style.right = '3em';
             break;
-        case (window.innerWidth >= 330):
-            mainOrdersSection.style.right = '4.5em';
+        case (window.innerWidth >= 430):
+            mainOrdersSection.style.right = '1em';
+            break;
+        case (window.innerWidth >= 460):
+            mainOrdersSection.style.right = '0em';
+            break;
+        case (window.innerWidth >= 560):
+            mainOrdersSection.style.right = '22em';
+            break;
+        case (window.innerWidth >= 640):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth >= 840):
+            mainOrdersSection.style.right = '30em';
+            break;
+        case (window.innerWidth >= 922):
+            mainOrdersSection.style.right = '28em';
+            break;
+        case (window.innerWidth >= 980):
+            mainOrdersSection.style.right = '9em';
+            break;
+        case (window.innerWidth >= 1290):
+            mainOrdersSection.style.right = '-1em';
+            break;
+        case (window.innerWidth >= 1500):
+            mainOrdersSection.style.right = '-1.5em';
             break;
         default:
             mainOrdersSection.style.right = '-1.5em';
@@ -502,25 +507,27 @@ toggleOrdersButton.addEventListener('click', function () {
 });
 
 function updateMainOrdersToggleButton() {
-    if (window.innerWidth >= 970) {
-        mainOrdersSection.style.right = '34em';
+    switch (true) {
+        case (window.innerWidth >= 970):
+            mainOrdersSection.style.right = '34em';
+            break;
+        case (window.innerWidth >= 830):
+        case (window.innerWidth >= 730):
+            mainOrdersSection.style.right = '25em';
+            break;
+        case (window.innerWidth >= 500):
+            mainOrdersSection.style.right = '21em';
+            break;
+        case (window.innerWidth >= 420):
+            mainOrdersSection.style.right = '1em';
+            break;
+        case (window.innerWidth >= 340):
+            mainOrdersSection.style.right = '4.5em';
+            break;
+        default:
+            mainOrdersSection.style.right = '0em';
+            break;
     }
-    else if (window.innerWidth >= 830) {
-        mainOrdersSection.style.right = '25em';
-    }
-    else if (window.innerWidth >= 730) {
-        mainOrdersSection.style.right = '25em';
-    }
-    else if (window.innerWidth >= 500) {
-        mainOrdersSection.style.right = '21em';
-    }
-    else if (window.innerWidth >= 420) {
-        mainOrdersSection.style.right = '1em';
-    }
-    else if (window.innerWidth >= 340) {
-        mainOrdersSection.style.right = '4.5em';
-    }
-
 }
 window.addEventListener('resize', updateMainOrdersToggleButton);
 
