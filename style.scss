@@ -211,9 +211,6 @@ body {
             background: #ea7c69;
             outline: 0.7em solid #252836;
             color: #ffffff;
-            @media screen and (max-width: 450px) {
-                display: none;
-            }
         }
         &:hover::before {
             content: url(img/rectangle1.svg);
@@ -255,6 +252,9 @@ body {
         top: -1.3em;
         left: 3.7em;
         z-index: -1;
+        @media screen and (max-width: 450px) {
+            display: none;
+        }
     }
     &:first-child::before {
         display: none;

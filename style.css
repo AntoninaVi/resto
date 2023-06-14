@@ -239,11 +239,6 @@ body {
   outline: 0.7em solid #252836;
   color: #ffffff;
 }
-@media screen and (max-width: 450px) {
-  .main-sidebar__btn:hover {
-    display: none;
-  }
-}
 .main-sidebar__btn:hover::before {
   content: url(img/rectangle1.svg);
   position: absolute;
@@ -295,6 +290,11 @@ body {
   top: -1.3em;
   left: 3.7em;
   z-index: -1;
+}
+@media screen and (max-width: 450px) {
+  .main-sidebar__btn.active::before {
+    display: none;
+  }
 }
 .main-sidebar__btn.active:first-child::before {
   display: none;
