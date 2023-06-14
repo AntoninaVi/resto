@@ -1173,7 +1173,7 @@ input[type=number]:focus {
 }
 @media screen and (max-width: 380px) {
   .toggle-orders-btn {
-    right: -14em;
+    right: -13em;
   }
 }
 @media screen and (max-width: 300px) {
