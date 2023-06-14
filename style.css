@@ -1181,3 +1181,37 @@ input[type=number]:focus {
     right: -10em;
   }
 }
+
+.loader {
+  border-radius: 50%;
+  width: 9em;
+  height: 9em;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  border-top: 1em solid #ea7c69;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}

@@ -984,3 +984,23 @@ input[type="number"]:focus {
         right: -10em;
     }
 }
+.loader {
+    border-radius: 50%;
+    width: 9em;
+    height: 9em;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 1em solid #ea7c69;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

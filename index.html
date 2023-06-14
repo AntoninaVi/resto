@@ -32,6 +32,8 @@
             </header>
 
             <main id="main" class="main">
+                <div class="error-message"></div>
+              <div class="loader" id="loader"></div>
                 <section class="main-sidebar">
                     <a id="logo" href="#" class="main-sidebar__btn">
                         <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +121,7 @@
 
 
 
-
+                
 
                 <section class="main-content">
                     <section class="main-tabs">
@@ -272,9 +274,9 @@
                                         class="main-orders__payment-methods-content-section credit-card">
                                         <form class=" main-orders__payment-methods-content-form">
                                             <label for="cardholderName">Cardholder Name:</label>
-                                            <input type="text" id="cardholderName" />
+                                            <input type="text" id="cardholderName" required />
                                             <label for="cardNumber">Card Number:</label>
-                                            <input type="text" id="cardNumber" />
+                                            <input type="text" id="cardNumber" required/>
                                             <div class="main-orders__payment-methods-content-section credit-card-form">
                                                 <div
                                                     class="main-orders__payment-methods-content-section credit-card-date-item">

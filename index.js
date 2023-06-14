@@ -53,6 +53,7 @@ const toggleOrdersButton = document.querySelector('.toggle-orders-btn'); //respo
 getDocs(dishesRef)
     .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
+
             const dishData = doc.data();
 
             const mainArticle = document.createElement('article');
@@ -86,8 +87,11 @@ getDocs(dishesRef)
             infoMainArticle.appendChild(availabilityMainArticle);
 
             mainContent.appendChild(mainArticle)
+
+            showLoader();
         })
-    })
+        setTimeout(hideLoader, 300);
+    });
 
 //Tabs filter
 function filterDishesByType(type) {
@@ -717,3 +721,13 @@ switch (true) {
         break;
 }
 
+
+//Loader
+function showLoader() {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'block';
+}
+function hideLoader() {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'none';
+}
