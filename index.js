@@ -721,7 +721,6 @@ switch (true) {
         break;
 }
 
-
 //Loader
 function showLoader() {
     const loader = document.getElementById('loader');

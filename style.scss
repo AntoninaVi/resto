@@ -994,7 +994,13 @@ input[type="number"]:focus {
     position: absolute;
     top: 20%;
     left: 30%;
+    @media screen and (max-width: 760px) {
+        top: 4%;
+        left: 28%;
+        z-index: 5;
+    }
 }
+
 
 @keyframes spin {
     0% {
