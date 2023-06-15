@@ -1016,6 +1016,9 @@ input[type="number"]:focus {
     position: absolute;
     top: 14%;
     right: 39%;
+    max-width: 21em;
+    width: 100%;
+    min-width: 10em;
     z-index: 10;
     background: #ea7c69;
     color: #ffffff;
@@ -1025,19 +1028,29 @@ input[type="number"]:focus {
         top: 35%;
         right: 15%;
     }
+    @media screen and (max-width: 420px) {
+        top: 35%;
+        right: 0%;
+        transform: scale(0.9);
+    }
+}
+.swal2-title{
+    text-align: center;
 }
 .swal2-confirm {
-    display: block;
+    position: relative;
+    left: 45%;
+    font-weight: 600;
+    line-height: 18px;
     max-width: 3em;
     padding: 0.5em;
     margin-top: 0.5em;
-    margin-left: 7.5em;
+    // margin-left: 7.5em;
     color: #ffffff;
-    background-color: #252836;
+    background-color: #6a2114;
     border-radius: 5px;
-    border: 2px solid grey;
+    border: none;
     cursor: pointer;
-
 }
 .swal2-icon-content {
     display: none;

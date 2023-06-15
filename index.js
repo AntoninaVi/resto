@@ -346,9 +346,9 @@ function updateMainOrdersPaymentButton() {
         case (window.innerWidth >= 395):
             mainOrdersSection.style.right = '1em';
             break;
-        case (window.innerWidth >= 410):
-            mainOrdersSection.style.right = '4em';
-            break;
+        // case (window.innerWidth >= 410):
+        //     mainOrdersSection.style.right = '4em';
+        //     break;
             case (window.innerWidth >= 450):
                 mainOrdersSection.style.right = '1em';
                 break;
