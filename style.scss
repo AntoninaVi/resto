@@ -670,7 +670,7 @@ input[type="number"]:focus {
         top: 0;
         right: -23.5em;
         flex-basis: 30%;
-        padding: 1.5em;
+        padding: 3.7em 1.5em 1.5em 1.5em;
         background: #1f1d2b;
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
@@ -679,6 +679,7 @@ input[type="number"]:focus {
         min-height: 25em;
         @media screen and (max-width: 800px) {
             top: 25em;
+            right: 0em;
             max-width: 24em;
             min-width: 23em;
             width: 100%;
@@ -986,7 +987,7 @@ input[type="number"]:focus {
         right: -10em;
     }
 }
-.loader {
+.main-loader {
     border-radius: 50%;
     width: 9em;
     height: 9em;
@@ -1010,4 +1011,34 @@ input[type="number"]:focus {
     100% {
         transform: rotate(360deg);
     }
+}
+.swal2-container {
+    position: absolute;
+    top: 14%;
+    right: 39%;
+    z-index: 10;
+    background: #ea7c69;
+    color: #ffffff;
+    padding: 1.5em;
+    border-radius: 8px;
+    @media screen and (max-width: 600px) {
+        top: 35%;
+        right: 15%;
+    }
+}
+.swal2-confirm {
+    display: block;
+    max-width: 3em;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    margin-left: 7.5em;
+    color: #ffffff;
+    background-color: #252836;
+    border-radius: 5px;
+    border: 2px solid grey;
+    cursor: pointer;
+
+}
+.swal2-icon-content {
+    display: none;
 }

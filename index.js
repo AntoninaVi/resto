@@ -36,14 +36,14 @@ const searchInput = document.querySelector('.header-search__input');
 const mainOrdersSection = document.querySelector('.main-orders');
 const sidebarButtons = document.querySelectorAll('.main-sidebar__btn');
 let totalAmount = 0;
-
+const loader = document.getElementById('loader');
 //payment
 const continueToPaymentButton = document.querySelector('.main-orders__content-button');
 const paymentMethodsContainer = document.querySelector('.main-orders__payment');
 const confirmationTitle = document.querySelector('.main-orders__title');
 const orderNumber = document.querySelector('#orderNumber');
 const backButtonArrow = document.querySelector('.main-orders__payment-back-btn');
-const itemTitles = document.querySelector('.main-orders__content-titles')
+const itemTitles = document.querySelector('.main-orders__content-titles');
 const overlay = document.getElementById('overlay');
 const mainOrdersContent = document.querySelector('.main-orders__content');
 const cancelButton = document.querySelector('.main-orders__payment-buttons-item:first-child');
@@ -61,7 +61,7 @@ getDocs(dishesRef)
             mainArticle.dataset.type = dishData.type; // type filter
 
 
-            const imageMainArticle = document.createElement('img')
+            const imageMainArticle = document.createElement('img');
             imageMainArticle.className = 'main-content__offers-dish-img';
             imageMainArticle.src = dishData.image;
             mainArticle.appendChild(imageMainArticle);
@@ -86,13 +86,20 @@ getDocs(dishesRef)
             availabilityMainArticle.textContent = dishData.availability;
             infoMainArticle.appendChild(availabilityMainArticle);
 
-            mainContent.appendChild(mainArticle)
+            mainContent.appendChild(mainArticle);
 
             showLoader();
-        })
+        });
         setTimeout(hideLoader, 300);
     });
 
+//Loader
+function showLoader() {
+    loader.style.display = 'block';
+}
+function hideLoader() {
+    loader.style.display = 'none';
+}
 //Tabs filter
 function filterDishesByType(type) {
     const dishes = document.querySelectorAll('.main-content__offers-dish');
@@ -109,7 +116,7 @@ function filterDishesByType(type) {
 tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
         tabs.forEach((tab) => {
-            tab.classList.remove('active');  ///active class for tabs
+            tab.classList.remove('active');  //active class for tabs
         });
         tab.classList.add('active');
         const selectedType = tab.textContent.toLowerCase(); // filter for tabs
@@ -144,9 +151,7 @@ let dishNotFoundMessage = null;
 
 function handleSearch() {
     const searchText = searchInput.value.toLowerCase();
-    const activeTab = document.querySelector('.main-tabs__tab.active');
-    const activeTabType = activeTab.textContent.toLowerCase();
-    const dishes = document.querySelectorAll(`.main-content__offers-dish[data-type="${activeTabType}"]`);
+    const dishes = document.querySelectorAll(`.main-content__offers-dish`);
 
     let dishFound = false;
 
@@ -215,16 +220,15 @@ function addDishToOrder(event) {
         itemInfo.appendChild(itemImage);
 
         const itemsText = document.createElement('div');
-        itemsText.className = 'main-orders__content-text-items'
-        itemInfo.appendChild(itemsText)
-
+        itemsText.className = 'main-orders__content-text-items';
+        itemInfo.appendChild(itemsText);
         const itemTitle = document.createElement('p');
         itemTitle.className = 'main-orders__content-text-item';
         itemTitle.textContent = dishTitle;
         itemsText.appendChild(itemTitle);
 
         const itemPrice = document.createElement('p');
-        itemPrice.className = 'main-orders__content-text-item';  ///orders sub total price
+        itemPrice.className = 'main-orders__content-text-item';  //orders sub total price
         itemPrice.textContent = dishPrice;
         itemsText.appendChild(itemPrice);
 
@@ -345,9 +349,9 @@ function updateMainOrdersPaymentButton() {
         case (window.innerWidth >= 410):
             mainOrdersSection.style.right = '4em';
             break;
-        case (window.innerWidth >= 460):
-            mainOrdersSection.style.right = '0em';
-            break;
+            case (window.innerWidth >= 450):
+                mainOrdersSection.style.right = '1em';
+                break;
         case (window.innerWidth >= 640):
             mainOrdersSection.style.right = '25em';
             break;
@@ -399,9 +403,9 @@ function updateMainOrdersBackButton() {
         case (window.innerWidth >= 460):
             mainOrdersSection.style.right = '0em';
             break;
-        case (window.innerWidth >= 560):
-            mainOrdersSection.style.right = '22em';
-            break;
+        // case (window.innerWidth >= 560):
+        //     mainOrdersSection.style.right = '22em';
+        //     break;
         case (window.innerWidth >= 640):
             mainOrdersSection.style.right = '25em';
             break;
@@ -456,9 +460,9 @@ function updateMainOrdersCancelButton() {
         case (window.innerWidth >= 460):
             mainOrdersSection.style.right = '0em';
             break;
-        case (window.innerWidth >= 560):
-            mainOrdersSection.style.right = '22em';
-            break;
+        // case (window.innerWidth >= 560):
+        //     mainOrdersSection.style.right = '22em';
+        //     break;
         case (window.innerWidth >= 640):
             mainOrdersSection.style.right = '25em';
             break;
@@ -498,18 +502,18 @@ function updateMainOrdersToggleButton() {
         case (window.innerWidth >= 340):
             mainOrdersSection.style.right = '4.5em';
             break;
-        case (window.innerWidth >= 420):
+        case (window.innerWidth >= 450):
             mainOrdersSection.style.right = '1em';
             break;
-        case (window.innerWidth >= 500):
-            mainOrdersSection.style.right = '21em';
-            break;
+        // case (window.innerWidth >= 500):
+        //     mainOrdersSection.style.right = '26em';
+        //     break;
         case (window.innerWidth >= 730):
         case (window.innerWidth >= 830):
             mainOrdersSection.style.right = '25em';
             break;
         case (window.innerWidth >= 970):
-            mainOrdersSection.style.right = '34em';
+            mainOrdersSection.style.right = '31em';
             break;
         default:
             mainOrdersSection.style.right = '0em';
@@ -539,6 +543,7 @@ window.addEventListener('resize', function () {
 const confirmPaymentButton = document.querySelector('.main-orders__payment-buttons-item:last-child');
 const modalOverlay = document.querySelector('.main-orders__payment-modal');
 const modalCloseButton = document.querySelector('.main-orders__payment-modal-button');
+
 confirmPaymentButton.addEventListener('click', showPaymentModal);
 modalCloseButton.addEventListener('click', hidePaymentModal);
 
@@ -549,12 +554,54 @@ document.addEventListener('keydown', function (event) {
 });
 
 function showPaymentModal() {
+    const paymentMethods = document.querySelectorAll('.main-orders__payment-methods-content-item');
+    const fields = [];
+    let isPaymentMethodSelected = false;
+
+    paymentMethods.forEach(method => {
+        const section = document.getElementById(`${method.id}Section`);
+        const methodFields = section.querySelectorAll('.main-orders__payment-methods-content-section-input');
+
+        if (method.classList.contains('active')) {
+            isPaymentMethodSelected = true;
+            methodFields.forEach(field => fields.push(field));
+        }
+    });
+
+    if (!isPaymentMethodSelected) {
+        Swal.fire({
+            title: 'Choose a payment method',
+            icon: 'warning',
+            confirmButtonText: 'OK'
+        });
+        return;
+    }
+
+    let allFieldsFilled = true;
+    fields.forEach(field => {
+        if (field.value.trim() === '') {
+            allFieldsFilled = false;
+            return;
+        }
+    });
+
+    if (!allFieldsFilled) {
+        Swal.fire({
+            title: 'Fill in all fields',
+            confirmButtonText: 'OK'
+        });
+        return;
+    }
+
     modalOverlay.classList.remove('hidden');
 }
+
+
 
 function hidePaymentModal() {
     modalOverlay.classList.add('hidden');
 }
+
 
 //Methods
 const creditCardItem = document.getElementById('creditCard');
@@ -676,16 +723,16 @@ homeSectionButton.addEventListener('click', function () {
 discountSectionButton.addEventListener('click', function () {
     mainPage.style.display = 'none';
     discountSection.style.display = 'block';
-    colorMenu.style.display = 'none'
-    mainTitle.textContent = 'There are no available discounts for you'
+    colorMenu.style.display = 'none';
+    mainTitle.textContent = 'There are no available discounts for you';
 });
 dashboardSectionButton.addEventListener('click', function () {
     mainPage.style.display = 'none';
     discountSection.style.display = 'none';
     dashboardSection.style.display = 'block';
-    colorMenu.style.display = 'none'
-    mainTitle.textContent = 'Our restaurant is happy to see you again! ☺'
-})
+    colorMenu.style.display = 'none';
+    mainTitle.textContent = 'Our restaurant is happy to see you again! ☺';
+});
 
 
 // Additional color wrapper change
@@ -723,15 +770,4 @@ switch (true) {
     default:
         swiper.destroy();
         break;
-}
-
-
-//Loader
-function showLoader() {
-    const loader = document.getElementById('loader');
-    loader.style.display = 'block';
-}
-function hideLoader() {
-    const loader = document.getElementById('loader');
-    loader.style.display = 'none';
 }

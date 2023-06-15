@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+
 
 </head>
 
@@ -33,7 +35,7 @@
 
             <main id="main" class="main">
                 <div class="error-message"></div>
-              <div class="loader" id="loader"></div>
+                <div class="main-loader" id="loader"></div>
                 <section class="main-sidebar">
                     <a id="logo" href="#" class="main-sidebar__btn">
                         <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -121,7 +123,7 @@
 
 
 
-                
+
 
                 <section class="main-content">
                     <section class="main-tabs">
@@ -274,19 +276,23 @@
                                         class="main-orders__payment-methods-content-section credit-card">
                                         <form class=" main-orders__payment-methods-content-form">
                                             <label for="cardholderName">Cardholder Name:</label>
-                                            <input type="text" id="cardholderName" required />
+                                            <input class="main-orders__payment-methods-content-section-input"
+                                                type="text" id="cardholderName" required />
                                             <label for="cardNumber">Card Number:</label>
-                                            <input type="text" id="cardNumber" required/>
+                                            <input class="main-orders__payment-methods-content-section-input"
+                                                type="text" id="cardNumber" required />
                                             <div class="main-orders__payment-methods-content-section credit-card-form">
                                                 <div
                                                     class="main-orders__payment-methods-content-section credit-card-date-item">
                                                     <label for="expirationDate">Expiration Date:</label>
-                                                    <input type="text" id="expirationDate" placeholder="MM/YYYY"
-                                                        required autocomplete="cc-exp" />
+                                                    <input class="main-orders__payment-methods-content-section-input"
+                                                        type="text" id="expirationDate" placeholder="MM/YYYY"
+                                                        autocomplete="cc-exp" required />
                                                 </div>
                                                 <div>
                                                     <label for="cvv">CVV</label>
-                                                    <input type="password" id="cvv" max="3" required
+                                                    <input class="main-orders__payment-methods-content-section-input"
+                                                        type="password" id="cvv" max="3" required
                                                         autocomplete="current-password" />
                                                 </div>
                                             </div>
@@ -301,7 +307,8 @@
                                                 </div>
                                                 <div>
                                                     <label for="orderTable">Table no.</label>
-                                                    <input type="text" />
+                                                    <input class="main-orders__payment-methods-content-section-input"
+                                                        type="text" />
                                                 </div>
 
                                             </div>
@@ -311,13 +318,17 @@
                                     <div id="payPalSection" class="main-orders__payment-methods-content-section paypal">
                                         <form class=" main-orders__payment-methods-content-form">
                                             <label for="email">Email</label>
-                                            <input type="email" id="email" autocomplete="email" />
+                                            <input class="main-orders__payment-methods-content-section-input"
+                                                type="email" id="email" autocomplete="email" />
                                             <label for="LastName">Last Name</label>
-                                            <input type="text" id="LastName" />
+                                            <input class="main-orders__payment-methods-content-section-input"
+                                                type="text" id="LastName" />
                                             <label for="FirstName">First Name</label>
-                                            <input type="text" id="FirstName" />
+                                            <input class="main-orders__payment-methods-content-section-input"
+                                                type="text" id="FirstName" />
                                             <label for="password">PayPal Password</label>
-                                            <input type="password" id="password" autocomplete="current-password" />
+                                            <input class="main-orders__payment-methods-content-section-input"
+                                                type="password" id="password" autocomplete="current-password" />
                                             <div class="main-orders__payment-methods-content-section credit-card-form">
                                                 <div class="main-orders__payment-methods-content-section-select">
                                                     <label for="orderType">Order Type:</label>
@@ -329,7 +340,8 @@
                                                 </div>
                                                 <div>
                                                     <label for="orderTable">Table no.</label>
-                                                    <input type="text" />
+                                                    <input class="main-orders__payment-methods-content-section-input"
+                                                        type="text" />
                                                 </div>
 
                                             </div>
@@ -339,11 +351,14 @@
                                     <div id="cashSection" class="main-orders__payment-methods-content-section cash">
                                         <form class=" main-orders__payment-methods-content-form">
                                             <label for="lastName">Last Name</label>
-                                            <input type="text" id="LastNameCash" />
+                                            <input class="main-orders__payment-methods-content-section-input"
+                                                type="text" id="LastNameCash" />
                                             <label for="firstName">First Name</label>
-                                            <input type="text" id="FirstNameCash" />
+                                            <input class="main-orders__payment-methods-content-section-input"
+                                                type="text" id="FirstNameCash" />
                                             <label for="phoneNumber">Phone Number</label>
-                                            <input type="text" id="phoneNumber" />
+                                            <input class="main-orders__payment-methods-content-section-input"
+                                                type="text" id="phoneNumber" />
                                             <div class="main-orders__payment-methods-content-section credit-card-form">
                                                 <div class="main-orders__payment-methods-content-section-select">
                                                     <label for="orderType">Order Type:</label>
@@ -355,7 +370,8 @@
                                                 </div>
                                                 <div>
                                                     <label for="orderTable">Table no.</label>
-                                                    <input type="text" />
+                                                    <input class="main-orders__payment-methods-content-section-input"
+                                                        type="text" />
                                                 </div>
 
                                             </div>
@@ -369,7 +385,7 @@
                         </div>
                         <div class="main-orders__payment-buttons">
                             <button class="main-orders__payment-buttons-item">Cancel</button>
-                            <button class="main-orders__payment-buttons-item">Confirm Payment</button>
+                            <button type="submit" class="main-orders__payment-buttons-item">Confirm Payment</button>
                         </div>
 
                         <div class="main-orders__payment-modal hidden">
