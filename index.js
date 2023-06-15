@@ -151,13 +151,15 @@ let dishNotFoundMessage = null;
 
 function handleSearch() {
     const searchText = searchInput.value.toLowerCase();
-    const dishes = document.querySelectorAll(`.main-content__offers-dish`);
-
+    const dishes = document.querySelectorAll('.main-content__offers-dish');
+    const activeTab = document.querySelector('.main-tabs__tab.active');
     let dishFound = false;
 
     dishes.forEach((dish) => {
+        const dishType = dish.dataset.type;
         const dishTitle = dish.querySelector('.main-content__offers-dish-title').textContent.toLowerCase();
-        if (dishTitle.includes(searchText)) {
+
+        if ((activeTab.textContent.toLowerCase() === 'all' || dishType === activeTab.textContent.toLowerCase()) && dishTitle.includes(searchText)) {
             dish.style.display = '';
             dishFound = true;
         } else {
@@ -179,6 +181,7 @@ function handleSearch() {
         }
     }
 }
+
 function clearSearchInput() {
     searchInput.value = '';
     if (dishNotFoundMessage) {
@@ -349,9 +352,9 @@ function updateMainOrdersPaymentButton() {
         // case (window.innerWidth >= 410):
         //     mainOrdersSection.style.right = '4em';
         //     break;
-            case (window.innerWidth >= 450):
-                mainOrdersSection.style.right = '1em';
-                break;
+        case (window.innerWidth >= 450):
+            mainOrdersSection.style.right = '1em';
+            break;
         case (window.innerWidth >= 640):
             mainOrdersSection.style.right = '25em';
             break;
