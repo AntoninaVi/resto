@@ -786,7 +786,6 @@ input[type=number]:focus {
 @media screen and (max-width: 800px) {
   .main-orders__payment {
     top: 25em;
-    right: 0em;
     max-width: 24em;
     min-width: 23em;
     width: 100%;
