@@ -112,7 +112,6 @@ tabs.forEach((tab) => {
             tab.classList.remove('active');  ///active class for tabs
         });
         tab.classList.add('active');
-
         const selectedType = tab.textContent.toLowerCase(); // filter for tabs
         filterDishesByType(selectedType);
         clearSearchInput();
@@ -134,24 +133,53 @@ dateToday.textContent = formattedDate;
 
 //search
 searchInput.addEventListener('input', handleSearch);
+searchInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Backspace' || event.key === 'Delete') { // delete message when deleting letters from search input
+        if (searchInput.value === '') {
+            clearSearchInput();
+        }
+    }
+});
+let dishNotFoundMessage = null;
+
 function handleSearch() {
     const searchText = searchInput.value.toLowerCase();
     const activeTab = document.querySelector('.main-tabs__tab.active');
     const activeTabType = activeTab.textContent.toLowerCase();
     const dishes = document.querySelectorAll(`.main-content__offers-dish[data-type="${activeTabType}"]`);
+
+    let dishFound = false;
+
     dishes.forEach((dish) => {
         const dishTitle = dish.querySelector('.main-content__offers-dish-title').textContent.toLowerCase();
         if (dishTitle.includes(searchText)) {
             dish.style.display = '';
+            dishFound = true;
         } else {
             dish.style.display = 'none';
         }
     });
+
+    if (!dishFound) {
+        if (!dishNotFoundMessage) {
+            dishNotFoundMessage = document.createElement('p');
+            dishNotFoundMessage.className = 'main-content__offers-dish-message';
+            dishNotFoundMessage.textContent = "Dish wasn't found 😔";
+            mainContent.appendChild(dishNotFoundMessage);
+        }
+    } else {
+        if (dishNotFoundMessage) {
+            dishNotFoundMessage.remove();
+            dishNotFoundMessage = null;
+        }
+    }
 }
 function clearSearchInput() {
     searchInput.value = '';
+    if (dishNotFoundMessage) {
+        dishNotFoundMessage.remove();
+    }
 }
-
 //Orders
 function addDishToOrder(event) {
     const selectedDish = event.target.closest('.main-content__offers-dish');
@@ -235,6 +263,7 @@ function addDishToOrder(event) {
 
         orderContent.appendChild(orderItem);
     }
+
     updateTotalAmount();
 }
 
