@@ -1234,7 +1234,7 @@ input[type=number]:focus {
 }
 @media screen and (max-width: 760px) {
   .main-loader {
-    top: 4%;
+    top: 10em;
     left: 28%;
     z-index: 5;
   }
