@@ -328,24 +328,6 @@ continueToPaymentButton.addEventListener('click', function () {
     orderNumber.innerHTML = 'Orders #22';
     overlay.style.display = 'block';
     mainOrdersContent.style.borderTop = '1px solid #393c49';
-    // mainOrdersSection.style.right = '27em';
-    updateMainOrdersPaymentButton();
-});
-
-continueToPaymentButton.addEventListener('click', function () {
-    backButtonArrow.style.display = 'block';
-    continueToPaymentButton.classList.add('hidden');
-    paymentMethodsContainer.classList.remove('hidden');
-
-    confirmationTitle.textContent = 'Confirmation';
-    confirmationTitle.style.fontSize = '28px';
-    confirmationTitle.style.marginBottom = '0.5em';
-
-    orderNumber.style.display = 'block';
-    itemTitles.style.display = 'none';
-    orderNumber.innerHTML = 'Orders #22';
-    overlay.style.display = 'block';
-    mainOrdersContent.style.borderTop = '1px solid #393c49';
     updateMainOrdersPaymentButton();
 });
 
