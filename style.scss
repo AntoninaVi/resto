@@ -49,7 +49,7 @@ body {
 
 .wrapper {
     background-color: #252836;
-
+    overflow-x: hidden;
 }
 .container {
     max-width: 1258px;
@@ -276,7 +276,8 @@ body {
     padding-bottom: 0.8em;
     border-bottom: 1px solid #393c49;
     @media screen and (max-width: 1200px) {
-        overflow: scroll;
+        overflow-x: scroll;
+        overflow-y: hidden;
         max-width: 30em;
     }
     @media screen and (max-width: 680px) {

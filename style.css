@@ -10,6 +10,7 @@ body {
 
 .wrapper {
   background-color: #252836;
+  overflow-x: hidden;
 }
 
 .container {
@@ -318,7 +319,8 @@ body {
 }
 @media screen and (max-width: 1200px) {
   .main-tabs {
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
     max-width: 30em;
   }
 }
