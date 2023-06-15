@@ -354,9 +354,6 @@ function updateMainOrdersPaymentButton() {
         case (window.innerWidth >= 395):
             mainOrdersSection.style.right = '1em';
             break;
-        // case (window.innerWidth >= 410):
-        //     mainOrdersSection.style.right = '4em';
-        //     break;
         case (window.innerWidth >= 450):
             mainOrdersSection.style.right = '1em';
             break;
@@ -405,20 +402,12 @@ function updateMainOrdersBackButton() {
         case (window.innerWidth >= 390):
             mainOrdersSection.style.right = '3em';
             break;
-        case (window.innerWidth >= 430):
+        case (window.innerWidth >= 450):
             mainOrdersSection.style.right = '1em';
             break;
-        case (window.innerWidth >= 460):
-            mainOrdersSection.style.right = '0em';
-            break;
-        // case (window.innerWidth >= 560):
-        //     mainOrdersSection.style.right = '22em';
-        //     break;
-        case (window.innerWidth >= 640):
+        case (window.innerWidth >= 730):
+        case (window.innerWidth >= 830):
             mainOrdersSection.style.right = '25em';
-            break;
-        case (window.innerWidth >= 840):
-            mainOrdersSection.style.right = '30em';
             break;
         case (window.innerWidth >= 922):
             mainOrdersSection.style.right = '28em';
@@ -462,20 +451,12 @@ function updateMainOrdersCancelButton() {
         case (window.innerWidth >= 390):
             mainOrdersSection.style.right = '3em';
             break;
-        case (window.innerWidth >= 430):
+        case (window.innerWidth >= 450):
             mainOrdersSection.style.right = '1em';
             break;
-        case (window.innerWidth >= 460):
-            mainOrdersSection.style.right = '0em';
-            break;
-        // case (window.innerWidth >= 560):
-        //     mainOrdersSection.style.right = '22em';
-        //     break;
-        case (window.innerWidth >= 640):
+        case (window.innerWidth >= 730):
+        case (window.innerWidth >= 830):
             mainOrdersSection.style.right = '25em';
-            break;
-        case (window.innerWidth >= 840):
-            mainOrdersSection.style.right = '30em';
             break;
         case (window.innerWidth >= 922):
             mainOrdersSection.style.right = '28em';
@@ -513,9 +494,6 @@ function updateMainOrdersToggleButton() {
         case (window.innerWidth >= 450):
             mainOrdersSection.style.right = '1em';
             break;
-        // case (window.innerWidth >= 500):
-        //     mainOrdersSection.style.right = '26em';
-        //     break;
         case (window.innerWidth >= 730):
         case (window.innerWidth >= 830):
             mainOrdersSection.style.right = '25em';
