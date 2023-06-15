@@ -990,15 +990,19 @@ input[type="number"]:focus {
     }
 }
 .main-loader {
-    border-radius: 50%;
-    width: 9em;
-    height: 9em;
-    -webkit-animation: spin 1s linear infinite;
-    animation: spin 1s linear infinite;
-    border-top: 1em solid #ea7c69;
     position: absolute;
     top: 20%;
     left: 30%;
+    border-radius: 50%;
+    width: 7em;
+    height: 7em;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 10px dotted #ea7c69;
+    border-bottom: 10px dotted #ea7c69;
+    border-left: 10px dotted #ea7c69;
+    border-right: 10px dotted #ea7c69;
+    opacity: 0.7;
     @media screen and (max-width: 760px) {
         top: 4%;
         left: 28%;
@@ -1011,7 +1015,7 @@ input[type="number"]:focus {
         transform: rotate(0deg);
     }
     100% {
-        transform: rotate(360deg);
+        transform: rotate(180deg);
     }
 }
 //ALERT messages
