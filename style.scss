@@ -186,9 +186,10 @@ body {
         margin-bottom: 3em;
         width: 3.5em;
         height: 3.5em;
-        // border-radius: 8px;
+        border-radius: 8px;
         border-top-left-radius: 8px;
         border-bottom-left-radius: 8px;
+        z-index: auto;
 
         z-index: 2;
         &:first-child {
@@ -211,18 +212,34 @@ body {
             background: #ea7c69;
             outline: 0.7em solid #252836;
             color: #ffffff;
-        }
-        &:hover::before {
-            content: url(img/rectangle1.svg);
-            position: absolute;
-            top: -1.3em;
-            left: 3.7em;
-            z-index: -1;
-            @media screen and (max-width: 450px) {
-                display: none;
+            z-index: auto;
+            &::before {
+                content: url(img/rectangle3.svg);
+                position: absolute;
+                top: -0.63em;
+                left: 2.5em;
+                z-index: -1;
+                border-radius: 8px;
+                @media screen and (max-width: 450px) {
+                    display: none;
+                }
+            }
+            &::after {
+                content: url(img/rectangle2.svg);
+                position: absolute;
+                top: -1.3em;
+                left: 3.5em;
+                z-index: -1;
+                @media screen and (max-width: 450px) {
+                    display: none;
+                }
             }
         }
+
         &:first-child::before {
+            display: none;
+        }
+        &:first-child::after {
             display: none;
         }
         @media screen and (max-width: 450px) {
@@ -246,17 +263,32 @@ body {
     outline: 0.7em solid #252836;
     color: #ffffff;
     border: none;
+    z-index: auto;
     &::before {
-        content: url(img/rectangle1.svg);
+        content: url(img/rectangle3.svg);
+        position: absolute;
+        top: -0.63em;
+        left: 2.5em;
+        z-index: -1;
+        border-radius: 8px;
+        @media screen and (max-width: 450px) {
+            display: none;
+        }
+    }
+    &::after {
+        content: url(img/rectangle2.svg);
         position: absolute;
         top: -1.3em;
-        left: 3.7em;
+        left: 3.5em;
         z-index: -1;
         @media screen and (max-width: 450px) {
             display: none;
         }
     }
     &:first-child::before {
+        display: none;
+    }
+    &:first-child::after {
         display: none;
     }
     @media screen and (max-width: 450px) {
@@ -1041,7 +1073,7 @@ input[type="number"]:focus {
         transform: scale(0.9);
     }
 }
-.swal2-title{
+.swal2-title {
     text-align: center;
     font-size: 18px;
     font-weight: 600;

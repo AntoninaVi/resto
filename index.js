@@ -705,6 +705,9 @@ homeSectionButton.addEventListener('click', function () {
     mainTitle.textContent = "Choose Dishes";
     colorMenu.style.display = 'none';
 });
+document.addEventListener('DOMContentLoaded', () => {
+    homeSectionButton.classList.add('active');
+});
 
 discountSectionButton.addEventListener('click', function () {
     mainPage.style.display = 'none';
