@@ -460,11 +460,7 @@ body {
 .main-content {
   -ms-flex-preferred-size: 57%;
       flex-basis: 57%;
-}
-@media screen and (max-width: 790px) {
-  .main-content {
-    min-height: 530vh;
-  }
+  min-height: 100vh;
 }
 
 .main-content__offers {
@@ -485,6 +481,7 @@ body {
     top: 6em;
     grid-template-columns: repeat(auto-fit, minmax(8.2em, 25em));
     gap: 13.7em;
+    height: 40%;
   }
 }
 @media screen and (max-width: 450px) {
