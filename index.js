@@ -195,6 +195,7 @@ function clearSearchInput() {
 }
 //Orders
 function addDishToOrder(event) {
+    showLoader();
     const selectedDish = event.target.closest('.main-content__offers-dish');
     const dishTitle = selectedDish.querySelector('.main-content__offers-dish-title').textContent;
     const dishPrice = selectedDish.querySelector('.main-content__offers-dish-price').textContent;
@@ -274,8 +275,11 @@ function addDishToOrder(event) {
         itemDelete.addEventListener('click', deleteOrderItem);
 
         orderContent.appendChild(orderItem);
-    }
 
+    }
+    setTimeout(() => {
+        hideLoader();
+    }, 300);
     updateTotalAmount();
 }
 
