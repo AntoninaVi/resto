@@ -293,7 +293,7 @@ body {
     }
     @media screen and (max-width: 360px) {
         max-width: 17em;
-        width: 65%;
+        width: 80%;
         overflow-y: hidden;
     }
     @media screen and (max-width: 300px) {
@@ -421,6 +421,7 @@ body {
     &-dish-img {
         position: relative;
         bottom: 3.5em;
+        left: 4%;
         width: 8.3em;
         height: 8.3em;
     }
