@@ -124,6 +124,11 @@ tabs.forEach((tab) => {
         clearSearchInput();
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const firstTab = document.querySelector('.main-tabs__tab:first-child');
+    firstTab.classList.add('active');
+});
+
 
 //date
 const today = new Date();
