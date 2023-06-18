@@ -788,6 +788,7 @@ body {
   height: 2em;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 input[type=number]::-webkit-inner-spin-button,

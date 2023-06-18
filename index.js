@@ -32,9 +32,7 @@ const dishesRef = collection(db, 'dishes');
 const mainContent = document.querySelector('.main-content__offers');
 const tabs = document.querySelectorAll('.main-tabs__tab');
 const dateToday = document.querySelector('.header-date');
-const searchInput = document.querySelector('.header-search__input');
 const mainOrdersSection = document.querySelector('.main-orders');
-const sidebarButtons = document.querySelectorAll('.main-sidebar__btn');
 let totalAmount = 0;
 const loader = document.getElementById('loader');
 //payment
@@ -143,61 +141,6 @@ const year = today.getFullYear();
 const formattedDate = `${dayOfWeek}, ${day} ${month} ${year}`;
 dateToday.textContent = formattedDate;
 
-//search
-let dishNotFoundMessage = null;
-
-searchInput.addEventListener('input', handleSearch);
-
-searchInput.addEventListener('keydown', (event) => {
-    if (event.key === 'Backspace' || event.key === 'Delete') { // delete message when deleting letters from search input
-        if (searchInput.value === '') {
-            clearSearchInput();
-        }
-    }
-});
-
-function handleSearch() {
-    const searchText = searchInput.value.toLowerCase();
-    const dishes = document.querySelectorAll('.main-content__offers-dish');
-    const activeTab = document.querySelector('.main-tabs__tab.active');
-    let dishFound = false;
-
-    dishes.forEach((dish) => {
-        const dishType = dish.dataset.type;
-        const dishTitleElement = dish.querySelector('.main-content__offers-dish-title');
-        const dishTitle = dishTitleElement ? dishTitleElement.textContent.toLowerCase() : '';
-
-        if ((activeTab.textContent.toLowerCase() === 'all' || dishType === activeTab.textContent.toLowerCase()) && dishTitle.includes(searchText)) {
-            dish.style.display = '';
-            dishFound = true;
-        } else {
-            dish.style.display = 'none';
-        }
-    });
-
-    if (!dishFound) {
-        if (!dishNotFoundMessage) {
-            dishNotFoundMessage = document.createElement('p');
-            dishNotFoundMessage.className = 'main-content__offers-dish-message';
-            dishNotFoundMessage.textContent = "Dish wasn't found 😔";
-            mainContent.appendChild(dishNotFoundMessage);
-        }
-    } else {
-        if (dishNotFoundMessage) {
-            dishNotFoundMessage.remove();
-            dishNotFoundMessage = null;
-        }
-    }
-}
-
-function clearSearchInput() {
-    searchInput.value = '';
-    handleSearch();
-    if (dishNotFoundMessage) {
-        dishNotFoundMessage.remove();
-        dishNotFoundMessage = null;
-    }
-}
 //Orders
 function addDishToOrder(event) {
     showLoader();
@@ -334,7 +277,7 @@ function updateTotalAmount() {
     }
 }
 
-//Payment
+//Payment section
 continueToPaymentButton.addEventListener('click', function () {
     backButtonArrow.style.display = 'block';
     continueToPaymentButton.classList.add('hidden');
@@ -400,42 +343,8 @@ backButtonArrow.addEventListener('click', function () {
     overlay.style.display = 'none';
     itemTitles.style.display = 'flex';
     mainOrdersContent.style.borderTop = 'none';
-    updateMainOrdersBackButton();
+    // updateMainOrdersBackButton();
 });
-
-function updateMainOrdersBackButton() {
-    switch (false) {
-        case (window.innerWidth >= 340):
-            mainOrdersSection.style.right = '4.5em';
-            break;
-        case (window.innerWidth >= 390):
-            mainOrdersSection.style.right = '3em';
-            break;
-        case (window.innerWidth >= 450):
-            mainOrdersSection.style.right = '1em';
-            break;
-        case (window.innerWidth >= 730):
-        case (window.innerWidth >= 830):
-            mainOrdersSection.style.right = '25em';
-            break;
-        case (window.innerWidth >= 922):
-            mainOrdersSection.style.right = '28em';
-            break;
-        case (window.innerWidth >= 980):
-            mainOrdersSection.style.right = '9em';
-            break;
-        case (window.innerWidth >= 1290):
-            mainOrdersSection.style.right = '-1em';
-            break;
-        case (window.innerWidth >= 1500):
-            mainOrdersSection.style.right = '-1.5em';
-            break;
-        default:
-            mainOrdersSection.style.right = '-1.5em';
-            break;
-    }
-}
-window.addEventListener('resize', updateMainOrdersBackButton);
 
 // Cancel
 cancelButton.addEventListener('click',
@@ -448,74 +357,67 @@ cancelButton.addEventListener('click',
         itemTitles.style.display = 'flex';
         overlay.style.display = 'none';
         mainOrdersContent.style.borderTop = 'none';
-        updateMainOrdersCancelButton();
     });
-
-
-function updateMainOrdersCancelButton() {
-    switch (false) {
-        case (window.innerWidth >= 340):
-            mainOrdersSection.style.right = '4.5em';
-            break;
-        case (window.innerWidth >= 390):
-            mainOrdersSection.style.right = '3em';
-            break;
-        case (window.innerWidth >= 450):
-            mainOrdersSection.style.right = '1em';
-            break;
-        case (window.innerWidth >= 730):
-        case (window.innerWidth >= 830):
-            mainOrdersSection.style.right = '25em';
-            break;
-        case (window.innerWidth >= 922):
-            mainOrdersSection.style.right = '28em';
-            break;
-        case (window.innerWidth >= 980):
-            mainOrdersSection.style.right = '9em';
-            break;
-        case (window.innerWidth >= 1290):
-            mainOrdersSection.style.right = '-1em';
-            break;
-        case (window.innerWidth >= 1500):
-            mainOrdersSection.style.right = '-1.5em';
-            break;
-        default:
-            mainOrdersSection.style.right = '-1.5em';
-            break;
-    }
-}
-
-window.addEventListener('resize', updateMainOrdersCancelButton);
 
 // Basket button responsive version 970px
 toggleOrdersButton.addEventListener('click', function () {
     mainOrdersSection.style.display = 'block';
     closeButtonResponsive.style.display = 'block';
     overlay.style.display = 'block';
-    updateMainOrdersToggleButton();
 });
 
-function updateMainOrdersToggleButton() {
+
+function updateElementPosition(element) {
     switch (false) {
-        case (window.innerWidth >= 340):
-            mainOrdersSection.style.right = '4.5em';
+        case (window.innerWidth >= 290):
+            element.style.right = '5em';
+            break;
+        case (window.innerWidth >= 330):
+            element.style.right = '4em';
             break;
         case (window.innerWidth >= 450):
-            mainOrdersSection.style.right = '1em';
+            element.style.right = '1em';
             break;
-        case (window.innerWidth >= 730):
-        case (window.innerWidth >= 830):
-            mainOrdersSection.style.right = '25em';
+        case (window.innerWidth >= 640):
+            element.style.right = '25em';
             break;
-        case (window.innerWidth >= 970):
-            mainOrdersSection.style.right = '31em';
+        case (window.innerWidth >= 850):
+            element.style.right = '34em';
             break;
+        case (window.innerWidth >= 925):
+            element.style.right = '30em';
+            break;
+        // case (window.innerWidth >= 1300):
+        //     element.style.right = '25em';
+        //     break;
+        // case (window.innerWidth >= 1500):
+        //     element.style.right = '22em';
+        //     break;
         default:
-            mainOrdersSection.style.right = '0em';
+            element.style.right = '-1.5em';
             break;
     }
 }
-window.addEventListener('resize', updateMainOrdersToggleButton);
+
+function addResizeListener(element, updateFunction) {
+    window.addEventListener('resize', function () {
+        updateFunction(element);
+    });
+}
+
+addResizeListener(mainOrdersSection, updateElementPosition);
+
+backButtonArrow.addEventListener('click', function () {
+    updateElementPosition(mainOrdersSection);
+});
+
+cancelButton.addEventListener('click', function () {
+    updateElementPosition(mainOrdersSection);
+});
+
+toggleOrdersButton.addEventListener('click', function () {
+    updateElementPosition(mainOrdersSection);
+});
 
 //Button 'close' for main-orders section 970px and less
 const closeButtonResponsive = document.querySelector('.main-orders__button-close-responsive');
@@ -533,227 +435,6 @@ window.addEventListener('resize', function () {
         closeButtonResponsive.style.display = 'none';
     }
 });
-
-//Modal
-const confirmPaymentButton = document.querySelector('.main-orders__payment-buttons-item:last-child');
-const modalOverlay = document.querySelector('.main-orders__payment-modal');
-const modalCloseButton = document.querySelector('.main-orders__payment-modal-button');
-
-confirmPaymentButton.addEventListener('click', showPaymentModal);
-modalCloseButton.addEventListener('click', hidePaymentModal);
-
-document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') {
-        hidePaymentModal();
-    }
-});
-
-function showPaymentModal() {
-    const paymentMethods = document.querySelectorAll('.main-orders__payment-methods-content-item');
-    const fields = [];
-    let isPaymentMethodSelected = false;
-
-    paymentMethods.forEach(method => {
-        const section = document.getElementById(`${method.id}Section`);
-        const methodFields = section.querySelectorAll('.main-orders__payment-methods-content-section-input');
-
-        if (method.classList.contains('active')) {
-            isPaymentMethodSelected = true;
-            methodFields.forEach(field => fields.push(field));
-        }
-    });
-
-    if (!isPaymentMethodSelected) {
-        Swal.fire({
-            title: 'Choose a payment method',
-            icon: 'warning',
-            confirmButtonText: 'OK'
-        });
-        return;
-    }
-
-    let allFieldsFilled = true;
-    fields.forEach(field => {
-        if (field.value.trim() === '') {
-            allFieldsFilled = false;
-            return;
-        }
-    });
-
-    if (!allFieldsFilled) {
-        Swal.fire({
-            title: 'Fill in all fields',
-            confirmButtonText: 'OK'
-        });
-        return;
-    }
-
-    modalOverlay.classList.remove('hidden');
-}
-
-
-
-function hidePaymentModal() {
-    modalOverlay.classList.add('hidden');
-}
-
-
-//Methods
-const creditCardItem = document.getElementById('creditCard');
-const creditCardSection = document.getElementById('creditCardSection');
-
-const payPalItem = document.getElementById('payPal');
-const payPalSection = document.getElementById('payPalSection');
-
-const cashlItem = document.getElementById('cash');
-const cashSection = document.getElementById('cashSection');
-
-creditCardItem.addEventListener('click', function () {
-    creditCardSection.style.display = 'grid';
-    payPalSection.style.display = 'none';
-    cashSection.style.display = 'none';
-
-    creditCardItem.classList.add('active');
-    payPalItem.classList.remove('active');
-    cashlItem.classList.remove('active');
-});
-
-payPalItem.addEventListener('click', function () {
-    payPalSection.style.display = 'grid';
-    creditCardSection.style.display = 'none';
-    cashSection.style.display = 'none';
-
-    payPalItem.classList.add('active');
-    creditCardItem.classList.remove('active');
-    cashlItem.classList.remove('active');
-});
-
-cashlItem.addEventListener('click', function () {
-    cashSection.style.display = 'grid';
-    payPalSection.style.display = 'none';
-    creditCardSection.style.display = 'none';
-
-    cashlItem.classList.add('active');
-    payPalItem.classList.remove('active');
-    creditCardItem.classList.remove('active');
-});
-
-// CREDIT CARD expiration date format
-const expirationDateInput = document.getElementById('expirationDate');
-
-expirationDateInput.addEventListener('input', function () {
-    const enteredValue = expirationDateInput.value;
-    const formattedValue = formatExpirationDate(enteredValue);
-    expirationDateInput.value = formattedValue;
-});
-
-function formatExpirationDate(value) {
-    const deletedValue = value.replace(/\D/g, '');
-    const month = deletedValue.substr(0, 2);
-    const year = deletedValue.substr(2, 4);
-    let formattedValue = '';
-
-    switch (true) {
-        case Boolean(month):
-            formattedValue += month;
-            break;
-        default:
-            break;
-    }
-
-    switch (true) {
-        case Boolean(year):
-            formattedValue += '/' + year;
-            break;
-        default:
-            break;
-    }
-
-    return formattedValue;
-}
-
-// CREDIT CARD CVV format
-const cvvInput = document.getElementById('cvv');
-
-cvvInput.addEventListener('input', function () {
-    const enteredValue = cvvInput.value;
-    const formattedValue = formatCVV(enteredValue);
-    cvvInput.value = formattedValue;
-});
-
-function formatCVV(value) {
-    const deletedValue = value.replace(/\D/g, '');
-    const maxLength = parseInt(cvvInput.getAttribute('max'), 10);
-    const formattedValue = deletedValue.substr(0, maxLength);
-    return formattedValue;
-}
-
-// Sidebar buttons and its sections
-sidebarButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-        sidebarButtons.forEach(function (btn) {
-            btn.classList.remove('active');
-        });
-        button.classList.add('active');
-    });
-});
-
-const homeSectionButton = document.getElementById('home');
-const discountSectionButton = document.getElementById('discount');
-const dashboardSectionButton = document.getElementById('dashboard');
-const mainTitle = document.querySelector('.main-title');
-
-const mainPage = document.querySelector('.main-content__offers');
-const discountSection = document.querySelector('#discountSection');
-const dashboardSection = document.querySelector('#dashboardSection');
-
-homeSectionButton.addEventListener('click', function () {
-    mainPage.style.display = 'grid';
-    discountSection.style.display = 'none';
-    dashboardSection.style.display = 'none';
-    mainTitle.textContent = "Choose Dishes";
-    colorMenu.style.display = 'none';
-});
-document.addEventListener('DOMContentLoaded', () => {
-    homeSectionButton.classList.add('active');
-});
-
-discountSectionButton.addEventListener('click', function () {
-    mainPage.style.display = 'none';
-    discountSection.style.display = 'block';
-    colorMenu.style.display = 'none';
-    mainTitle.textContent = 'There are no available discounts for you';
-});
-dashboardSectionButton.addEventListener('click', function () {
-    mainPage.style.display = 'none';
-    discountSection.style.display = 'none';
-    dashboardSection.style.display = 'block';
-    colorMenu.style.display = 'none';
-    mainTitle.textContent = 'Our restaurant is happy to see you again! ☺';
-});
-
-
-// Additional color wrapper change
-const settingsButton = document.getElementById('settings');
-const colorMenu = document.getElementById('colorMenu');
-const colorOptions = colorMenu.querySelectorAll('input[name="color"]');
-const wrapper = document.querySelector('.wrapper');
-
-settingsButton.addEventListener('click', function () {
-    colorMenu.style.display = 'flex';
-    mainPage.style.display = 'none';
-    discountSection.style.display = 'none';
-    dashboardSection.style.display = 'none';
-    mainTitle.textContent = 'Select Background Color';
-});
-
-colorOptions.forEach(function (option) {
-    option.addEventListener('change', function () {
-        const selectedColor = this.value;
-        wrapper.style.backgroundColor = selectedColor;
-    });
-});
-
 
 //  Swiper for tabs (responsive version)
 var swiper = new Swiper('.swiper-container', {
