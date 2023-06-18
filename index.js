@@ -260,7 +260,7 @@ function deleteOrderItem(event) {
 function updateTotalAmount() {
     const orderItems = document.querySelectorAll('.main-orders__content-order-item');
     totalAmount = 0;
-
+    
     orderItems.forEach((orderItem) => {
         const itemQty = orderItem.querySelector('.main-orders__content-text-input');
         const itemPrice = orderItem.querySelector('.main-orders__content-text-item:last-child').textContent;
@@ -303,27 +303,21 @@ function updateMainOrdersPaymentButton() {
         case (window.innerWidth >= 330):
             mainOrdersSection.style.right = '4em';
             break;
-        case (window.innerWidth >= 395):
-            mainOrdersSection.style.right = '1em';
-            break;
         case (window.innerWidth >= 450):
             mainOrdersSection.style.right = '1em';
             break;
         case (window.innerWidth >= 640):
             mainOrdersSection.style.right = '25em';
             break;
-        case (window.innerWidth >= 850):
-            mainOrdersSection.style.right = '34em';
-            break;
         case (window.innerWidth >= 925):
-            mainOrdersSection.style.right = '30em';
+            mainOrdersSection.style.right = '32em';
             break;
-        case (window.innerWidth >= 1300):
-            mainOrdersSection.style.right = '25em';
-            break;
-        case (window.innerWidth >= 1500):
-            mainOrdersSection.style.right = '27em';
-            break;
+        // case (window.innerWidth >= 1300):
+        //     mainOrdersSection.style.right = '25em';
+        //     break;
+        // case (window.innerWidth >= 1500):
+        //     mainOrdersSection.style.right = '27em';
+        //     break;
         default:
             mainOrdersSection.style.right = '22em';
             break;
@@ -331,41 +325,19 @@ function updateMainOrdersPaymentButton() {
 }
 window.addEventListener('resize', updateMainOrdersPaymentButton);
 
-// Back button <--
-backButtonArrow.addEventListener('click', function () {
-    paymentMethodsContainer.classList.add('hidden');
-    confirmationTitle.textContent = 'Orders #22';
-    confirmationTitle.style.fontSize = '20px';
-    confirmationTitle.style.marginBottom = '5em';
-    orderNumber.style.display = 'none';
-    continueToPaymentButton.classList.remove('hidden');
-    backButtonArrow.style.display = 'none';
-    overlay.style.display = 'none';
-    itemTitles.style.display = 'flex';
-    mainOrdersContent.style.borderTop = 'none';
-    // updateMainOrdersBackButton();
-});
-
-// Cancel
-cancelButton.addEventListener('click',
+// Back button <-- and Cancel button functions
     function cancelPayment() {
-        continueToPaymentButton.classList.remove('hidden');
         paymentMethodsContainer.classList.add('hidden');
+        confirmationTitle.textContent = 'Orders #22';
+        confirmationTitle.style.fontSize = '20px';
+        confirmationTitle.style.marginBottom = '5em';
         orderNumber.style.display = 'none';
-        confirmationTitle.textContent = 'Order #22';
+        continueToPaymentButton.classList.remove('hidden');
         backButtonArrow.style.display = 'none';
-        itemTitles.style.display = 'flex';
         overlay.style.display = 'none';
+        itemTitles.style.display = 'flex';
         mainOrdersContent.style.borderTop = 'none';
-    });
-
-// Basket button responsive version 970px
-toggleOrdersButton.addEventListener('click', function () {
-    mainOrdersSection.style.display = 'block';
-    closeButtonResponsive.style.display = 'block';
-    overlay.style.display = 'block';
-});
-
+    };
 
 function updateElementPosition(element) {
     switch (false) {
@@ -381,11 +353,8 @@ function updateElementPosition(element) {
         case (window.innerWidth >= 640):
             element.style.right = '25em';
             break;
-        case (window.innerWidth >= 850):
-            element.style.right = '34em';
-            break;
         case (window.innerWidth >= 925):
-            element.style.right = '30em';
+            element.style.right = '32em';
             break;
         // case (window.innerWidth >= 1300):
         //     element.style.right = '25em';
@@ -399,6 +368,8 @@ function updateElementPosition(element) {
     }
 }
 
+// Basket button responsive version 970px
+
 function addResizeListener(element, updateFunction) {
     window.addEventListener('resize', function () {
         updateFunction(element);
@@ -409,14 +380,19 @@ addResizeListener(mainOrdersSection, updateElementPosition);
 
 backButtonArrow.addEventListener('click', function () {
     updateElementPosition(mainOrdersSection);
+    cancelPayment()
 });
 
 cancelButton.addEventListener('click', function () {
     updateElementPosition(mainOrdersSection);
+    cancelPayment()
 });
 
 toggleOrdersButton.addEventListener('click', function () {
     updateElementPosition(mainOrdersSection);
+    mainOrdersSection.style.display = 'block';
+    closeButtonResponsive.style.display = 'block';
+    overlay.style.display = 'block';
 });
 
 //Button 'close' for main-orders section 970px and less
@@ -441,7 +417,6 @@ var swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
     spaceBetween: 10,
 });
-
 switch (true) {
     case (window.innerWidth <= 970):
         swiper.init();
