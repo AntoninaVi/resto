@@ -60,7 +60,6 @@ function formatExpirationDate(value) {
         default:
             break;
     }
-
     switch (true) {
         case Boolean(year):
             formattedValue += '/' + year;

@@ -86,6 +86,7 @@ getDocs(dishesRef)
             showLoader();
         });
         setTimeout(hideLoader, 300);
+        filterDishesByType('hot dishes');
     });
 
 //Loader
@@ -122,7 +123,11 @@ tabs.forEach((tab) => {
 document.addEventListener('DOMContentLoaded', function () {
     const firstTab = document.querySelector('.main-tabs__tab:first-child');
     firstTab.classList.add('active');
+    const selectedType = firstTab.textContent.toLowerCase();
+    filterDishesByType(selectedType);
 });
+
+
 
 
 //date
