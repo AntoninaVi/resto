@@ -58,7 +58,6 @@ getDocs(dishesRef)
             mainArticle.className = 'main-content__offers-dish';
             mainArticle.dataset.type = dishData.type; // type filter
 
-
             const imageMainArticle = document.createElement('img');
             imageMainArticle.className = 'main-content__offers-dish-img';
             imageMainArticle.src = dishData.image;
@@ -67,7 +66,6 @@ getDocs(dishesRef)
             const infoMainArticle = document.createElement('div');
             infoMainArticle.className = 'main-content__offers-dish-info';
             mainArticle.appendChild(infoMainArticle);
-
 
             const titleMainArticle = document.createElement('h2');
             titleMainArticle.className = 'main-content__offers-dish-title';
@@ -85,7 +83,6 @@ getDocs(dishesRef)
             infoMainArticle.appendChild(availabilityMainArticle);
 
             mainContent.appendChild(mainArticle);
-
             showLoader();
         });
         setTimeout(hideLoader, 300);
@@ -260,7 +257,7 @@ function deleteOrderItem(event) {
 function updateTotalAmount() {
     const orderItems = document.querySelectorAll('.main-orders__content-order-item');
     totalAmount = 0;
-    
+
     orderItems.forEach((orderItem) => {
         const itemQty = orderItem.querySelector('.main-orders__content-text-input');
         const itemPrice = orderItem.querySelector('.main-orders__content-text-item:last-child').textContent;
@@ -278,7 +275,7 @@ function updateTotalAmount() {
 }
 
 //Payment section
-continueToPaymentButton.addEventListener('click', function () {
+function continueToPayment() {
     backButtonArrow.style.display = 'block';
     continueToPaymentButton.classList.add('hidden');
     paymentMethodsContainer.classList.remove('hidden');
@@ -292,100 +289,64 @@ continueToPaymentButton.addEventListener('click', function () {
     orderNumber.innerHTML = 'Orders #22';
     overlay.style.display = 'block';
     mainOrdersContent.style.borderTop = '1px solid #393c49';
-    updateMainOrdersPaymentButton();
-});
-
-function updateMainOrdersPaymentButton() {
-    switch (false) {
-        case (window.innerWidth >= 290):
-            mainOrdersSection.style.right = '5em';
-            break;
-        case (window.innerWidth >= 330):
-            mainOrdersSection.style.right = '4em';
-            break;
-        case (window.innerWidth >= 450):
-            mainOrdersSection.style.right = '1em';
-            break;
-        case (window.innerWidth >= 640):
-            mainOrdersSection.style.right = '25em';
-            break;
-        case (window.innerWidth >= 925):
-            mainOrdersSection.style.right = '32em';
-            break;
-        // case (window.innerWidth >= 1300):
-        //     mainOrdersSection.style.right = '25em';
-        //     break;
-        // case (window.innerWidth >= 1500):
-        //     mainOrdersSection.style.right = '27em';
-        //     break;
-        default:
-            mainOrdersSection.style.right = '22em';
-            break;
-    }
+    updateElementPosition(mainOrdersSection, '22em');
 }
-window.addEventListener('resize', updateMainOrdersPaymentButton);
+continueToPaymentButton.addEventListener('click', continueToPayment);
 
 // Back button <-- and Cancel button functions
-    function cancelPayment() {
-        paymentMethodsContainer.classList.add('hidden');
-        confirmationTitle.textContent = 'Orders #22';
-        confirmationTitle.style.fontSize = '20px';
-        confirmationTitle.style.marginBottom = '5em';
-        orderNumber.style.display = 'none';
-        continueToPaymentButton.classList.remove('hidden');
-        backButtonArrow.style.display = 'none';
-        overlay.style.display = 'none';
-        itemTitles.style.display = 'flex';
-        mainOrdersContent.style.borderTop = 'none';
-    };
+function cancelPayment() {
+    paymentMethodsContainer.classList.add('hidden');
+    confirmationTitle.textContent = 'Orders #22';
+    confirmationTitle.style.fontSize = '20px';
+    confirmationTitle.style.marginBottom = '5em';
+    orderNumber.style.display = 'none';
+    continueToPaymentButton.classList.remove('hidden');
+    backButtonArrow.style.display = 'none';
+    overlay.style.display = 'none';
+    itemTitles.style.display = 'flex';
+    mainOrdersContent.style.borderTop = 'none';
+};
 
-function updateElementPosition(element) {
+function updateElementPosition(element, defaultValue) {
     switch (false) {
         case (window.innerWidth >= 290):
             element.style.right = '5em';
             break;
-        case (window.innerWidth >= 330):
+        case (window.innerWidth >= 335):
             element.style.right = '4em';
             break;
         case (window.innerWidth >= 450):
             element.style.right = '1em';
             break;
-        case (window.innerWidth >= 640):
+        case (window.innerWidth >= 675):
             element.style.right = '25em';
             break;
-        case (window.innerWidth >= 925):
+        case (window.innerWidth >= 975):
             element.style.right = '32em';
             break;
-        // case (window.innerWidth >= 1300):
-        //     element.style.right = '25em';
-        //     break;
-        // case (window.innerWidth >= 1500):
-        //     element.style.right = '22em';
-        //     break;
         default:
-            element.style.right = '-1.5em';
+            element.style.right = defaultValue;
             break;
     }
 }
 
-// Basket button responsive version 970px
-
-function addResizeListener(element, updateFunction) {
+function addResizeListener(element, updateFunction, defaultValue) {
     window.addEventListener('resize', function () {
-        updateFunction(element);
+        updateFunction(element, defaultValue);
     });
 }
-
-addResizeListener(mainOrdersSection, updateElementPosition);
+addResizeListener(mainOrdersSection, updateElementPosition, '-1.5em');
 
 backButtonArrow.addEventListener('click', function () {
     updateElementPosition(mainOrdersSection);
     cancelPayment()
+    updateElementPosition(mainOrdersSection, '-1.5em');
 });
 
 cancelButton.addEventListener('click', function () {
     updateElementPosition(mainOrdersSection);
     cancelPayment()
+    updateElementPosition(mainOrdersSection, '-1.5em');
 });
 
 toggleOrdersButton.addEventListener('click', function () {
